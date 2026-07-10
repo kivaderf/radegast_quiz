@@ -16,13 +16,13 @@
   --danger: #d24b32;
 
   /* --- Colors for the four traits (result + roulette) --- */
-  --t-sila: #c0392b;
-  --t-rozhodnost: #e3a63c;
-  --t-odolnost: #4e8067;
-  --t-zodpovednost: #3c6e93;
+  --t-sila: #E22A00;
+  --t-rozhodnost: #F7B705;
+  --t-odolnost: #199A6D;
+  --t-zodpovednost: #247DD1;
 
   /* --- Background image (swap the file in /assets) --- */
-  --bg-image: url("../assets/background.svg");
+  --bg-image: url("../assets/background_start.jpg");
 
   /* --- Fonts (to use your own, add @font-face and change here) --- */
   --font-display: "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
@@ -80,12 +80,6 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: env(safe-area-inset-top, 0);
-}
-.app-header img {
-  height: min(72%, 92px);
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 
 /* Area below the header where each screen is rendered */
