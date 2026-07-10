@@ -61,6 +61,14 @@
   flex-direction: column;
   gap: clamp(6px, 1.4vh, 12px);
 }
+.q-counter {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: clamp(11px, 1.4vh, 14px);
+  font-weight: 700;
+  color: var(--amber);
+}
 .progress-dots {
   display: flex;
   justify-content: center;

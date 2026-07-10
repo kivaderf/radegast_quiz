@@ -53,6 +53,7 @@
     /* ---------- Otázka ---------------------------------------- */
     renderQuestion: function (index, total, question, onPick) {
       // progress
+      $("#qCounter").textContent = "Otázka " + (index + 1) + "/" + total;
       var dots = $("#dots");
       dots.innerHTML = "";
       dots.classList.remove("low");
