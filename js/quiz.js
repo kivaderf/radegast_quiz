@@ -69,6 +69,14 @@
       }
 
       var chosen = pool.slice(0, count);
+      console.log(
+        "[Kvíz:Quiz] Výběr otázek – fresh: " + fresh.length +
+          ", celkem v poolu: " + Quiz.questions.length +
+          ", vybráno ID:",
+        chosen.map(function (q) {
+          return q.id;
+        })
+      );
       Store.pushRecent(
         chosen.map(function (q) {
           return q.id;

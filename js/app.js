@@ -34,7 +34,9 @@
     var id = state.idValue;
     if (!id) return;
     document.getElementById("startBtn").disabled = true;
+    console.log("[Kvíz] Kontroluji ID:", id);
     Api.checkId(id).then(function (res) {
+      console.log("[Kvíz] Výsledek kontroly ID:", res);
       if (res.allowed) {
         beginTest();
       } else {
@@ -132,6 +134,7 @@
 
     // Save (locally right away, to the server once it's available)
     Api.saveResult(record).then(function (status) {
+      console.log("[Kvíz] Stav odeslání:", status);
       if (Cfg.API_BASE && status.pending > 0) {
         UI.setSyncNote("Výsledek uložen, čeká na odeslání.");
       } else if (Cfg.API_BASE) {
@@ -147,6 +150,7 @@
 
   /* ---------- Denied start -------------------------------- */
   function showDenied() {
+    console.log("[Kvíz] Start zamítnut pro ID:", state.idValue);
     UI.renderDenied();
     UI.showScreen("denied");
     var secs = Math.round(Cfg.DENIED_RESET_MS / 1000);
@@ -164,6 +168,7 @@
 
   /* ---------- Return to start -------------------------------- */
   function resetToId() {
+    console.log("[Kvíz] Reset na úvodní obrazovku.");
     clearTimeout(state.resultTimer);
     clearInterval(state.deniedTimer);
     UI.timer.stop();
@@ -228,10 +233,16 @@
 
     Quiz.load()
       .then(function () {
+        console.log(
+          "[Kvíz] Data načtena:",
+          Quiz.questions.length + " otázek",
+          Quiz.results
+        );
         UI.showScreen("id");
         Api.flushQueue(); // send any leftovers from before
       })
-      .catch(function () {
+      .catch(function (err) {
+        console.log("[Kvíz] Načtení dat selhalo:", err);
         document.getElementById("qText") &&
           (document.getElementById("startBtn").disabled = true);
         alert("Nepodařilo se načíst data kvízu (data/questions.json).");

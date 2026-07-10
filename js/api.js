@@ -50,9 +50,11 @@
          3) If the API is missing or unavailable -> ALLOW (fail-open). */
     checkId: function (id) {
       if (Store.isCompleted(id)) {
+        console.log("[Kvíz:API] ID už je lokálně označené jako dokončené:", id);
         return Promise.resolve({ allowed: false, reason: "already" });
       }
       if (!Cfg.API_BASE) {
+        console.log("[Kvíz:API] Žádné API nastavené, propouštím (fail-open).");
         return Promise.resolve({ allowed: true, reason: "no-api" });
       }
       return fetchWithTimeout(Cfg.API_BASE + Cfg.ENDPOINTS.check, {
@@ -61,15 +63,20 @@
         body: JSON.stringify({ id: id })
       })
         .then(function (res) {
-          if (!res.ok) return { allowed: true, reason: "api-error" };
+          if (!res.ok) {
+            console.log("[Kvíz:API] Chyba API při kontrole ID, propouštím:", res.status);
+            return { allowed: true, reason: "api-error" };
+          }
           return res.json().then(function (data) {
+            console.log("[Kvíz:API] Odpověď serveru na kontrolu ID:", data);
             return data && data.exists
               ? { allowed: false, reason: "already" }
               : { allowed: true, reason: "ok" };
           });
         })
-        .catch(function () {
+        .catch(function (err) {
           // API unavailable -> let them through (per spec)
+          console.log("[Kvíz:API] API nedostupné, propouštím (fail-open):", err);
           return { allowed: true, reason: "offline" };
         });
     },
@@ -77,7 +84,12 @@
     /* Saves the result: locally first (deduped by ID), then tries to send it. */
     saveResult: function (record) {
       Store.markCompleted(record.id);
-      Store.enqueue(record);
+      var wasNew = Store.enqueue(record);
+      console.log(
+        "[Kvíz:API] Výsledek uložen lokálně" +
+          (wasNew ? " a zařazen do fronty:" : " (ID už bylo ve frontě):"),
+        record
+      );
       return Api.flushQueue();
     },
 
@@ -85,8 +97,14 @@
     flushQueue: function () {
       var queue = Store.getQueue();
       if (!Cfg.API_BASE || !navigator.onLine || queue.length === 0) {
+        console.log(
+          "[Kvíz:API] Fronta se neodesílá (API: " + !!Cfg.API_BASE +
+            ", online: " + navigator.onLine +
+            ", ve frontě: " + queue.length + ")."
+        );
         return Promise.resolve({ sent: 0, pending: queue.length });
       }
+      console.log("[Kvíz:API] Odesílám frontu, položek:", queue.length);
       var sent = 0;
       // send one at a time so we don't flood the server
       return queue
@@ -102,15 +120,21 @@
                 if (res.ok || res.status === 409) {
                   Store.removeFromQueue(rec.id);
                   sent++;
+                  console.log("[Kvíz:API] Odesláno:", rec.id, res.status);
+                } else {
+                  console.log("[Kvíz:API] Odeslání selhalo, necháno ve frontě:", rec.id, res.status);
                 }
               })
-              .catch(function () {
+              .catch(function (err) {
                 /* leave it queued for next time */
+                console.log("[Kvíz:API] Odeslání selhalo (síť), necháno ve frontě:", rec.id, err);
               });
           });
         }, Promise.resolve())
         .then(function () {
-          return { sent: sent, pending: Store.queueSize() };
+          var result = { sent: sent, pending: Store.queueSize() };
+          console.log("[Kvíz:API] Frontu odesláno:", result);
+          return result;
         });
     }
   };
