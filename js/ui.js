@@ -33,50 +33,20 @@
       });
     },
 
-    /* ---------- ID + klávesnice -------------------------------- */
+    /* ---------- ID (textové pole s numerickou klávesnicí zařízení) */
     setIdDisplay: function (value) {
-      var box = $("#idDisplay");
-      if (!value) {
-        box.innerHTML =
-          '<span class="placeholder">Zadej svoje číslo</span>';
-      } else {
-        box.textContent = value;
-        var caret = document.createElement("span");
-        caret.className = "caret";
-        box.appendChild(caret);
-      }
+      var input = $("#idInput");
+      input.value = value || "";
       $("#startBtn").disabled = !value;
     },
 
-    buildKeypad: function (onDigit, onBack) {
-      var pad = $("#keypad");
-      pad.innerHTML = "";
-      var layout = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "back", "0", "clear"];
-      layout.forEach(function (val) {
-        var b = document.createElement("button");
-        b.className = "key";
-        b.type = "button";
-        if (val === "back") {
-          b.classList.add("key--back");
-          b.textContent = "⌫";
-          b.setAttribute("aria-label", "Smazat číslici");
-          b.addEventListener("click", function () {
-            onBack(false);
-          });
-        } else if (val === "clear") {
-          b.classList.add("key--back");
-          b.textContent = "C";
-          b.setAttribute("aria-label", "Smazat vše");
-          b.addEventListener("click", function () {
-            onBack(true);
-          });
-        } else {
-          b.textContent = val;
-          b.addEventListener("click", function () {
-            onDigit(val);
-          });
-        }
-        pad.appendChild(b);
+    initIdInput: function (maxLen, onChange) {
+      var input = $("#idInput");
+      input.maxLength = maxLen;
+      input.addEventListener("input", function () {
+        var digits = input.value.replace(/\D/g, "").slice(0, maxLen);
+        if (digits !== input.value) input.value = digits;
+        onChange(digits);
       });
     },
 

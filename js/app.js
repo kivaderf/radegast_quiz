@@ -25,14 +25,9 @@
   };
 
   /* ---------- ID obrazovka ---------------------------------- */
-  function onDigit(d) {
-    if (state.idValue.length >= MAX_ID_LEN) return;
-    state.idValue += d;
-    UI.setIdDisplay(state.idValue);
-  }
-  function onBack(clearAll) {
-    state.idValue = clearAll ? "" : state.idValue.slice(0, -1);
-    UI.setIdDisplay(state.idValue);
+  function onIdChange(digits) {
+    state.idValue = digits;
+    document.getElementById("startBtn").disabled = !digits;
   }
 
   function onStart() {
@@ -218,7 +213,7 @@
   /* ---------- Start ----------------------------------------- */
   function init() {
     UI.init();
-    UI.buildKeypad(onDigit, onBack);
+    UI.initIdInput(MAX_ID_LEN, onIdChange);
     UI.setIdDisplay("");
     document.getElementById("startBtn").addEventListener("click", onStart);
     document.getElementById("againBtn").addEventListener("click", resetToId);

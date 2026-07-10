@@ -20,9 +20,8 @@
 .id-display {
   width: 100%;
   min-height: clamp(52px, 9vh, 78px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  text-align: center;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -31,53 +30,19 @@
   font-size: clamp(28px, 6vh, 52px);
   color: var(--amber);
   min-width: 0;
+  outline: none;
+  caret-color: var(--amber);
 }
-.id-display .placeholder {
+.id-display::placeholder {
   color: var(--bone-dim);
   letter-spacing: 0.08em;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: clamp(15px, 2.4vh, 20px);
 }
-.id-display .caret {
-  width: 3px;
-  height: 1em;
-  margin-left: 6px;
-  background: var(--amber);
-  animation: blink 1s steps(1) infinite;
-}
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.keypad {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(8px, 1.6vh, 14px);
-}
-.key {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 4vh, 34px);
-  color: var(--bone);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: clamp(10px, 2.2vh, 18px) 0;
-  cursor: pointer;
-  transition: background 0.08s ease, transform 0.06s ease;
-}
-.key:active {
-  background: rgba(227, 166, 60, 0.22);
-  transform: translateY(2px);
-}
-.key.wide {
-  grid-column: span 1;
-}
-.key--back {
-  color: var(--danger);
+.id-display:focus-visible {
+  outline: 3px solid var(--bone);
+  outline-offset: 3px;
 }
 #screen-id .btn {
   width: 100%;
