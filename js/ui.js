@@ -1,0 +1,239 @@
+/* ============================================================
+   ui.js — vykreslování a animace (práce s DOM)
+   Řídí ho app.js; sám o sobě nezná stav testu.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var Cfg = window.Config;
+  var LETTERS = ["A", "B", "C", "D"];
+
+  function $(sel) {
+    return document.querySelector(sel);
+  }
+
+  var screens = {
+    id: null,
+    question: null,
+    denied: null,
+    result: null
+  };
+
+  var UI = {
+    init: function () {
+      screens.id = $("#screen-id");
+      screens.question = $("#screen-question");
+      screens.denied = $("#screen-denied");
+      screens.result = $("#screen-result");
+    },
+
+    showScreen: function (name) {
+      Object.keys(screens).forEach(function (k) {
+        screens[k].classList.toggle("is-active", k === name);
+      });
+    },
+
+    /* ---------- ID + klávesnice -------------------------------- */
+    setIdDisplay: function (value) {
+      var box = $("#idDisplay");
+      if (!value) {
+        box.innerHTML =
+          '<span class="placeholder">Zadej svoje číslo</span>';
+      } else {
+        box.textContent = value;
+        var caret = document.createElement("span");
+        caret.className = "caret";
+        box.appendChild(caret);
+      }
+      $("#startBtn").disabled = !value;
+    },
+
+    buildKeypad: function (onDigit, onBack) {
+      var pad = $("#keypad");
+      pad.innerHTML = "";
+      var layout = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "back", "0", "clear"];
+      layout.forEach(function (val) {
+        var b = document.createElement("button");
+        b.className = "key";
+        b.type = "button";
+        if (val === "back") {
+          b.classList.add("key--back");
+          b.textContent = "⌫";
+          b.setAttribute("aria-label", "Smazat číslici");
+          b.addEventListener("click", function () {
+            onBack(false);
+          });
+        } else if (val === "clear") {
+          b.classList.add("key--back");
+          b.textContent = "C";
+          b.setAttribute("aria-label", "Smazat vše");
+          b.addEventListener("click", function () {
+            onBack(true);
+          });
+        } else {
+          b.textContent = val;
+          b.addEventListener("click", function () {
+            onDigit(val);
+          });
+        }
+        pad.appendChild(b);
+      });
+    },
+
+    /* ---------- Otázka ---------------------------------------- */
+    renderQuestion: function (index, total, question, onPick) {
+      // progress
+      var dots = $("#dots");
+      dots.innerHTML = "";
+      for (var i = 0; i < total; i++) {
+        var s = document.createElement("span");
+        if (i < index) s.className = "done";
+        else if (i === index) s.className = "current";
+        dots.appendChild(s);
+      }
+
+      $("#qText").textContent = question.text;
+      $("#autoNote").className = "auto-note";
+      $("#autoNote").textContent = "";
+
+      var wrap = $("#options");
+      wrap.className = "options";
+      wrap.innerHTML = "";
+      var optionEls = [];
+
+      question.options.forEach(function (opt, idx) {
+        var b = document.createElement("button");
+        b.className = "option";
+        b.type = "button";
+        b.innerHTML =
+          '<span class="tag">' + LETTERS[idx] + "</span>" +
+          '<span class="label"></span>';
+        b.querySelector(".label").textContent = opt.text;
+        b.addEventListener("click", function () {
+          onPick(opt.trait, b);
+        });
+        wrap.appendChild(b);
+        optionEls.push(b);
+      });
+
+      return {
+        optionEls: optionEls,
+        options: question.options,
+        lock: function (pickedEl) {
+          wrap.classList.add("locked");
+          if (pickedEl) pickedEl.classList.add("is-picked");
+        },
+        showAutoNote: function () {
+          var note = $("#autoNote");
+          note.textContent = "Čas vypršel – vybíráme za tebe…";
+          note.className = "auto-note show";
+        }
+      };
+    },
+
+    /* ---------- Časomíra (requestAnimationFrame) --------------- */
+    timer: (function () {
+      var raf = null;
+      var barI = null;
+      var bar = null;
+      var num = null;
+      return {
+        start: function (duration, onExpire) {
+          bar = $("#timerBar");
+          barI = bar.querySelector("i");
+          num = $("#timerNum");
+          bar.classList.remove("low");
+          num.classList.remove("low");
+          var t0 = performance.now();
+          function frame(now) {
+            var remain = Math.max(0, duration - (now - t0));
+            var frac = remain / duration;
+            barI.style.transform = "scaleX(" + frac + ")";
+            var secs = Math.ceil(remain / 1000);
+            num.textContent = secs + " s";
+            if (secs <= 10) {
+              num.classList.add("low");
+              bar.classList.add("low");
+            }
+            if (remain <= 0) {
+              raf = null;
+              onExpire();
+              return;
+            }
+            raf = requestAnimationFrame(frame);
+          }
+          raf = requestAnimationFrame(frame);
+        },
+        stop: function () {
+          if (raf) cancelAnimationFrame(raf);
+          raf = null;
+        }
+      };
+    })(),
+
+    /* ---------- Ruletka po vypršení času ---------------------- */
+    // Prosviští volby a s decelerací zastaví na náhodné. Vrací index.
+    roulette: function (optionEls) {
+      var ms = Cfg.ROULETTE_MS;
+      return new Promise(function (resolve) {
+        var n = optionEls.length;
+        var target = Math.floor(Math.random() * n);
+        var i = Math.floor(Math.random() * n);
+        var start = performance.now();
+        function clearAll() {
+          optionEls.forEach(function (o) {
+            o.classList.remove("is-flash");
+          });
+        }
+        function step() {
+          clearAll();
+          optionEls[i].classList.add("is-flash");
+          var progress = (performance.now() - start) / ms;
+          if (progress >= 1) {
+            clearAll();
+            resolve(target);
+            return;
+          }
+          if (progress > 0.82) {
+            i = target; // v závěru se ustálíme na cílové volbě
+          } else {
+            i = (i + 1) % n;
+          }
+          var delay = 60 + progress * progress * 220; // zpomalování
+          setTimeout(step, delay);
+        }
+        step();
+      });
+    },
+
+    /* ---------- Výsledek -------------------------------------- */
+    renderResult: function (evalObj) {
+      var r = evalObj.result;
+      var root = $("#screen-result");
+      root.style.setProperty("--trait-color", "var(--t-" + evalObj.trait + ")");
+      $("#resultBadge").textContent = (r.title || r.name || "?").charAt(0);
+      $("#resultName").textContent = r.name || "";
+      $("#resultType").textContent = r.title || r.name || "";
+      $("#resultTagline").textContent = r.tagline || "";
+      $("#resultDesc").textContent = r.description || "";
+      $("#syncNote").textContent = "";
+    },
+    setSyncNote: function (text) {
+      $("#syncNote").textContent = text || "";
+    },
+
+    /* ---------- Zákaz spuštění -------------------------------- */
+    renderDenied: function () {
+      $("#deniedTitle").textContent = "Tento kód už byl použit";
+      $("#deniedText").textContent =
+        "S tímto číslem už test proběhl. Každý ho může vyplnit jen jednou. " +
+        "Za chvíli se vrátíme na úvod.";
+    },
+    setDeniedCountdown: function (secs) {
+      $("#deniedCountdown").innerHTML =
+        "Návrat na úvod za <b>" + secs + "</b> s";
+    }
+  };
+
+  window.UI = UI;
+})();

@@ -1,0 +1,210 @@
+/* ============================================================
+   base.css — základ: proměnné, reset, rám (pozadí + logo), kiosk
+   Barvy a fonty měň tady. Rozložení obrazovek je v screens.css.
+   ============================================================ */
+
+:root {
+  /* --- Barvy (uprav podle brandu) --- */
+  --ink: #14110d;
+  --ink-2: #1e1a15;
+  --bone: #f1eadb;
+  --bone-dim: #b7ad99;
+  --amber: #e3a63c;
+  --amber-deep: #c6841f;
+  --line: rgba(241, 234, 219, 0.14);
+  --panel: rgba(10, 8, 6, 0.46);
+  --danger: #d24b32;
+
+  /* --- Barvy čtyř typů (výsledek + ruletka) --- */
+  --t-sila: #c0392b;
+  --t-rozhodnost: #e3a63c;
+  --t-odolnost: #4e8067;
+  --t-zodpovednost: #3c6e93;
+
+  /* --- Obrázek pozadí (vyměň soubor v /assets) --- */
+  --bg-image: url("../assets/background.svg");
+
+  /* --- Fonty (chceš-li vlastní, přidej @font-face a změň sem) --- */
+  --font-display: "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius: 14px;
+  --header-h: clamp(64px, 12vh, 120px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body);
+  /* Kiosk: žádný výběr textu, žádné dlouhé podržení, žádný zoom gesty */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+
+/* Rám aplikace – pozadí + tmavý přechod pro čitelnost + vinětace */
+#app {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+      180deg,
+      rgba(10, 8, 6, 0.55) 0%,
+      rgba(10, 8, 6, 0.25) 30%,
+      rgba(10, 8, 6, 0.55) 100%
+    ),
+    radial-gradient(120% 90% at 50% 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.6) 100%),
+    var(--bg-image);
+  background-size: cover, cover, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Logo nahoře, na střed – na všech obrazovkách */
+.app-header {
+  height: var(--header-h);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: env(safe-area-inset-top, 0);
+}
+.app-header img {
+  height: min(72%, 92px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Plocha pod hlavičkou, kam se vykreslují jednotlivé obrazovky */
+.app-main {
+  flex: 1 1 auto;
+  position: relative;
+  min-height: 0;
+}
+
+/* Každá obrazovka leží přes celou plochu; přepíná se .is-active */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vh, 28px) clamp(16px, 4vw, 48px)
+    calc(clamp(12px, 3vh, 28px) + env(safe-area-inset-bottom, 0));
+}
+.screen.is-active {
+  display: flex;
+  animation: screen-in 0.32s ease both;
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sdílené prvky ------------------------------------------------ */
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: clamp(11px, 1.4vh, 14px);
+  color: var(--amber);
+  font-weight: 700;
+}
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.btn {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  background: var(--amber);
+  border-radius: var(--radius);
+  padding: clamp(12px, 2vh, 18px) clamp(22px, 4vw, 40px);
+  font-size: clamp(16px, 2.4vh, 22px);
+  box-shadow: 0 6px 0 var(--amber-deep), 0 10px 22px rgba(0, 0, 0, 0.4);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--amber-deep), 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+.btn:disabled {
+  opacity: 0.4;
+  filter: grayscale(0.4);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--bone);
+  outline-offset: 3px;
+}
+
+/* Upozornění na otočení do landscape (kdyby PWA neuzamkla orientaci) */
+.rotate-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--ink);
+  color: var(--bone);
+  text-align: center;
+  padding: 32px;
+}
+.rotate-hint .glyph {
+  font-size: 54px;
+  animation: rotate-nudge 1.8s ease-in-out infinite;
+}
+@keyframes rotate-nudge {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-90deg);
+  }
+}
+@media (orientation: portrait) {
+  .rotate-hint {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kvíz osobnosti</title>
+
+    <!-- Kiosk / iPad: pevné měřítko, celá plocha, bez zoomu -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#14110d" />
+
+    <!-- iOS: spuštění z plochy jako fullscreen appka -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Kvíz" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/screens.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <img src="assets/logo.svg" alt="Logo" />
+      </header>
+
+      <main class="app-main">
+        <!-- 1) Zadání ID -->
+        <section id="screen-id" class="screen is-active">
+          <div class="id-wrap">
+            <span class="eyebrow">Vítej</span>
+            <p class="prompt">Zadej svoje číslo a spusť test</p>
+            <div id="idDisplay" class="id-display"></div>
+            <div id="keypad" class="keypad"></div>
+            <button id="startBtn" class="btn" type="button" disabled>
+              Spustit test
+            </button>
+          </div>
+        </section>
+
+        <!-- 2) Otázka -->
+        <section id="screen-question" class="screen">
+          <div class="q-top">
+            <div class="q-meta">
+              <div id="dots" class="progress-dots"></div>
+              <div id="timerNum" class="timer-num">30 s</div>
+            </div>
+            <div id="timerBar" class="timer-bar"><i></i></div>
+          </div>
+          <h1 id="qText" class="q-text"></h1>
+          <div id="options" class="options"></div>
+          <div id="autoNote" class="auto-note"></div>
+        </section>
+
+        <!-- 3) Zákaz spuštění -->
+        <section id="screen-denied" class="screen">
+          <div class="denied-wrap">
+            <div class="denied-mark">×</div>
+            <h2 id="deniedTitle" class="display denied-title"></h2>
+            <p id="deniedText" class="denied-text"></p>
+            <div id="deniedCountdown" class="countdown"></div>
+          </div>
+        </section>
+
+        <!-- 4) Výsledek -->
+        <section id="screen-result" class="screen">
+          <div class="result-wrap">
+            <div id="resultBadge" class="result-badge"></div>
+            <span id="resultName" class="result-name"></span>
+            <h1 id="resultType" class="display result-type"></h1>
+            <p id="resultTagline" class="result-tagline"></p>
+            <p id="resultDesc" class="result-desc"></p>
+            <div class="result-actions">
+              <button id="againBtn" class="btn" type="button">
+                Nový test
+              </button>
+            </div>
+            <div id="syncNote" class="sync-note"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Když je iPad na výšku -->
+    <div class="rotate-hint">
+      <div class="glyph">⟳</div>
+      <div>Otoč zařízení na šířku</div>
+    </div>
+
+    <!-- Pořadí načítání je důležité -->
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

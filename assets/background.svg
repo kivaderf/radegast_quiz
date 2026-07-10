@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pozadí">
+  <!-- PLACEHOLDER POZADI: vymen za svou fotku. Nahrad tento soubor,
+       nebo zmen promennou bg-image v souboru css/base.css -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241d16"/>
+      <stop offset="0.55" stop-color="#181410"/>
+      <stop offset="1" stop-color="#0f0c09"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.28" r="0.6">
+      <stop offset="0" stop-color="#3a2c18"/>
+      <stop offset="1" stop-color="#3a2c18" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+
+  <!-- vzdálené hory -->
+  <path d="M0 640 L220 470 L430 600 L640 430 L880 620 L1120 440 L1360 610 L1600 470 L1600 1000 L0 1000 Z"
+        fill="#211a13" opacity="0.9"/>
+  <!-- střední hřeben -->
+  <path d="M0 760 L260 600 L520 740 L780 560 L1040 760 L1320 590 L1600 740 L1600 1000 L0 1000 Z"
+        fill="#191309"/>
+  <!-- přední hřeben -->
+  <path d="M0 880 L300 730 L620 860 L900 700 L1220 880 L1600 720 L1600 1000 L0 1000 Z"
+        fill="#120d07"/>
+
+  <!-- jemné hvězdy / textura -->
+  <g fill="#E3A63C" opacity="0.5">
+    <circle cx="300" cy="180" r="2"/>
+    <circle cx="520" cy="120" r="1.5"/>
+    <circle cx="760" cy="220" r="2"/>
+    <circle cx="1040" cy="150" r="1.5"/>
+    <circle cx="1280" cy="210" r="2"/>
+    <circle cx="1420" cy="120" r="1.5"/>
+    <circle cx="180" cy="260" r="1.5"/>
+  </g>
+
+  <!-- vinětace -->
+  <rect width="1600" height="1000" fill="black" opacity="0.06"/>
+</svg>
