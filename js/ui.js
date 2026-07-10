@@ -105,7 +105,7 @@
       // Re-bound each question so it always closes over the current selection.
       submitBtn.onclick = function () {
         if (selectedIdx === -1 || wrap.classList.contains("locked")) return;
-        onSubmit(question.options[selectedIdx].trait, optionEls[selectedIdx]);
+        onSubmit(question.options[selectedIdx], optionEls[selectedIdx]);
       };
 
       return {

@@ -48,6 +48,7 @@
     state.questions = Quiz.pickQuestions();
     state.qIndex = 0;
     state.answers = [];
+    console.log("[Kvíz] Start testu, ID:", state.idValue);
     UI.showScreen("question");
     renderCurrent();
   }
@@ -65,12 +66,12 @@
   }
 
   // Manual pick, confirmed via the submit button
-  function onSubmit(trait, el) {
+  function onSubmit(opt, el) {
     if (state.answered) return;
     state.answered = true;
     UI.timer.stop();
     state.current.lock(el);
-    record(trait);
+    record(opt);
     setTimeout(advance, 550);
   }
 
@@ -82,16 +83,19 @@
     UI.roulette(state.current.optionEls).then(function (idx) {
       var opt = state.current.options[idx];
       state.current.lock(state.current.optionEls[idx]);
-      record(opt.trait);
+      record(opt);
       setTimeout(advance, 650);
     });
   }
 
-  function record(trait) {
-    state.answers.push({
-      questionId: state.questions[state.qIndex].id,
-      trait: trait
-    });
+  function record(opt) {
+    var q = state.questions[state.qIndex];
+    console.log(
+      "[Kvíz] Otázka " + (state.qIndex + 1) + "/" + Cfg.QUESTION_COUNT + ":",
+      q
+    );
+    console.log("[Kvíz] Vybraná odpověď:", opt);
+    state.answers.push({ questionId: q.id, trait: opt.trait });
   }
 
   function advance() {
@@ -119,6 +123,9 @@
       answers: state.answers,
       finishedAt: new Date().toISOString()
     };
+
+    console.log("[Kvíz] Vyhodnocení:", evalObj);
+    console.log("[Kvíz] Uložený záznam:", record);
 
     UI.renderResult(evalObj);
     UI.showScreen("result");
