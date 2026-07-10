@@ -61,54 +61,31 @@
   flex-direction: column;
   gap: clamp(6px, 1.4vh, 12px);
 }
-.q-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
 .progress-dots {
   display: flex;
+  justify-content: center;
   gap: 8px;
 }
 .progress-dots span {
+  position: relative;
+  overflow: hidden;
   width: clamp(18px, 3.4vw, 34px);
-  height: 6px;
-  border-radius: 3px;
+  height: 8px;
+  border-radius: 4px;
   background: var(--line);
 }
 .progress-dots span.done {
   background: var(--amber);
 }
-.progress-dots span.current {
-  background: var(--bone);
-}
-.timer-num {
-  font-family: var(--font-display);
-  font-size: clamp(16px, 2.6vh, 22px);
-  color: var(--bone-dim);
-  min-width: 2.4ch;
-  text-align: right;
-}
-.timer-num.low {
-  color: var(--danger);
-}
-.timer-bar {
-  width: 100%;
-  height: 8px;
-  border-radius: 4px;
-  background: var(--line);
-  overflow: hidden;
-}
-.timer-bar > i {
+.progress-dots span.current > i {
+  /* šířka se řídí přes transform:scaleX v JS (plynulé, bez reflow) */
   display: block;
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, var(--amber), var(--amber-deep));
   transform-origin: left center;
-  /* šířka se řídí přes transform:scaleX v JS (plynulé, bez reflow) */
 }
-.timer-bar.low > i {
+.progress-dots.low span.current > i {
   background: linear-gradient(90deg, var(--danger), #a3341f);
 }
 

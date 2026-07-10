@@ -55,10 +55,15 @@
       // progress
       var dots = $("#dots");
       dots.innerHTML = "";
+      dots.classList.remove("low");
       for (var i = 0; i < total; i++) {
         var s = document.createElement("span");
-        if (i < index) s.className = "done";
-        else if (i === index) s.className = "current";
+        if (i < index) {
+          s.className = "done";
+        } else if (i === index) {
+          s.className = "current";
+          s.appendChild(document.createElement("i"));
+        }
         dots.appendChild(s);
       }
 
@@ -104,27 +109,20 @@
     /* ---------- Časomíra (requestAnimationFrame) --------------- */
     timer: (function () {
       var raf = null;
-      var barI = null;
-      var bar = null;
-      var num = null;
+      var fillI = null;
+      var dots = null;
       return {
         start: function (duration, onExpire) {
-          bar = $("#timerBar");
-          barI = bar.querySelector("i");
-          num = $("#timerNum");
-          bar.classList.remove("low");
-          num.classList.remove("low");
+          dots = $("#dots");
+          fillI = dots.querySelector(".current > i");
+          dots.classList.remove("low");
           var t0 = performance.now();
           function frame(now) {
             var remain = Math.max(0, duration - (now - t0));
-            var frac = remain / duration;
-            barI.style.transform = "scaleX(" + frac + ")";
+            var elapsedFrac = 1 - remain / duration;
+            if (fillI) fillI.style.transform = "scaleX(" + elapsedFrac + ")";
             var secs = Math.ceil(remain / 1000);
-            num.textContent = secs + " s";
-            if (secs <= 10) {
-              num.classList.add("low");
-              bar.classList.add("low");
-            }
+            if (secs <= 10) dots.classList.add("low");
             if (remain <= 0) {
               raf = null;
               onExpire();
