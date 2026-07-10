@@ -230,9 +230,11 @@
         alert("Nepodařilo se načíst data kvízu (data/questions.json).");
       });
 
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js").catch(function () {});
-    }
+    // Dočasně vypnuto kvůli testování (cache maskuje změny v souborech).
+    // Před nasazením na iPad zase odkomentovat.
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker.register("service-worker.js").catch(function () {});
+    // }
   }
 
   if (document.readyState === "loading") {
