@@ -72,15 +72,19 @@
 .progress-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
 }
 .progress-dots span {
   position: relative;
   overflow: hidden;
-  width: clamp(18px, 3.4vw, 34px);
-  height: 8px;
-  border-radius: 4px;
-  background: var(--line);
+  flex: 1 1 0;
+  max-width: clamp(60px, 11vw, 120px);
+  height: clamp(30px, 6vh, 52px);
+  border: 3px solid var(--bone);
+  background: transparent;
+  margin-left: -3px;
+}
+.progress-dots span:first-child {
+  margin-left: 0;
 }
 .progress-dots span.done {
   background: var(--amber);
