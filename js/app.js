@@ -59,13 +59,13 @@
       state.qIndex,
       Cfg.QUESTION_COUNT,
       q,
-      onPick
+      onSubmit
     );
     UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
   }
 
-  // Manual pick
-  function onPick(trait, el) {
+  // Manual pick, confirmed via the submit button
+  function onSubmit(trait, el) {
     if (state.answered) return;
     state.answered = true;
     UI.timer.stop();

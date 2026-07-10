@@ -51,7 +51,7 @@
     },
 
     /* ---------- Question ---------------------------------------- */
-    renderQuestion: function (index, total, question, onPick) {
+    renderQuestion: function (index, total, question, onSubmit) {
       // progress
       $("#qCounter").textContent = "Otázka " + (index + 1) + "/" + total;
       var dots = $("#dots");
@@ -76,6 +76,10 @@
       wrap.className = "options";
       wrap.innerHTML = "";
       var optionEls = [];
+      var selectedIdx = -1;
+
+      var submitBtn = $("#submitBtn");
+      submitBtn.disabled = true;
 
       question.options.forEach(function (opt, idx) {
         var b = document.createElement("button");
@@ -86,23 +90,41 @@
           '<span class="label"></span>';
         b.querySelector(".label").textContent = opt.text;
         b.addEventListener("click", function () {
-          onPick(opt.trait, b);
+          if (wrap.classList.contains("locked")) return;
+          optionEls.forEach(function (o) {
+            o.classList.remove("is-selected");
+          });
+          b.classList.add("is-selected");
+          selectedIdx = idx;
+          submitBtn.disabled = false;
         });
         wrap.appendChild(b);
         optionEls.push(b);
       });
+
+      // Re-bound each question so it always closes over the current selection.
+      submitBtn.onclick = function () {
+        if (selectedIdx === -1 || wrap.classList.contains("locked")) return;
+        onSubmit(question.options[selectedIdx].trait, optionEls[selectedIdx]);
+      };
 
       return {
         optionEls: optionEls,
         options: question.options,
         lock: function (pickedEl) {
           wrap.classList.add("locked");
+          submitBtn.disabled = true;
+          optionEls.forEach(function (o) {
+            o.classList.remove("is-selected");
+          });
           if (pickedEl) pickedEl.classList.add("is-picked");
         },
         showAutoNote: function () {
           var note = $("#autoNote");
           note.textContent = "Čas vypršel – vybíráme za tebe…";
           note.className = "auto-note show";
+          wrap.classList.add("locked");
+          submitBtn.disabled = true;
         }
       };
     },
