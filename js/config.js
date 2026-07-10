@@ -1,50 +1,50 @@
 /* ============================================================
-   config.js — všechna nastavení na jednom místě
-   Uprav tady časy, počty a adresu API. Nic dalšího řešit nemusíš.
+   config.js — all settings in one place
+   Adjust timings, counts and the API address here. Nothing else needed.
    ============================================================ */
 (function () {
   "use strict";
 
   window.Config = {
-    /* ---- API (verze 1: žádné API) --------------------------------
-       Až budeš mít backend, nastav API_BASE na jeho adresu, např.:
-         API_BASE: "https://api.mojedomena.cz"
-       Dokud je null, běží aplikace lokálně: kontrola ID projde
-       (fail-open) a výsledky se ukládají do fronty v prohlížeči.
+    /* ---- API (v1: no API) --------------------------------
+       Once you have a backend, set API_BASE to its address, e.g.:
+         API_BASE: "https://api.yourdomain.com"
+       While it's null, the app runs locally: the ID check passes
+       (fail-open) and results are queued in the browser.
     */
     API_BASE: null,
     ENDPOINTS: {
-      // POST {API_BASE}{check}  telo: { id }         -> { exists: boolean }
+      // POST {API_BASE}{check}  body: { id }         -> { exists: boolean }
       check: "/participants/check",
-      // POST {API_BASE}{result} telo: viz api.js      -> 200/201 = uloženo
+      // POST {API_BASE}{result} body: see api.js      -> 200/201 = saved
       result: "/participants/result"
     },
-    // Volitelná hlavička pro autorizaci (necháváme prázdné pro v1).
-    // Příklad: { "Authorization": "Bearer XXX" }
+    // Optional auth header (left empty for v1).
+    // Example: { "Authorization": "Bearer XXX" }
     API_HEADERS: {},
-    API_TIMEOUT_MS: 6000, // po této době bereme API jako nedostupné -> fail-open
+    API_TIMEOUT_MS: 6000, // after this we treat the API as unavailable -> fail-open
 
-    /* ---- Průběh testu -------------------------------------------- */
-    QUESTION_COUNT: 5, // kolik otázek v jednom testu
-    TIME_PER_QUESTION_MS: 30000, // 30 s na otázku
-    ROULETTE_MS: 1500, // délka „ruletky“ při vypršení času
+    /* ---- Test flow -------------------------------------------- */
+    QUESTION_COUNT: 5, // how many questions per test
+    TIME_PER_QUESTION_MS: 30000, // 30 s per question
+    ROULETTE_MS: 1500, // duration of the "roulette" when time expires
 
-    /* ---- Anti-repeat mezi testy ---------------------------------
-       Otázka se znovu objeví až poté, co proběhlo tolik jiných otázek.
-       Pool má 201 otázek, takže 150 = velká variabilita a nic se
-       hned neopakuje. (Musí být < 201 - QUESTION_COUNT.)
+    /* ---- Anti-repeat between tests ---------------------------------
+       A question reappears only after this many other questions have
+       been asked. The pool has 201 questions, so 150 = plenty of
+       variety and nothing repeats right away. (Must be < 201 - QUESTION_COUNT.)
     */
     COOLDOWN_QUESTIONS: 150,
 
-    /* ---- Automatické návraty (kiosk) ----------------------------- */
-    DENIED_RESET_MS: 10000, // obrazovka „nelze spustit“ -> zpět na ID
-    RESULT_RESET_MS: 30000, // výsledek -> automaticky nový test
+    /* ---- Automatic returns (kiosk) ----------------------------- */
+    DENIED_RESET_MS: 10000, // "can't start" screen -> back to ID
+    RESULT_RESET_MS: 30000, // result -> automatically starts a new test
 
-    /* ---- Zdroje dat ---------------------------------------------- */
+    /* ---- Data sources ---------------------------------------------- */
     QUESTIONS_URL: "data/questions.json",
     RESULTS_URL: "data/results.json",
 
-    /* Pořadí typů (odpovídá sloupcům v xlsx). Needituj bez úpravy dat. */
+    /* Order of traits (matches the xlsx columns). Don't edit without updating the data. */
     TRAITS: ["sila", "rozhodnost", "odolnost", "zodpovednost"]
   };
 })();

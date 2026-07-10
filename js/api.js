@@ -1,8 +1,8 @@
 /* ============================================================
-   api.js — komunikace se serverem + offline fronta
-   Verze 1: API_BASE je null, takže se nic neposílá. Výsledky se
-   hromadí lokálně a odešlou se automaticky, jakmile API nastavíš
-   a bude dostupné. Jedno ID = jeden záznam (žádné duplicity).
+   api.js — server communication + offline queue
+   V1: API_BASE is null, so nothing is sent. Results accumulate
+   locally and are sent automatically once you set the API and
+   it becomes available. One ID = one record (no duplicates).
    ============================================================ */
 (function () {
   "use strict";
@@ -10,7 +10,7 @@
   var Cfg = window.Config;
   var Store = window.Store;
 
-  // fetch s časovým limitem – po API_TIMEOUT_MS to vzdáme
+  // fetch with a timeout – give up after API_TIMEOUT_MS
   function fetchWithTimeout(url, opts) {
     opts = opts || {};
     return new Promise(function (resolve, reject) {
@@ -41,13 +41,13 @@
   }
 
   var Api = {
-    /* Kontrola ID před testem.
-       Vrací { allowed: bool, reason: string }
-         - reason "already": ID už test absolvovalo -> zákaz
-       Pravidla:
-         1) Když je ID lokálně vedené jako dokončené -> zákaz (i offline).
-         2) Když je API nastavené, zeptáme se serveru (exists=true -> zákaz).
-         3) Když API chybí nebo je nedostupné -> POVOLIT (fail-open). */
+    /* Checks the ID before the test.
+       Returns { allowed: bool, reason: string }
+         - reason "already": the ID already completed the test -> denied
+       Rules:
+         1) If the ID is locally marked as completed -> deny (even offline).
+         2) If the API is configured, ask the server (exists=true -> deny).
+         3) If the API is missing or unavailable -> ALLOW (fail-open). */
     checkId: function (id) {
       if (Store.isCompleted(id)) {
         return Promise.resolve({ allowed: false, reason: "already" });
@@ -69,26 +69,26 @@
           });
         })
         .catch(function () {
-          // nedostupné API -> pustíme dál (podle zadání)
+          // API unavailable -> let them through (per spec)
           return { allowed: true, reason: "offline" };
         });
     },
 
-    /* Uloží výsledek: nejdřív lokálně (dedup podle ID), pak zkusí odeslat. */
+    /* Saves the result: locally first (deduped by ID), then tries to send it. */
     saveResult: function (record) {
       Store.markCompleted(record.id);
       Store.enqueue(record);
       return Api.flushQueue();
     },
 
-    /* Pokusí se odeslat vše z fronty. Bez API nebo offline jen tiše skončí. */
+    /* Tries to send everything in the queue. Without an API or offline it just quietly stops. */
     flushQueue: function () {
       var queue = Store.getQueue();
       if (!Cfg.API_BASE || !navigator.onLine || queue.length === 0) {
         return Promise.resolve({ sent: 0, pending: queue.length });
       }
       var sent = 0;
-      // odesíláme postupně, ať server nezahltíme
+      // send one at a time so we don't flood the server
       return queue
         .reduce(function (chain, rec) {
           return chain.then(function () {
@@ -98,14 +98,14 @@
               body: JSON.stringify(rec)
             })
               .then(function (res) {
-                // 200/201 = uloženo; 409 = server už záznam má -> taky OK
+                // 200/201 = saved; 409 = server already has the record -> also OK
                 if (res.ok || res.status === 409) {
                   Store.removeFromQueue(rec.id);
                   sent++;
                 }
               })
               .catch(function () {
-                /* necháme ve frontě na příště */
+                /* leave it queued for next time */
               });
           });
         }, Promise.resolve())
@@ -115,7 +115,7 @@
     }
   };
 
-  // Zkusit odeslat frontu, kdykoli se objeví síť.
+  // Try flushing the queue whenever the network comes back.
   window.addEventListener("online", function () {
     Api.flushQueue();
   });

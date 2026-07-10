@@ -1,7 +1,7 @@
 /* ============================================================
-   service-worker.js — offline běh (PWA)
-   Cachuje aplikaci i data, aby test fungoval bez sítě.
-   Po úpravě souborů zvyš CACHE_VERSION, ať se cache obnoví.
+   service-worker.js — offline operation (PWA)
+   Caches the app and data so the test works without a network.
+   Bump CACHE_VERSION after changing files so the cache refreshes.
    ============================================================ */
 var CACHE_VERSION = "ra-kviz-v1";
 
@@ -54,13 +54,13 @@ self.addEventListener("activate", function (e) {
 
 self.addEventListener("fetch", function (e) {
   var req = e.request;
-  if (req.method !== "GET") return; // POST na API nikdy necachujeme
+  if (req.method !== "GET") return; // never cache POSTs to the API
 
   var url = new URL(req.url);
-  // Požadavky mimo náš původ (např. API) neřešíme – jdou přímo na síť.
+  // Requests to a different origin (e.g. the API) are left alone – straight to the network.
   if (url.origin !== self.location.origin) return;
 
-  // App shell + data: cache-first, s tichým doplněním z cache při výpadku.
+  // App shell + data: cache-first, silently falling back to cache on failure.
   e.respondWith(
     caches.match(req).then(function (cached) {
       if (cached) return cached;

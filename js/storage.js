@@ -1,9 +1,9 @@
 /* ============================================================
-   storage.js — lokální paměť (localStorage)
-   Drží tři věci:
-     1) recent  – naposledy použité otázky (anti-repeat mezi testy)
-     2) queue   – výsledky čekající na odeslání na server
-     3) done    – ID, která už test dokončila (kvůli duplicitám)
+   storage.js — local persistence (localStorage)
+   Holds three things:
+     1) recent  – recently used questions (anti-repeat between tests)
+     2) queue   – results waiting to be sent to the server
+     3) done    – IDs that already completed the test (to prevent duplicates)
    ============================================================ */
 (function () {
   "use strict";
@@ -27,7 +27,7 @@
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (e) {
-      /* soukromý režim / plná paměť – aplikace běží dál bez perzistence */
+      /* private mode / storage full – app keeps running without persistence */
     }
   }
 
@@ -36,14 +36,14 @@
     getRecent: function () {
       return read(K.recent, []);
     },
-    // Přidá právě odehrané otázky na konec a ořízne na délku cooldownu.
+    // Appends the just-played questions and trims to the cooldown length.
     pushRecent: function (ids, cooldown) {
       var list = read(K.recent, []).concat(ids);
       if (list.length > cooldown) list = list.slice(list.length - cooldown);
       write(K.recent, list);
     },
 
-    /* ---- Dokončená ID (duplicity) ----------------------------- */
+    /* ---- Completed IDs (duplicates) ----------------------------- */
     isCompleted: function (id) {
       return read(K.done, []).indexOf(String(id)) !== -1;
     },
@@ -55,11 +55,11 @@
       }
     },
 
-    /* ---- Fronta výsledků k odeslání --------------------------- */
+    /* ---- Queue of results to send --------------------------- */
     getQueue: function () {
       return read(K.queue, []);
     },
-    // Zařadí výsledek; jedno ID nikdy dvakrát (ochrana proti duplicitám).
+    // Enqueues a result; the same ID is never queued twice (duplicate protection).
     enqueue: function (record) {
       var q = read(K.queue, []);
       var exists = q.some(function (r) {
@@ -81,7 +81,7 @@
       return read(K.queue, []).length;
     },
 
-    /* ---- Servis ----------------------------------------------- */
+    /* ---- Utilities ----------------------------------------------- */
     exportAll: function () {
       return {
         recent: read(K.recent, []),

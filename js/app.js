@@ -1,6 +1,6 @@
 /* ============================================================
-   app.js — řídící logika (stavový automat)
-   Obrazovky: ID -> (DENIED) -> OTÁZKY x5 -> VÝSLEDEK -> zpět na ID
+   app.js — control logic (state machine)
+   Screens: ID -> (DENIED) -> QUESTIONS x5 -> RESULT -> back to ID
    ============================================================ */
 (function () {
   "use strict";
@@ -11,7 +11,7 @@
   var Quiz = window.Quiz;
   var Store = window.Store;
 
-  var MAX_ID_LEN = 12; // ID je „různě dlouhé“ – strop kvůli rozbití UI
+  var MAX_ID_LEN = 12; // IDs vary in length – cap to avoid breaking the UI
 
   var state = {
     idValue: "",
@@ -24,7 +24,7 @@
     deniedTimer: null
   };
 
-  /* ---------- ID obrazovka ---------------------------------- */
+  /* ---------- ID screen ---------------------------------- */
   function onIdChange(digits) {
     state.idValue = digits;
     document.getElementById("startBtn").disabled = !digits;
@@ -43,7 +43,7 @@
     });
   }
 
-  /* ---------- Průběh testu ---------------------------------- */
+  /* ---------- Test flow ---------------------------------- */
   function beginTest() {
     state.questions = Quiz.pickQuestions();
     state.qIndex = 0;
@@ -64,7 +64,7 @@
     UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
   }
 
-  // Ruční volba
+  // Manual pick
   function onPick(trait, el) {
     if (state.answered) return;
     state.answered = true;
@@ -74,7 +74,7 @@
     setTimeout(advance, 550);
   }
 
-  // Vypršel čas -> ruletka vybere za uživatele
+  // Time expired -> roulette picks for the user
   function onExpire() {
     if (state.answered) return;
     state.answered = true;
@@ -103,7 +103,7 @@
     }
   }
 
-  /* ---------- Výsledek -------------------------------------- */
+  /* ---------- Result -------------------------------------- */
   function finish() {
     var evalObj = Quiz.evaluate(
       state.answers.map(function (a) {
@@ -123,7 +123,7 @@
     UI.renderResult(evalObj);
     UI.showScreen("result");
 
-    // Uložit (lokálně hned, na server až bude dostupný)
+    // Save (locally right away, to the server once it's available)
     Api.saveResult(record).then(function (status) {
       if (Cfg.API_BASE && status.pending > 0) {
         UI.setSyncNote("Výsledek uložen, čeká na odeslání.");
@@ -138,7 +138,7 @@
     state.resultTimer = setTimeout(resetToId, Cfg.RESULT_RESET_MS);
   }
 
-  /* ---------- Zákaz spuštění -------------------------------- */
+  /* ---------- Denied start -------------------------------- */
   function showDenied() {
     UI.renderDenied();
     UI.showScreen("denied");
@@ -155,7 +155,7 @@
     }, 1000);
   }
 
-  /* ---------- Návrat na úvod -------------------------------- */
+  /* ---------- Return to start -------------------------------- */
   function resetToId() {
     clearTimeout(state.resultTimer);
     clearInterval(state.deniedTimer);
@@ -166,11 +166,11 @@
     state.answered = false;
     UI.setIdDisplay("");
     UI.showScreen("id");
-    // pokus o odeslání nasbíraných výsledků, když je klid
+    // try sending queued results while things are idle
     Api.flushQueue();
   }
 
-  /* ---------- Kiosk: zamezit únikům/gestům ------------------ */
+  /* ---------- Kiosk: block escape gestures ------------------ */
   function hardenKiosk() {
     document.addEventListener("contextmenu", function (e) {
       e.preventDefault();
@@ -181,7 +181,7 @@
     document.addEventListener("dragstart", function (e) {
       e.preventDefault();
     });
-    // zabránit double-tap zoomu
+    // prevent double-tap zoom
     var lastTouch = 0;
     document.addEventListener(
       "touchend",
@@ -192,7 +192,7 @@
       },
       { passive: false }
     );
-    // držet displej rozsvícený (best-effort)
+    // keep the screen awake (best-effort)
     requestWakeLock();
     document.addEventListener("visibilitychange", function () {
       if (document.visibilityState === "visible") requestWakeLock();
@@ -222,7 +222,7 @@
     Quiz.load()
       .then(function () {
         UI.showScreen("id");
-        Api.flushQueue(); // odeslat případné resty z minula
+        Api.flushQueue(); // send any leftovers from before
       })
       .catch(function () {
         document.getElementById("qText") &&
@@ -230,8 +230,8 @@
         alert("Nepodařilo se načíst data kvízu (data/questions.json).");
       });
 
-    // Dočasně vypnuto kvůli testování (cache maskuje změny v souborech).
-    // Před nasazením na iPad zase odkomentovat.
+    // Temporarily disabled for testing (cache hides file changes).
+    // Re-enable before deploying to the iPad.
     // if ("serviceWorker" in navigator) {
     //   navigator.serviceWorker.register("service-worker.js").catch(function () {});
     // }

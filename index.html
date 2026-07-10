@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <title>Kvíz osobnosti</title>
 
-    <!-- Kiosk / iPad: pevné měřítko, celá plocha, bez zoomu -->
+    <!-- Kiosk / iPad: fixed scale, full area, no zoom -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
     />
     <meta name="theme-color" content="#14110d" />
 
-    <!-- iOS: spuštění z plochy jako fullscreen appka -->
+    <!-- iOS: launch from home screen as a fullscreen app -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -30,7 +30,7 @@
       </header>
 
       <main class="app-main">
-        <!-- 1) Zadání ID -->
+        <!-- 1) ID entry -->
         <section id="screen-id" class="screen is-active">
           <div class="id-wrap">
             <span class="eyebrow">Vítej</span>
@@ -52,7 +52,7 @@
           </div>
         </section>
 
-        <!-- 2) Otázka -->
+        <!-- 2) Question -->
         <section id="screen-question" class="screen">
           <div class="q-top">
             <div id="dots" class="progress-dots"></div>
@@ -63,7 +63,7 @@
           <div id="autoNote" class="auto-note"></div>
         </section>
 
-        <!-- 3) Zákaz spuštění -->
+        <!-- 3) Denied start -->
         <section id="screen-denied" class="screen">
           <div class="denied-wrap">
             <div class="denied-mark">×</div>
@@ -73,7 +73,7 @@
           </div>
         </section>
 
-        <!-- 4) Výsledek -->
+        <!-- 4) Result -->
         <section id="screen-result" class="screen">
           <div class="result-wrap">
             <div id="resultBadge" class="result-badge"></div>
@@ -92,13 +92,13 @@
       </main>
     </div>
 
-    <!-- Když je iPad na výšku -->
+    <!-- When the iPad is in portrait -->
     <div class="rotate-hint">
       <div class="glyph">⟳</div>
       <div>Otoč zařízení na šířku</div>
     </div>
 
-    <!-- Pořadí načítání je důležité -->
+    <!-- Load order matters -->
     <script src="js/config.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/api.js"></script>

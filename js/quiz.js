@@ -1,9 +1,9 @@
 /* ============================================================
-   quiz.js — čistá logika kvízu (bez DOM)
-     - načtení otázek a výsledků
-     - výběr 5 otázek s anti-repeat pravidlem
-     - zamíchání pořadí odpovědí na obrazovce
-     - vyhodnocení + férový tie-break
+   quiz.js — pure quiz logic (no DOM)
+     - loading questions and results
+     - picking 5 questions with the anti-repeat rule
+     - shuffling answer order on screen
+     - evaluation + fair tie-break
    ============================================================ */
 (function () {
   "use strict";
@@ -41,10 +41,10 @@
       });
     },
 
-    /* Vybere QUESTION_COUNT otázek:
-         - žádné opakování v rámci jednoho testu (výběr bez návratu)
-         - přednost mají otázky mimo „cooldown“ okno (anti-repeat mezi testy)
-       Vrací otázky se zamíchaným pořadím odpovědí. */
+    /* Picks QUESTION_COUNT questions:
+         - no repeats within a single test (sampling without replacement)
+         - questions outside the "cooldown" window are preferred (anti-repeat between tests)
+       Returns the questions with shuffled answer order. */
     pickQuestions: function () {
       var count = Cfg.QUESTION_COUNT;
       var recent = Store.getRecent();
@@ -57,7 +57,7 @@
         return !recentSet[q.id];
       });
 
-      // Pojistka: kdyby cooldown byl moc velký, doplníme z těch starších.
+      // Safety net: if the cooldown is too large, top up with older ones.
       var pool;
       if (fresh.length >= count) {
         pool = shuffle(fresh);
@@ -76,7 +76,7 @@
         Cfg.COOLDOWN_QUESTIONS
       );
 
-      // Zamícháme pořadí odpovědí, aby daný typ nebyl pořád na stejném místě.
+      // Shuffle answer order so a given trait isn't always in the same spot.
       return chosen.map(function (q) {
         return {
           id: q.id,
@@ -86,10 +86,10 @@
       });
     },
 
-    /* Sečte typy z odpovědí a vybere vítěze.
-       Tie-break: náhoda mezi typy se stejným (nejvyšším) počtem –
-       jediné férové pravidlo, když odpovědi nemají váhy.
-       answers = pole traitů, např. ["sila","odolnost",...] */
+    /* Tallies traits from the answers and picks a winner.
+       Tie-break: random choice among traits with the same (highest) count –
+       the only fair rule when answers aren't weighted.
+       answers = array of traits, e.g. ["sila","odolnost",...] */
     evaluate: function (answers) {
       var counts = {};
       Cfg.TRAITS.forEach(function (t) {

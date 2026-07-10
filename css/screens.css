@@ -1,8 +1,8 @@
 /* ============================================================
-   screens.css — rozložení a animace jednotlivých obrazovek
+   screens.css — layout and animation for each screen
    ============================================================ */
 
-/* ---------- Obrazovka: zadání ID ---------------------------- */
+/* ---------- Screen: ID entry ---------------------------- */
 #screen-id .id-wrap {
   width: min(560px, 92%);
   text-align: center;
@@ -49,7 +49,7 @@
   margin-top: 2px;
 }
 
-/* ---------- Obrazovka: otázka ------------------------------- */
+/* ---------- Screen: question ------------------------------- */
 #screen-question {
   justify-content: flex-start;
   padding-top: clamp(8px, 1.6vh, 16px);
@@ -90,7 +90,7 @@
   background: var(--amber);
 }
 .progress-dots span.current > i {
-  /* šířka se řídí přes transform:scaleX v JS (plynulé, bez reflow) */
+  /* width is driven via transform:scaleX in JS (smooth, no reflow) */
   display: block;
   height: 100%;
   width: 100%;
@@ -177,7 +177,7 @@
   opacity: 0.4;
 }
 
-/* malý štítek při automatické volbě po vypršení času */
+/* small label shown for the automatic pick after time runs out */
 .auto-note {
   margin-top: clamp(8px, 1.8vh, 16px);
   font-size: clamp(13px, 1.9vh, 16px);
@@ -192,7 +192,7 @@
   opacity: 1;
 }
 
-/* ---------- Obrazovka: zákaz spuštění ----------------------- */
+/* ---------- Screen: denied start ----------------------- */
 #screen-denied .denied-wrap {
   text-align: center;
   max-width: 720px;
@@ -231,7 +231,7 @@
   font-family: var(--font-display);
 }
 
-/* ---------- Obrazovka: výsledek ----------------------------- */
+/* ---------- Screen: result ----------------------------- */
 #screen-result {
   justify-content: center;
 }

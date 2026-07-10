@@ -1,6 +1,6 @@
 /* ============================================================
-   ui.js — vykreslování a animace (práce s DOM)
-   Řídí ho app.js; sám o sobě nezná stav testu.
+   ui.js — rendering and animation (DOM work)
+   Driven by app.js; has no knowledge of quiz state on its own.
    ============================================================ */
 (function () {
   "use strict";
@@ -33,7 +33,7 @@
       });
     },
 
-    /* ---------- ID (textové pole s numerickou klávesnicí zařízení) */
+    /* ---------- ID (text field with the device's numeric keyboard) */
     setIdDisplay: function (value) {
       var input = $("#idInput");
       input.value = value || "";
@@ -50,7 +50,7 @@
       });
     },
 
-    /* ---------- Otázka ---------------------------------------- */
+    /* ---------- Question ---------------------------------------- */
     renderQuestion: function (index, total, question, onPick) {
       // progress
       $("#qCounter").textContent = "Otázka " + (index + 1) + "/" + total;
@@ -107,7 +107,7 @@
       };
     },
 
-    /* ---------- Časomíra (requestAnimationFrame) --------------- */
+    /* ---------- Timer (requestAnimationFrame) --------------- */
     timer: (function () {
       var raf = null;
       var fillI = null;
@@ -140,8 +140,8 @@
       };
     })(),
 
-    /* ---------- Ruletka po vypršení času ---------------------- */
-    // Prosviští volby a s decelerací zastaví na náhodné. Vrací index.
+    /* ---------- Roulette after time expires ---------------------- */
+    // Flashes through the options and decelerates to a stop on a random one. Returns the index.
     roulette: function (optionEls) {
       var ms = Cfg.ROULETTE_MS;
       return new Promise(function (resolve) {
@@ -164,18 +164,18 @@
             return;
           }
           if (progress > 0.82) {
-            i = target; // v závěru se ustálíme na cílové volbě
+            i = target; // settle on the target option near the end
           } else {
             i = (i + 1) % n;
           }
-          var delay = 60 + progress * progress * 220; // zpomalování
+          var delay = 60 + progress * progress * 220; // slow down
           setTimeout(step, delay);
         }
         step();
       });
     },
 
-    /* ---------- Výsledek -------------------------------------- */
+    /* ---------- Result -------------------------------------- */
     renderResult: function (evalObj) {
       var r = evalObj.result;
       var root = $("#screen-result");
@@ -191,7 +191,7 @@
       $("#syncNote").textContent = text || "";
     },
 
-    /* ---------- Zákaz spuštění -------------------------------- */
+    /* ---------- Denied start -------------------------------- */
     renderDenied: function () {
       $("#deniedTitle").textContent = "Tento kód už byl použit";
       $("#deniedText").textContent =

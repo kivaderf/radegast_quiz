@@ -1,10 +1,10 @@
 /* ============================================================
-   base.css — základ: proměnné, reset, rám (pozadí + logo), kiosk
-   Barvy a fonty měň tady. Rozložení obrazovek je v screens.css.
+   base.css — foundation: variables, reset, app frame (background + logo), kiosk
+   Change colors and fonts here. Screen layout lives in screens.css.
    ============================================================ */
 
 :root {
-  /* --- Barvy (uprav podle brandu) --- */
+  /* --- Colors (adjust to match the brand) --- */
   --ink: #14110d;
   --ink-2: #1e1a15;
   --bone: #f1eadb;
@@ -15,16 +15,16 @@
   --panel: rgba(10, 8, 6, 0.46);
   --danger: #d24b32;
 
-  /* --- Barvy čtyř typů (výsledek + ruletka) --- */
+  /* --- Colors for the four traits (result + roulette) --- */
   --t-sila: #c0392b;
   --t-rozhodnost: #e3a63c;
   --t-odolnost: #4e8067;
   --t-zodpovednost: #3c6e93;
 
-  /* --- Obrázek pozadí (vyměň soubor v /assets) --- */
+  /* --- Background image (swap the file in /assets) --- */
   --bg-image: url("../assets/background.svg");
 
-  /* --- Fonty (chceš-li vlastní, přidej @font-face a změň sem) --- */
+  /* --- Fonts (to use your own, add @font-face and change here) --- */
   --font-display: "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
@@ -44,7 +44,7 @@ body {
   background: var(--ink);
   color: var(--bone);
   font-family: var(--font-body);
-  /* Kiosk: žádný výběr textu, žádné dlouhé podržení, žádný zoom gesty */
+  /* Kiosk: no text selection, no long-press, no zoom gestures */
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
@@ -53,7 +53,7 @@ body {
   overscroll-behavior: none;
 }
 
-/* Rám aplikace – pozadí + tmavý přechod pro čitelnost + vinětace */
+/* App frame – background + dark gradient for readability + vignette */
 #app {
   position: fixed;
   inset: 0;
@@ -72,7 +72,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Logo nahoře, na střed – na všech obrazovkách */
+/* Logo at the top, centered – on all screens */
 .app-header {
   height: var(--header-h);
   flex: 0 0 auto;
@@ -88,14 +88,14 @@ body {
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 
-/* Plocha pod hlavičkou, kam se vykreslují jednotlivé obrazovky */
+/* Area below the header where each screen is rendered */
 .app-main {
   flex: 1 1 auto;
   position: relative;
   min-height: 0;
 }
 
-/* Každá obrazovka leží přes celou plochu; přepíná se .is-active */
+/* Each screen covers the whole area; toggled via .is-active */
 .screen {
   position: absolute;
   inset: 0;
@@ -121,7 +121,7 @@ body {
   }
 }
 
-/* Sdílené prvky ------------------------------------------------ */
+/* Shared elements ------------------------------------------------ */
 .eyebrow {
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -165,7 +165,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Upozornění na otočení do landscape (kdyby PWA neuzamkla orientaci) */
+/* Prompt to rotate to landscape (in case the PWA didn't lock orientation) */
 .rotate-hint {
   position: fixed;
   inset: 0;
