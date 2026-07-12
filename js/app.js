@@ -138,18 +138,10 @@
 
     if (state.isPreview) {
       console.log("[Kvíz] Náhled (?result=quiz) - výsledek se neukládá.");
-      UI.setSyncNote("");
     } else {
       // Save (locally right away, to the server once it's available)
       Api.saveResult(record).then(function (status) {
         console.log("[Kvíz] Stav odeslání:", status);
-        if (Cfg.API_BASE && status.pending > 0) {
-          UI.setSyncNote("Výsledek uložen, čeká na odeslání.");
-        } else if (Cfg.API_BASE) {
-          UI.setSyncNote("Výsledek odeslán.");
-        } else {
-          UI.setSyncNote("");
-        }
       });
     }
 
@@ -297,7 +289,6 @@
     UI.initIdInput(MAX_ID_LEN, onIdChange);
     UI.setIdDisplay("");
     document.getElementById("startBtn").addEventListener("click", onStart);
-    document.getElementById("againBtn").addEventListener("click", resetToId);
     hardenKiosk();
 
     Quiz.load()

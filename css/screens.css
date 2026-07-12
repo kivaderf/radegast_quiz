@@ -277,14 +277,8 @@
 .result-badge {
   width: clamp(84px, 16vh, 130px);
   height: clamp(84px, 16vh, 130px);
-  border-radius: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: 70px;
-  color: #fff;
-  background: var(--trait-color, var(--amber));
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.5));
   animation: badge-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
 }
 @keyframes badge-in {
@@ -297,22 +291,4 @@
   font-size: 66px;
   color: var(--trait-color, var(--amber));
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.5);
-}
-.result-name {
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 15px;
-  color: var(--bone-dim);
-}
-.result-actions {
-  margin-top: clamp(6px, 1.4vh, 12px);
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.sync-note {
-  font-size: 13px;
-  color: var(--bone-dim);
-  opacity: 0.7;
-  height: 1.2em;
 }

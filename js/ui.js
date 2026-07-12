@@ -206,13 +206,9 @@
       var r = evalObj.result;
       var root = $("#screen-result");
       root.style.setProperty("--trait-color", "var(--t-" + evalObj.trait + ")");
-      $("#resultBadge").textContent = (r.title || r.name || "?").charAt(0);
-      $("#resultName").textContent = r.name || "";
+      $("#resultBadge").src = "assets/trait_" + evalObj.trait + ".png";
+      $("#resultBadge").alt = r.title || r.name || "";
       $("#resultType").textContent = r.title || r.name || "";
-      $("#syncNote").textContent = "";
-    },
-    setSyncNote: function (text) {
-      $("#syncNote").textContent = text || "";
     },
 
     /* ---------- Denied start -------------------------------- */
