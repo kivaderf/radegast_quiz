@@ -21,7 +21,9 @@
     answered: false,
     current: null,
     resultTimer: null,
-    deniedTimer: null
+    deniedTimer: null,
+    isPreview: false, // true when started via ?result=quiz(-paused) - skips saving
+    timerDisabled: false // true when started via ?result=quiz-paused
   };
 
   /* ---------- ID screen ---------------------------------- */
@@ -64,7 +66,9 @@
       q,
       onSubmit
     );
-    UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
+    if (!state.timerDisabled) {
+      UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
+    }
   }
 
   // Manual pick, confirmed via the submit button
@@ -132,17 +136,22 @@
     UI.renderResult(evalObj);
     UI.showScreen("result");
 
-    // Save (locally right away, to the server once it's available)
-    Api.saveResult(record).then(function (status) {
-      console.log("[Kvíz] Stav odeslání:", status);
-      if (Cfg.API_BASE && status.pending > 0) {
-        UI.setSyncNote("Výsledek uložen, čeká na odeslání.");
-      } else if (Cfg.API_BASE) {
-        UI.setSyncNote("Výsledek odeslán.");
-      } else {
-        UI.setSyncNote("");
-      }
-    });
+    if (state.isPreview) {
+      console.log("[Kvíz] Náhled (?result=quiz) - výsledek se neukládá.");
+      UI.setSyncNote("");
+    } else {
+      // Save (locally right away, to the server once it's available)
+      Api.saveResult(record).then(function (status) {
+        console.log("[Kvíz] Stav odeslání:", status);
+        if (Cfg.API_BASE && status.pending > 0) {
+          UI.setSyncNote("Výsledek uložen, čeká na odeslání.");
+        } else if (Cfg.API_BASE) {
+          UI.setSyncNote("Výsledek odeslán.");
+        } else {
+          UI.setSyncNote("");
+        }
+      });
+    }
 
     clearTimeout(state.resultTimer);
     state.resultTimer = setTimeout(resetToId, Cfg.RESULT_RESET_MS);
@@ -176,6 +185,8 @@
     state.answers = [];
     state.qIndex = 0;
     state.answered = false;
+    state.isPreview = false;
+    state.timerDisabled = false;
     UI.setIdDisplay("");
     UI.showScreen("id");
     // try sending queued results while things are idle
@@ -193,14 +204,20 @@
     document.addEventListener("dragstart", function (e) {
       e.preventDefault();
     });
-    // prevent double-tap zoom
-    var lastTouch = 0;
+    // prevent double-tap zoom (only when tapping the *same* element twice
+    // fast - otherwise quick taps on different buttons/options would have
+    // their second click silently swallowed)
+    var lastTouchTime = 0;
+    var lastTouchTarget = null;
     document.addEventListener(
       "touchend",
       function (e) {
         var now = Date.now();
-        if (now - lastTouch <= 350) e.preventDefault();
-        lastTouch = now;
+        if (now - lastTouchTime <= 350 && e.target === lastTouchTarget) {
+          e.preventDefault();
+        }
+        lastTouchTime = now;
+        lastTouchTarget = e.target;
       },
       { passive: false }
     );
@@ -222,6 +239,59 @@
       .catch(function () {});
   }
 
+  /* ---------- Dev shortcut: ?result=<handle> jumps straight to a
+     screen (skips ID entry) so it's quick to edit/preview:
+       ?result=sila | rozhodnost | odolnost | zodpovednost -> that result
+       ?result=prijato -> "ID already used" (denied) screen
+       ?result=quiz -> starts a real quiz run (timer, options, etc.)
+       ?result=quiz-paused -> same, but the countdown never starts -
+         only the submit button advances questions
+     No auto-reset timers are armed for the static previews, so those
+     screens stay put while you edit. Query param only, no URL routing -
+     works on any static host with no server config. ------------- */
+  function previewFromUrl() {
+    var handle = new URLSearchParams(location.search).get("result");
+    if (!handle) return false;
+
+    if (handle === "prijato") {
+      console.log("[Kvíz] Náhled obrazovky 'ID už bylo použito' přes URL (?result=prijato)");
+      UI.renderDenied();
+      UI.setDeniedCountdown(Math.round(Cfg.DENIED_RESET_MS / 1000));
+      UI.showScreen("denied");
+      return true;
+    }
+
+    if (handle === "quiz" || handle === "quiz-paused") {
+      console.log("[Kvíz] Náhled obrazovky otázek přes URL (?result=" + handle + ")");
+      state.idValue = "preview";
+      state.isPreview = true;
+      state.timerDisabled = handle === "quiz-paused";
+      beginTest();
+      return true;
+    }
+
+    if (Cfg.TRAITS.indexOf(handle) === -1) return false;
+
+    var evalObj = {
+      trait: handle,
+      counts: Cfg.TRAITS.reduce(function (acc, t) {
+        acc[t] = t === handle ? Cfg.QUESTION_COUNT : 0;
+        return acc;
+      }, {}),
+      tie: false,
+      result: Quiz.results[handle] || {
+        trait: handle,
+        name: handle,
+        title: handle,
+        description: ""
+      }
+    };
+    console.log("[Kvíz] Náhled výsledku přes URL (?result=" + handle + "):", evalObj);
+    UI.renderResult(evalObj);
+    UI.showScreen("result");
+    return true;
+  }
+
   /* ---------- Start ----------------------------------------- */
   function init() {
     UI.init();
@@ -238,7 +308,9 @@
           Quiz.questions.length + " otázek",
           Quiz.results
         );
-        UI.showScreen("id");
+        if (!previewFromUrl()) {
+          UI.showScreen("id");
+        }
         Api.flushQueue(); // send any leftovers from before
       })
       .catch(function (err) {
