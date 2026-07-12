@@ -224,46 +224,19 @@
 }
 
 /* ---------- Screen: denied start ----------------------- */
-#screen-denied .denied-wrap {
-  text-align: center;
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(12px, 2.4vh, 22px);
-}
-#screen-denied .denied-mark {
-  width: clamp(64px, 12vh, 96px);
-  height: clamp(64px, 12vh, 96px);
-  border-radius: 0;
-  border: 4px solid var(--danger);
-  color: var(--danger);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: 54px;
-}
-#screen-denied .denied-title {
-  font-size: 41px;
-  color: var(--bone);
-}
-#screen-denied .denied-text {
-  font-size: 21px;
-  color: var(--bone-dim);
-  line-height: 1.4;
-  max-width: 60ch;
-}
-.countdown {
-  font-size: 16px;
-  color: var(--bone-dim);
-}
-.countdown b {
-  color: var(--amber);
-  font-family: var(--font-display);
+/* Reuses the .result-* classes (below) for a consistent look;
+   just overrides the points-info background since there's no trait color. */
+#screen-denied .result-pointsInfo {
+  background-color: #232323;
+  max-width: 570px;
 }
 
 /* ---------- Screen: result ----------------------------- */
-#screen-result {
+/* flex-start + fixed padding-top (instead of centering) so the gap above
+   .result-wrap stays put no matter how tall the content inside grows. */
+#screen-result,
+#screen-denied,
+#screen-question {
   justify-content: flex-start;
   padding-top: 190px;
 }
@@ -289,6 +262,9 @@
 }
 .result-badge {
   width: 290px;
+}
+#screen-denied .result-badge {
+  width: 230px;
 }
 @keyframes badge-in {
   from {

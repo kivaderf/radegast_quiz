@@ -210,21 +210,19 @@
       $("#resultBadge").alt = r.title || r.name || "";
       $("#resultType").textContent = r.title || r.name || "";
     },
-    setResultCountdown: function (secs) {
-      $("#resultCountdown").textContent =
-        "Tato obrazovka se za " + secs + "s automaticky přepne na úvod";
-    },
 
     /* ---------- Denied start -------------------------------- */
     renderDenied: function () {
-      $("#deniedTitle").textContent = "Tento kód už byl použit";
-      $("#deniedText").textContent =
-        "S tímto číslem už test proběhl. Každý ho může vyplnit jen jednou. " +
-        "Za chvíli se vrátíme na úvod.";
+      $("#deniedText").innerHTML =
+        "Ahoj (Petr), podle našich záznamů jsi už dnešní Radegastův kvíz absolvoval.<br><br>Tvůj charakter je již zapsán. Běž ukázat svou sílu na Buchar nebo prověř postřeh na Vlkovi a sbírej další body do celonárodního žebříčku.";
     },
-    setDeniedCountdown: function (secs) {
-      $("#deniedCountdown").innerHTML =
-        "Návrat na úvod za <b>" + secs + "</b> s";
+
+    /* ---------- Shared: result + denied auto-return countdown -- */
+    setCountdownText: function (secs) {
+      var text = "Tato obrazovka se za " + secs + "s automaticky přepne na úvod";
+      document.querySelectorAll(".countdown-text").forEach(function (el) {
+        el.textContent = text;
+      });
     }
   };
 

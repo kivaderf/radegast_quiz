@@ -146,11 +146,11 @@
     }
 
     var secs = Math.round(Cfg.RESULT_RESET_MS / 1000);
-    UI.setResultCountdown(secs);
+    UI.setCountdownText(secs);
     clearInterval(state.resultTimer);
     state.resultTimer = setInterval(function () {
       secs--;
-      UI.setResultCountdown(Math.max(0, secs));
+      UI.setCountdownText(Math.max(0, secs));
       if (secs <= 0) {
         clearInterval(state.resultTimer);
         resetToId();
@@ -164,11 +164,11 @@
     UI.renderDenied();
     UI.showScreen("denied");
     var secs = Math.round(Cfg.DENIED_RESET_MS / 1000);
-    UI.setDeniedCountdown(secs);
+    UI.setCountdownText(secs);
     clearInterval(state.deniedTimer);
     state.deniedTimer = setInterval(function () {
       secs--;
-      UI.setDeniedCountdown(Math.max(0, secs));
+      UI.setCountdownText(Math.max(0, secs));
       if (secs <= 0) {
         clearInterval(state.deniedTimer);
         resetToId();
@@ -257,7 +257,7 @@
     if (handle === "prijato") {
       console.log("[Kvíz] Náhled obrazovky 'ID už bylo použito' přes URL (?result=prijato)");
       UI.renderDenied();
-      UI.setDeniedCountdown(Math.round(Cfg.DENIED_RESET_MS / 1000));
+      UI.setCountdownText(Math.round(Cfg.DENIED_RESET_MS / 1000));
       UI.showScreen("denied");
       return true;
     }

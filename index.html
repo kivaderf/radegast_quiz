@@ -78,11 +78,20 @@
 
         <!-- 3) Denied start -->
         <section id="screen-denied" class="screen">
-          <div class="denied-wrap">
-            <div class="denied-mark">×</div>
-            <h2 id="deniedTitle" class="display denied-title"></h2>
-            <p id="deniedText" class="denied-text"></p>
-            <div id="deniedCountdown" class="countdown"></div>
+          <div class="result-wrap">
+            <div class="result-headlines">
+              <p class="result-headlines-completed">Pozor!</p>
+              <p class="result-headlines-spoken">VÝZVA UŽ BYLA PŘIJATA</p>
+            </div>
+            <div class="result-badgeWrap">
+              <img src="assets/prijato.png" class="result-badge" alt="ID již použito" />
+            </div>
+            <div class="result-pointsInfo">
+              <span id="deniedText"></span>
+            </div>
+            <div class="result-redirection">
+              <span class="countdown-text"></span>
+            </div>
           </div>
         </section>
 
@@ -101,7 +110,7 @@
               <span>Tvoje hořká nátura tě předurčuje k velkým činům.<br>Body byly připsány na tvé ID.</span>
             </div>
             <div class="result-redirection">
-              <span id="resultCountdown"></span>
+              <span class="countdown-text"></span>
             </div>
           </div>
         </section>
