@@ -1,8 +1,40 @@
 /* ============================================================
    service-worker.js — offline operation (PWA)
-   Caches the app and data so the test works without a network.
-   Bump CACHE_VERSION after changing files so the cache refreshes.
+
+   CACHING TEMPORARILY DISABLED FOR TESTING. Every request now goes
+   straight to the network and no assets are cached, so file changes
+   show up on a normal reload — no manual cache clearing or bumping
+   CACHE_VERSION needed. This version also wipes out any cache left
+   over from before, automatically, the first time it activates.
+
+   To re-enable offline support later: delete the disabled block
+   below and uncomment/restore the cache-first block beneath it.
    ============================================================ */
+
+self.addEventListener("install", function (e) {
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", function (e) {
+  e.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(
+        keys.map(function (k) {
+          return caches.delete(k);
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", function () {
+  // No e.respondWith() call -> browser handles the request normally,
+  // straight to the network, nothing cached.
+});
+
+/* ---------- Original cache-first implementation (disabled) --------------
+
 var CACHE_VERSION = "ra-kviz-v1";
 
 var ASSETS = [
@@ -78,3 +110,5 @@ self.addEventListener("fetch", function (e) {
     })
   );
 });
+
+---------------------------------------------------------------------- */
