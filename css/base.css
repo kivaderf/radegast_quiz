@@ -23,7 +23,7 @@
   /* --- Colors (adjust to match the brand) --- */
   --ink: #14110d;
   --ink-2: #1e1a15;
-  --bone: #f1eadb;
+  --bone: #fff;
   --bone-dim: #b7ad99;
   --amber: #D09627;
   --amber-deep: #c6841f;
@@ -100,6 +100,12 @@ body {
   justify-content: center;
   padding-top: env(safe-area-inset-top, 0);
   z-index: 2;
+}
+#app.bg-start .app-header img {
+  width: 362px;
+}
+#app.bg-rest .app-header img {
+  width: 340px;
 }
 
 /* Full-height area where each screen is rendered, independent of the header */

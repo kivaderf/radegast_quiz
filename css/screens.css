@@ -264,7 +264,8 @@
 
 /* ---------- Screen: result ----------------------------- */
 #screen-result {
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 190px;
 }
 .result-wrap {
   text-align: center;
@@ -272,14 +273,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(10px, 2vh, 18px);
+}
+.result-headlines p {
+  margin: 0;
+  text-transform: uppercase;
+}
+.result-headlines-completed {
+  font-size: 30px;
+}
+.result-headlines-spoken {
+  font-size: 46px;
+}
+.result-badgeWrap {
+    margin-top: 40px;
 }
 .result-badge {
-  width: clamp(84px, 16vh, 130px);
-  height: clamp(84px, 16vh, 130px);
-  object-fit: contain;
-  filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.5));
-  animation: badge-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+  width: 290px;
 }
 @keyframes badge-in {
   from {
@@ -288,7 +297,24 @@
   }
 }
 .result-type {
-  font-size: 66px;
-  color: var(--trait-color, var(--amber));
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.5);
+  margin-top: -50px;
+  font-size: 75px;
+}
+.result-pointsInfo {
+  background-color: var(--trait-color, var(--amber));
+  padding: 18px;
+  margin-top: 30px;
+}
+.result-redirection {
+    margin-top: 10px;
+}
+.result-pointsInfo,
+.result-redirection {
+  font-family: "Fishmonger MR", var(--font-body);
+}
+.result-pointsInfo span {
+    font-size: 18px;
+}
+.result-redirection span {
+    font-size: 14px;
 }

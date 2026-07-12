@@ -26,7 +26,7 @@
   <body>
     <div id="app">
       <header class="app-header">
-        <img src="assets/Radegast_logo.png" width="362px" alt="Logo" />
+        <img src="assets/Radegast_logo.png" alt="Logo" />
       </header>
 
       <main class="app-main">
@@ -89,14 +89,18 @@
         <!-- 4) Result -->
         <section id="screen-result" class="screen">
           <div class="result-wrap">
-            <h3>Výzva Dokončena</h3>
-            <h2>Radegast promluvil</h1>
-            <img id="resultBadge" class="result-badge" alt="" />
-            <h1 id="resultType" class="display result-type"></h1>
-            <div>
+            <div class="result-headlines">
+              <p class="result-headlines-completed">Výzva Dokončena</p>
+              <p class="result-headlines-spoken">Radegast promluvil</p>
+            </div>
+            <div class="result-badgeWrap">
+              <img id="resultBadge" class="result-badge" alt="Výsledek" />
+              <h1 id="resultType" class="display result-type"></h1>
+            </div>
+            <div class="result-pointsInfo">
               <span>Tvoje hořká nátura tě předurčuje k velkým činům.<br>Body byly připsány na tvé ID.</span>
             </div>
-            <div>
+            <div class="result-redirection">
               <span>Tato obrazovka se za 10s automaticky přepne na úvod</span>
             </div>
           </div>
