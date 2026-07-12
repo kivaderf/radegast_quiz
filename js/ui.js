@@ -31,6 +31,10 @@
       Object.keys(screens).forEach(function (k) {
         screens[k].classList.toggle("is-active", k === name);
       });
+      var app = $("#app");
+      app.classList.toggle("bg-start", name === "id");
+      app.classList.toggle("bg-rest", name !== "id");
+      console.log("[Kvíz] Pozadí přepnuto na:", name === "id" ? "start" : "rest");
     },
 
     /* ---------- ID (text field with the device's numeric keyboard) */

@@ -21,7 +21,9 @@
   --t-odolnost: #199A6D;
   --t-zodpovednost: #247DD1;
 
-  /* --- Background image (swap the file in /assets) --- */
+  /* --- Background image (swap the files in /assets) ---
+     Default matches the ID screen, which is active on first load;
+     #app.bg-start / #app.bg-rest below override it per screen. */
   --bg-image: url("../assets/background_start.jpg");
 
   /* --- Fonts (to use your own, add @font-face and change here) --- */
@@ -70,6 +72,12 @@ body {
   background-size: cover, cover, cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+#app.bg-start {
+  --bg-image: url("../assets/background_start.jpg");
+}
+#app.bg-rest {
+  --bg-image: url("../assets/background_rest.jpg");
 }
 
 /* Logo at the top, centered – on all screens */
