@@ -48,6 +48,25 @@
   width: 100%;
   margin-top: 2px;
 }
+.id-footer {
+  position: absolute;
+  left: clamp(16px, 4vw, 48px);
+  right: clamp(16px, 4vw, 48px);
+  bottom: clamp(56px, 9vh, 100px);
+}
+.id-footer .partner-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: clamp(28px, 5vh, 44px);
+  width: auto;
+}
+.id-footer .eyebrow {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 
 /* ---------- Screen: question ------------------------------- */
 #screen-question {
