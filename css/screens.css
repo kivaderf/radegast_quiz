@@ -131,11 +131,9 @@
   width: 100%;
   max-width: 1000px;
   text-align: center;
-  margin: clamp(10px, 2.6vh, 26px) auto clamp(10px, 2.2vh, 22px);
-  font-size: 30px;
-  line-height: 1.16;
-  color: var(--bone);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  font-size: 54px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .options {
