@@ -210,6 +210,10 @@
       $("#resultBadge").alt = r.title || r.name || "";
       $("#resultType").textContent = r.title || r.name || "";
     },
+    setResultCountdown: function (secs) {
+      $("#resultCountdown").textContent =
+        "Tato obrazovka se za " + secs + "s automaticky přepne na úvod";
+    },
 
     /* ---------- Denied start -------------------------------- */
     renderDenied: function () {

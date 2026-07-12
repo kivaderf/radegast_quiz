@@ -38,7 +38,7 @@
 
     /* ---- Automatic returns (kiosk) ----------------------------- */
     DENIED_RESET_MS: 10000, // "can't start" screen -> back to ID
-    RESULT_RESET_MS: 30000, // result -> automatically starts a new test
+    RESULT_RESET_MS: 10000, // result -> automatically starts a new test
 
     /* ---- Data sources ---------------------------------------------- */
     QUESTIONS_URL: "data/questions.json",

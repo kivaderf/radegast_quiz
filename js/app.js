@@ -145,8 +145,17 @@
       });
     }
 
-    clearTimeout(state.resultTimer);
-    state.resultTimer = setTimeout(resetToId, Cfg.RESULT_RESET_MS);
+    var secs = Math.round(Cfg.RESULT_RESET_MS / 1000);
+    UI.setResultCountdown(secs);
+    clearInterval(state.resultTimer);
+    state.resultTimer = setInterval(function () {
+      secs--;
+      UI.setResultCountdown(Math.max(0, secs));
+      if (secs <= 0) {
+        clearInterval(state.resultTimer);
+        resetToId();
+      }
+    }, 1000);
   }
 
   /* ---------- Denied start -------------------------------- */
@@ -170,7 +179,7 @@
   /* ---------- Return to start -------------------------------- */
   function resetToId() {
     console.log("[Kvíz] Reset na úvodní obrazovku.");
-    clearTimeout(state.resultTimer);
+    clearInterval(state.resultTimer);
     clearInterval(state.deniedTimer);
     UI.timer.stop();
     state.idValue = "";
