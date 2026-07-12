@@ -248,11 +248,9 @@
         alert("Nepodařilo se načíst data kvízu (data/questions.json).");
       });
 
-    // Temporarily disabled for testing (cache hides file changes).
-    // Re-enable before deploying to the iPad.
-    // if ("serviceWorker" in navigator) {
-    //   navigator.serviceWorker.register("service-worker.js").catch(function () {});
-    // }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").catch(function () {});
+    }
   }
 
   if (document.readyState === "loading") {
