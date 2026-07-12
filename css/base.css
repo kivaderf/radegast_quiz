@@ -55,21 +55,14 @@ body {
   overscroll-behavior: none;
 }
 
-/* App frame – background + dark gradient for readability + vignette */
+/* App frame – background image, no dimming */
 #app {
   position: fixed;
   inset: 0;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(
-      180deg,
-      rgba(10, 8, 6, 0.55) 0%,
-      rgba(10, 8, 6, 0.25) 30%,
-      rgba(10, 8, 6, 0.55) 100%
-    ),
-    radial-gradient(120% 90% at 50% 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.6) 100%),
-    var(--bg-image);
-  background-size: cover, cover, cover;
+  background-image: var(--bg-image);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
