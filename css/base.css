@@ -17,7 +17,7 @@
   --ink-2: #1e1a15;
   --bone: #f1eadb;
   --bone-dim: #b7ad99;
-  --amber: #e3a63c;
+  --amber: #D09627;
   --amber-deep: #c6841f;
   --line: rgba(241, 234, 219, 0.14);
   --panel: rgba(10, 8, 6, 0.46);
@@ -127,11 +127,8 @@ body {
 /* Shared elements ------------------------------------------------ */
 .eyebrow {
   font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: clamp(11px, 1.4vh, 14px);
+  font-size: 11px;
   color: var(--amber);
-  font-weight: 700;
 }
 .display {
   font-family: var(--font-display);
@@ -147,11 +144,11 @@ body {
   letter-spacing: 0.06em;
   border: none;
   cursor: pointer;
-  color: var(--ink);
+  color: var(--bone);
   background: var(--amber);
   border-radius: var(--radius);
   padding: clamp(12px, 2vh, 18px) clamp(22px, 4vw, 40px);
-  font-size: clamp(16px, 2.4vh, 22px);
+  font-size: 20px;
   box-shadow: 0 6px 0 var(--amber-deep), 0 10px 22px rgba(0, 0, 0, 0.4);
   transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
 }
