@@ -1,35 +1,25 @@
 {
-  "_comment": "EDITOVATELNÉ VÝSLEDKY. Čtyři typy = čtyři sloupce z kvízu. Přepiš 'title', 'tagline' a 'description' svým finálním textem. Klíče (sila/rozhodnost/odolnost/zodpovednost) a 'trait' NEMĚŇ – jsou navázané na vyhodnocení. Barvy se nastavují v css/screens.css (proměnné --t-*).",
-
   "sila": {
     "trait": "sila",
     "name": "Síla",
-    "title": "TAHOUN",
-    "tagline": "Když je potřeba zabrat, jdeš první.",
-    "description": "Jsi ten, na koho parta spoléhá, když dojde na těžkou práci. Neptáš se, jestli to půjde – vezmeš to na sebe a uneseš víc než ostatní. Tvoje síla není jen ve svalech, ale v tom, že se do věcí opřeš naplno."
+    "title": "Jsi Silný"
   },
 
   "rozhodnost": {
     "trait": "rozhodnost",
     "name": "Rozhodnost",
-    "title": "STRATÉG",
-    "tagline": "Chladná hlava, jasné rozhodnutí.",
-    "description": "Když ostatní váhají, ty už víš, co dál. Umíš vyhodnotit situaci a rozseknout ji dřív, než se stačí zamotat. Vede tě rozvaha, ne emoce – a právě proto ti parta dá v klíčové chvíli slovo."
+    "title": "Jsi Rozhodný"
   },
 
   "odolnost": {
     "trait": "odolnost",
     "name": "Odolnost",
-    "title": "DRŽÁK",
-    "tagline": "Nic tě nepoloží.",
-    "description": "Vydržíš tam, kde ostatní balí. Nepříjemný chlad, dlouhá cesta, tvrdý den – zatneš zuby a jdeš dál bez řečí. Tvoje výdrž je tichá jistota, o kterou se dá opřít, když jde do tuhého."
+    "title": "Jsi odhodlaný"
   },
 
   "zodpovednost": {
     "trait": "zodpovednost",
     "name": "Zodpovědnost",
-    "title": "PARŤÁK",
-    "tagline": "Držíš slovo a hlídáš celek.",
-    "description": "Myslíš na ostatní i na následky. Postaráš se, aby byli všichni v pořádku a aby se dotáhlo, co se slíbilo. Nejsi ten, kdo nejvíc křičí – jsi ten, na koho je spoleh, když na tom záleží."
+    "title": "Jsi Spolehlivý"
   }
 }

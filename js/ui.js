@@ -209,8 +209,6 @@
       $("#resultBadge").textContent = (r.title || r.name || "?").charAt(0);
       $("#resultName").textContent = r.name || "";
       $("#resultType").textContent = r.title || r.name || "";
-      $("#resultTagline").textContent = r.tagline || "";
-      $("#resultDesc").textContent = r.description || "";
       $("#syncNote").textContent = "";
     },
     setSyncNote: function (text) {

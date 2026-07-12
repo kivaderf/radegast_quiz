@@ -120,7 +120,7 @@
         trait: winner,
         counts: counts,
         tie: leaders.length > 1,
-        result: Quiz.results[winner] || { trait: winner, name: winner, title: winner, description: "" }
+        result: Quiz.results[winner] || { trait: winner, name: winner, title: winner }
       };
     }
   };

@@ -282,8 +282,7 @@
       result: Quiz.results[handle] || {
         trait: handle,
         name: handle,
-        title: handle,
-        description: ""
+        title: handle
       }
     };
     console.log("[Kvíz] Náhled výsledku přes URL (?result=" + handle + "):", evalObj);
