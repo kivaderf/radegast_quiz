@@ -11,6 +11,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Fishmonger MR";
+  src: url("../assets/fonts/Fishmonger MR Plain.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* --- Colors (adjust to match the brand) --- */
   --ink: #14110d;
@@ -130,8 +138,8 @@ body {
 
 /* Shared elements ------------------------------------------------ */
 .eyebrow {
-  font-family: var(--font-body);
-  font-size: 11px;
+  font-family: "Fishmonger MR", var(--font-body);
+  font-size: 15px;
   color: var(--amber);
 }
 .display {
