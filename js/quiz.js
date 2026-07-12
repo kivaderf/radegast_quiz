@@ -97,7 +97,7 @@
     /* Tallies traits from the answers and picks a winner.
        Tie-break: random choice among traits with the same (highest) count –
        the only fair rule when answers aren't weighted.
-       answers = array of traits, e.g. ["sila","odolnost",...] */
+       answers = array of traits, e.g. ["strength","resilience",...] */
     evaluate: function (answers) {
       var counts = {};
       Cfg.TRAITS.forEach(function (t) {

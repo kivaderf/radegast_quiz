@@ -45,6 +45,6 @@
     RESULTS_URL: "data/results.json",
 
     /* Order of traits (matches the xlsx columns). Don't edit without updating the data. */
-    TRAITS: ["sila", "rozhodnost", "odolnost", "zodpovednost"]
+    TRAITS: ["strength", "decisiveness", "resilience", "responsibility"]
   };
 })();

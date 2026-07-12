@@ -38,14 +38,14 @@ jinak si zařízení může držet starou verzi z cache.
 
 Vygenerováno z dodaného xlsx. Pořadí odpovědí ve sloupcích odpovídá typům:
 
-1. sloupec → `sila`
-2. sloupec → `rozhodnost`
-3. sloupec → `odolnost`
-4. sloupec → `zodpovednost`
+1. sloupec → `strength`
+2. sloupec → `decisiveness`
+3. sloupec → `resilience`
+4. sloupec → `responsibility`
 
 Na obrazovce se pořadí odpovědí **náhodně zamíchá**, aby daný typ nebyl pořád
-na stejné pozici. Klíče `sila/rozhodnost/odolnost/zodpovednost` neměň — jsou
-navázané na vyhodnocení a na texty ve `results.json`.
+na stejné pozici. Klíče `strength/decisiveness/resilience/responsibility` neměň —
+jsou navázané na vyhodnocení a na texty ve `results.json`.
 
 ## Napojení na API (až bude hotové)
 
@@ -71,10 +71,10 @@ Aplikace pak volá dva endpointy:
 ```json
 {
   "id": "427",
-  "type": "sila",
-  "traits": { "sila": 3, "rozhodnost": 1, "odolnost": 1, "zodpovednost": 0 },
+  "type": "strength",
+  "traits": { "strength": 3, "decisiveness": 1, "resilience": 1, "responsibility": 0 },
   "tie": false,
-  "answers": [ { "questionId": 12, "trait": "sila" }, "..." ],
+  "answers": [ { "questionId": 12, "trait": "strength" }, "..." ],
   "finishedAt": "2026-07-08T12:00:00.000Z"
 }
 ```

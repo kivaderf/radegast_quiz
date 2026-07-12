@@ -1,9 +1,9 @@
 {
  "traits": [
-  "sila",
-  "rozhodnost",
-  "odolnost",
-  "zodpovednost"
+  "strength",
+  "decisiveness",
+  "resilience",
+  "responsibility"
  ],
  "questions": [
   {
@@ -11,19 +11,19 @@
    "text": "V noci na chalupě vypadne proud a nastane absolutní tma. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Seženu generátor"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zkusím vypínač"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Počkám do rána"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zkontroluju pojistky"
     }
    ]
@@ -33,19 +33,19 @@
    "text": "V lese vás zastihne prudký liják. Co je obvykle tvá role?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu nést výbavu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu úkryt pro všechny"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Jdu dál bez řečí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Všechny zkontroluju zda jsou v pořádku"
     }
    ]
@@ -55,19 +55,19 @@
    "text": "Cesta do kopce je horší, než čekáš. Co je tvou předností?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla v nohách"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Chladná hlava"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zatnuté zuby"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Cit pro odpočinek"
     }
    ]
@@ -77,19 +77,19 @@
    "text": "Kamarád na túře výrazně zpomaluje. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu mu batoh"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Upravím pro něj trasu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Srovnám s ním tempo"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zkontroluju jeho zdravotní stav"
     }
    ]
@@ -99,19 +99,19 @@
    "text": "Na chatě s přáteli chybí naštípané dřevo. Jak k tomu přistoupíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Naštípu to sám"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozdělím práci"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím to bez dřeva"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Udělám větší zásoby"
     }
    ]
@@ -121,19 +121,19 @@
    "text": "V noci v horách nastane problém. Co v tobě sepne?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ochranářský pud"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasné rozhodnutí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zachování chladné hlavy"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Odpovědnost za partu"
     }
    ]
@@ -143,19 +143,19 @@
    "text": "Co je tvá přednost při špatném počasí?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nenechám se zlomit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vymyslím co dál"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím i prudký déšť"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zajistím úkryt"
     }
    ]
@@ -165,19 +165,19 @@
    "text": "Když je třeba zabrat rukama, co tě definuje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Hrubá síla"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozumný postup"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Dlouhá výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poctivá práce"
     }
    ]
@@ -187,19 +187,19 @@
    "text": "Došli jste na hřeben hor a otevřel se nádherný výhled. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Najdu si nejvyšší bod k výhledu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zaznamenám vzpomínky na fotoaparát"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tiše pozoruji krajinu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zjistím, která místa vidíme"
     }
    ]
@@ -209,19 +209,19 @@
    "text": "Přijde studená noc. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přinesu dřevo na zátop"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zařídím nocleh"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Překousnu chlad"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Postarám se o ostatní"
     }
    ]
@@ -231,19 +231,19 @@
    "text": "Když parta váhá, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla vše rozhodne"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozseknu to hlavou"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím tlak"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pohlídám celek"
     }
    ]
@@ -253,19 +253,19 @@
    "text": "Co je pro tebe v horách nejcennější?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správný úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tvrdá výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zodpovědný postup"
     }
    ]
@@ -275,19 +275,19 @@
    "text": "Přechod je těžší, než měl být. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nevzdám to"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Změním plán"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zkousnu diskomfort"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dovedu všechny do cíle"
     }
    ]
@@ -297,19 +297,19 @@
    "text": "Na chatě se něco pokazí. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Opravím to vlastníma rukama"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vymyslím nejdříve řešení"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pokus omyl"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zajistím někoho na opravu"
     }
    ]
@@ -319,19 +319,19 @@
    "text": "Když jde do tuhého, co je tvá klíčová vlastnost?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tah na bránu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Pevný úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím i to nepříjemné"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Charakter"
     }
    ]
@@ -341,19 +341,19 @@
    "text": "V prudkém kopci dochází dech. Co je nejlepší?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zabrat nohama"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozvrhnout tempo"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepolevit"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Hlídat kamarády"
     }
    ]
@@ -363,19 +363,19 @@
    "text": "Co podle tebe dělá chlapa chlapem?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozvaha"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Odolnost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zodpovědnost"
     }
    ]
@@ -385,19 +385,19 @@
    "text": "Přijde nečekaná překážka na cestě. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odstraním ji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu jinou cestu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Překonám ji"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zajistím bezpečný průchod"
     }
    ]
@@ -407,19 +407,19 @@
    "text": "Musíš přečkat noc v lese, jak si poradíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Postavím si přístřešek"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Schovám se v přirodním přístřeší"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zvládnu to pod širákem"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Kontaktuji nejbližší"
     }
    ]
@@ -429,19 +429,19 @@
    "text": "Co tě žene dopředu, když už nemůžeš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vnitřní síla"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasný cíl"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tvrdá vůle"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Závazek"
     }
    ]
@@ -451,19 +451,19 @@
    "text": "Na výpravě někdo ztratí nervy. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Promluvím s ním"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Uklidním situaci"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím napětí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nedovolím průšvih"
     }
    ]
@@ -473,19 +473,19 @@
    "text": "Bolí nohy a cesta nekončí. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Co bolí to roste"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hlídám rytmus"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Jdu přes bolest"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Hlídám skupinu"
     }
    ]
@@ -495,19 +495,19 @@
    "text": "Co má větší cenu než řeči?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla rukou"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasné rozhodnutí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž bez stížností"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Splněné slovo"
     }
    ]
@@ -517,19 +517,19 @@
    "text": "Při bouřce na festivalu se ti zničí stan. Jak to vyřešíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Připravím si improvizovaný přístřešek"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Poprosím souseda o přespání"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Přespím na zemi bez něj"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Mám připravený záložní stan"
     }
    ]
@@ -539,19 +539,19 @@
    "text": "V nerozhodné situaci se musí jednat hned. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Opřu se do toho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnu ve vteřině"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepolevím"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Myslím na důsledky"
     }
    ]
@@ -561,19 +561,19 @@
    "text": "Na chatě je práce až nad hlavu. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu na sebe nejtěžší práci"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Srovnám priority"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Makám v kuse až do konce"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Udělám jen to, co jsem slíbil"
     }
    ]
@@ -583,19 +583,19 @@
    "text": "Parta ztrácí morálku. Co přineseš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu navíc"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasný směr"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž navíc"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Jistotu pro ostatní"
     }
    ]
@@ -605,19 +605,19 @@
    "text": "Kamarád tě požádal o pomoc s montáží těžkých dřevěných trámů. Jak se k tomun postavíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nejtěžší trámy vezmu na sebe"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Naplánuju postup stavby"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Dokud nebude hotovo neodejdu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dohlédnu na bezpečný průběh"
     }
    ]
@@ -627,19 +627,19 @@
    "text": "Sejdete se s přáteli u karet nebo deskové hry na chatě a prohraješ. Jaká je tvá běžná reakce?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Bouchnu do stolu a rozčílím se"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přijmu prohru"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Chci odvetu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pogratuluji soupeři"
     }
    ]
@@ -649,19 +649,19 @@
    "text": "Pořádáte pro sousedy z ulice letní sousedské grilování. Jaký jsi typ souseda?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Všeuměl"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Organizátor"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Kliďas"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pečovatel"
     }
    ]
@@ -671,19 +671,19 @@
    "text": "V horách není prostor pro výmluvy. Co nastupuje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnutí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Odpovědnost"
     }
    ]
@@ -693,19 +693,19 @@
    "text": "Co tě vystihuje při tvrdé práci venku?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jdu přes sílu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vím, co dělám"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nezaleknu se ji"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dotahuju věci"
     }
    ]
@@ -715,19 +715,19 @@
    "text": "Když se láme chleba, co vyhraje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Fyzická převaha"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správná volba"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pevné nervy"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Čestné jednání"
     }
    ]
@@ -737,19 +737,19 @@
    "text": "Co je lepší než pohodlí?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Mít sílu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mít jasno"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Něco vydržet"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Být spolehlivý"
     }
    ]
@@ -759,19 +759,19 @@
    "text": "Chystá se večerní posezení u chaty a slunce zapadá. Jak pomůžeš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přinesu dříví"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zajistím ohniště"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zajistím pivo"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Připravím občerstvení pro ostatní"
     }
    ]
@@ -781,19 +781,19 @@
    "text": "Kamarád potřebuje pomoc. Co nabídneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Radu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pomoc bez řečí"
     }
    ]
@@ -803,19 +803,19 @@
    "text": "Na hřebeni fouká a není kam uhnout. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zapřu se"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Držím kurz"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím nápor"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Kryju ostatní"
     }
    ]
@@ -825,19 +825,19 @@
    "text": "Potkáte na horské stezce starší manželský pár s mapou…",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nabídnu pomoc s batohy"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Pomůžu s trasou"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nabídnu jim doprovod"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Upozorním je na nástrahy cesty"
     }
    ]
@@ -847,19 +847,19 @@
    "text": "Máš poslední síly. Co s nimi?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zaberu naplno"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Použiju je chytře"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepustím to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ochráním ostatní"
     }
    ]
@@ -869,19 +869,19 @@
    "text": "11. Na túře najdete opuštěné, zanedbané odpočívadlo s lavičkou. Co uděláš jako první?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Opravím co je třeba"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnu o přestávce"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Postojím, místa na sezení nechám ostatním"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poklidím okolí"
     }
    ]
@@ -891,19 +891,19 @@
    "text": "Co je v drsných podmínkách největší jistota?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Silné tělo"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Střízlivý úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tvrdá výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zodpovědný chlap"
     }
    ]
@@ -913,19 +913,19 @@
    "text": "Když je cesta hořká, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tlačím vpřed"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Volím rozumně"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Kousnu to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nesu důsledky"
     }
    ]
@@ -935,19 +935,19 @@
    "text": "Parta se začíná rozpadat. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Rázně sjednám pořádek"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zklidním emoce"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zůstanu pevným bodem party"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Převezmu vedení"
     }
    ]
@@ -957,19 +957,19 @@
    "text": "Rozhodli jste se na zahradě postavit jednoduchou udírnu. Co je tvá role?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Kopání hlubokých základů"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hned načrtnu plán"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Celý den míchám maltu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pečlivě přeměřím kouřovod"
     }
    ]
@@ -979,19 +979,19 @@
    "text": "Co tě nejlíp vystihuje na horské chatě?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla v rukách"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozum v hlavě"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž v těle"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pořádek ve věcech"
     }
    ]
@@ -1001,19 +1001,19 @@
    "text": "Vyschla ti studna na chatě. Jak tuto situaci vyřešíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Prohloubím ji sám."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Objednám nový vrt."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Donesu vodu v kanystrech."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nachytám dešťovou vodu."
     }
    ]
@@ -1023,19 +1023,19 @@
    "text": "Život je hořký. Co na to ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ustojím ho silou"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozum na prvním místě"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Překousnu ho"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Postavím se k němu čelem"
     }
    ]
@@ -1045,19 +1045,19 @@
    "text": "Kdybys měl mít na štítu jedno heslo, jaké?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Unesu, co přijde"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vím, kdy jednat"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nic mě nepoloží"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Držím slovo"
     }
    ]
@@ -1067,19 +1067,19 @@
    "text": "U grilu se maso začne z ničeho nic pálit. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zvednu celý rošt"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Stáhnu maso z grilu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nezmatkuju"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Odříznu spálené části"
     }
    ]
@@ -1089,19 +1089,19 @@
    "text": "Kamarád dorazí na hory bez bundy. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pujčím mu svoji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Změním plány výletu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zocelí se chladem."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Seženu náhradní oblečení"
     }
    ]
@@ -1111,19 +1111,19 @@
    "text": "Ve frontě na pivo někdo předbíhá. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Silně se ohradím"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vyřeším to klidně"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nerozhodí mě to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zastanu se hlavně ostatních"
     }
    ]
@@ -1133,19 +1133,19 @@
    "text": "Na chatě ráno vstanu jako první, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zatopím"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zavelím budíček"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Jdu se otužovat"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Připravím snídani"
     }
    ]
@@ -1155,19 +1155,19 @@
    "text": "Někdo machruje, ale do práce se nehrne. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vynadám mu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Nastavím pravidla"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Myslí si o něm své"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Promluvím si s ním"
     }
    ]
@@ -1177,19 +1177,19 @@
    "text": "V base je poslední pivko. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu si ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozdělím se s ostatními"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím bez něj"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dojdu pro další"
     }
    ]
@@ -1199,19 +1199,19 @@
    "text": "Zjistíš, že nemáš vhodné nářadí. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zvládnu to i bez něj"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Poradím si jinak"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vystačím si s málem"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zajdu ho koupit"
     }
    ]
@@ -1221,19 +1221,19 @@
    "text": "Někdo ti řekne: „To nedáš.“ Co odpovíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sleduj"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Proč si to myslíš?"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "To mě nezastaví"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Mám záložní plán"
     }
    ]
@@ -1243,19 +1243,19 @@
    "text": "U ohně probíhá náročná debata. Co přineseš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pevný názor"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Klidný úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tichou trpělivost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Férové slovo"
     }
    ]
@@ -1265,19 +1265,19 @@
    "text": "Festivalový den se protáhne o několik hodin. Co tě vystihuje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Hodně výkonu, málo spánku"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Pošetřím své síly"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zůstanu až do konce"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Na zítra si beru volno"
     }
    ]
@@ -1287,19 +1287,19 @@
    "text": "Radegast se tě zeptá, co tě vystihuje. Co řekneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Razím si svou cestu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Příjmám životní hořkost"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepovolím pod tlakem"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Chráním své blízké"
     }
    ]
@@ -1309,19 +1309,19 @@
    "text": "Parta se nedohodne, kam dál. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vyrazím první"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Navrhnu směr"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Počkám v klidu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Najdu shodu"
     }
    ]
@@ -1331,19 +1331,19 @@
    "text": "Telefon má 5 % baterie a potřebujete mapu. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vydám se napřed"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zapamatuju si trasu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepanikařím"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Šetřím baterku"
     }
    ]
@@ -1353,19 +1353,19 @@
    "text": "V hospodě přijde účet za celou partu. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zacáluju první"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozpočítám to"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neřeším drobné"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pohlídám férovost"
     }
    ]
@@ -1375,19 +1375,19 @@
    "text": "Někomu v noci spadne stan. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu ho postavit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Pomůžu mu najít lepší místo"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepůjdu spát než bude vše v pořádku"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ubytuju ho u sebe"
     }
    ]
@@ -1397,19 +1397,19 @@
    "text": "Máš poslední sirku. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pokusím se rozdělat oheň"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Použiju ji chytře"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neztratím nervy"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zkusím rozdělat oheň jinak"
     }
    ]
@@ -1419,19 +1419,19 @@
    "text": "Chlap se pozná podle toho, jak…",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zabere"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodne"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydrží"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Splní"
     }
    ]
@@ -1441,19 +1441,19 @@
    "text": "Chystáte se zavařovat okurky podle tradičního receptu.",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Utahuju víčka sklenic"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hned rozdělím úkoly"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Sedím u stolu a čistím zeleninu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pečlivě kontroluju sterilitu sklenic"
     }
    ]
@@ -1463,19 +1463,19 @@
    "text": "Někdo má hloupé řeči na servírku. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jdu si to s ním vyříkat"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zeptám se jestli je vše v pořádku?"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Stáhnu pozornost na sebe"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Uklidním situaci"
     }
    ]
@@ -1485,19 +1485,19 @@
    "text": "Dostaneš úkol, do kterého se nikomu nechce. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zjednoduším ho"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Dotáhnu ho"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vysvětlím jeho důležitost"
     }
    ]
@@ -1507,19 +1507,19 @@
    "text": "Všichni slibují pomoc, ale nikdo nezvedá ruku. Co ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zvednu ji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozdělím role"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pomůžu sám"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dohlédnu, aby se všichni zapojili"
     }
    ]
@@ -1529,19 +1529,19 @@
    "text": "V tričku tě zastihne podzimní kosa. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Rozhýbu se"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu závětří"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Překousnu to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Seženu si další vrstvu"
     }
    ]
@@ -1551,19 +1551,19 @@
    "text": "V partě vznikne hádka kvůli trase. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nezúčastním se hádky"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnu o trase"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím emoce"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Udržím partu pospolu"
     }
    ]
@@ -1573,19 +1573,19 @@
    "text": "Poslední kilometr do kopce bolí nejvíc. Co rozhodne?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla nohou"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Práce s tempem"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zarputilá hlava"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Přestávka ve vhodnou chvíli"
     }
    ]
@@ -1595,19 +1595,19 @@
    "text": "V dálce vidíš požár nedaleko lesa. Jak zareaguješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Začnu sám hasit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zavolám hasiče"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Doběhnu zjistit situaci"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Varuji lidi v okolí"
     }
    ]
@@ -1617,19 +1617,19 @@
    "text": "V hospodě padne výzva na páku. Co tě vystihne?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pevný stisk"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Klid před soubojem"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Rozložení sil"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Hrát fér"
     }
    ]
@@ -1639,19 +1639,19 @@
    "text": "Přijde den, kdy nic nejde podle plánu. Co je tvoje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zabrat silou"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přepnout strategii"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržet chaos"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Držet závazky"
     }
    ]
@@ -1661,19 +1661,19 @@
    "text": "Máš nést něco těžkého a nikdo se nehrne. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Beru to na sebe"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hledám jendoduché řešení"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neskuhrám"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Domluvím se s ostatními"
     }
    ]
@@ -1683,19 +1683,19 @@
    "text": "Někdo z party má blbej den. Co nabídneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Terapii sportem"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozumný nadhled"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Klidnou přítomnost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Spolehlivou oporu"
     }
    ]
@@ -1705,19 +1705,19 @@
    "text": "Kdyby tvůj den měl příchuť, jaká je?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Silná a řízná"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zlatavá a vyvážená"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Drsně hořká"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poctivá a čistá"
     }
    ]
@@ -1727,19 +1727,19 @@
    "text": "U výčepu se utrhne nápor lidí. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu tahat sudy"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zorganizuju frontu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Budu trpělivý"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pohlídám pořádek"
     }
    ]
@@ -1749,19 +1749,19 @@
    "text": "Čeká tě rozhodnutí, které se nebude líbit všem. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Budu si stát za svým"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnu fér"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Přijmu kritiku"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vezmu následky"
     }
    ]
@@ -1771,19 +1771,19 @@
    "text": "Na chatě někdo rozbije sběratelskou sklenici. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Uklidím střepy"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu viníka"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neřeším drama"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zkontroluju, jestli se nikdo nepořezal"
     }
    ]
@@ -1793,19 +1793,19 @@
    "text": "V kůlně najdeš vosí hnízdo. Co s ním uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sám ho zlikviduji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě kupuji postřik"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nebudu si ho všímat"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zavolám odbornou pomoc"
     }
    ]
@@ -1815,19 +1815,19 @@
    "text": "Přijde nečekaná práce navíc. Co si řekneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Mám na to"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Dám tomu řád"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zvládnu to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Stejně se to musí udělat"
     }
    ]
@@ -1837,19 +1837,19 @@
    "text": "V lese potkáte poraněného člověka. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odnesu ho do bezpečí"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zavolám pomoc"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zachovám klid"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zjistím zdravotní stav"
     }
    ]
@@ -1859,19 +1859,19 @@
    "text": "Někdo tě urazí před celou partou. Co ty na to?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Konfrontuji ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Beru to s nadhledem"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ignoruju to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Argumentuji s ním"
     }
    ]
@@ -1881,19 +1881,19 @@
    "text": "Kamarád se stěhuje a zbyla na něj nejtěžší skříň z masivu. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Těžší stranu vezmu za něj"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zavolám pomoc"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Bez řeči ji ponesu s ním"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Hlídám aby se nic nepoškodilo"
     }
    ]
@@ -1903,19 +1903,19 @@
    "text": "Do kůlny se nastěhovala rodina ježků. Jak situaci vyřešíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odnesu je do přírody"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zabezpečím pro ně prostor"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nechám je tam žít"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Seženu jim potravu"
     }
    ]
@@ -1925,19 +1925,19 @@
    "text": "Na polní cestě potkáte traktor, který zapadl jedním kolem do příkopu. Jak pomůžeš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zkusím ho silou vytlačit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vytáhnu ho svým autem"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Setrvám do příjezdu pomoci"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zavolám odtahovou službu"
     }
    ]
@@ -1947,19 +1947,19 @@
    "text": "Kamarád chce riskovat zbytečnou blbost. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zastavím ho i na sílu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozmluvím mu to"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nechám ho vylít si zlost na mě"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nenechám ho to udělat"
     }
    ]
@@ -1969,19 +1969,19 @@
    "text": "Na stole leží poslední kus masa. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sním ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozdělím ho chytře"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím bez něj"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nechám ho hladovějšímu"
     }
    ]
@@ -1991,19 +1991,19 @@
    "text": "Co tě nejvíc štve na slabém charakteru?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vzdávání se bez boje"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Odklonění viny jinam"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zhroucení pod tlakem"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Útěk před následky"
     }
    ]
@@ -2013,19 +2013,19 @@
    "text": "Musíš říct nepříjemnou pravdu. Jak na to?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Napřímo"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "S rozvahou"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Bez cuknutí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Férově"
     }
    ]
@@ -2035,19 +2035,19 @@
    "text": "Jste s partou na nádraží a ujel vám vlak. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Najdu viníka."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Podívám se na nejbližší spoj."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Všechny uklidním."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zkontroluji, že jsme všichni."
     }
    ]
@@ -2057,19 +2057,19 @@
    "text": "Vybavení je mokré, těžké a smrdí kouřem. Co s tím?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odnesu ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Roztřídím ho"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neřeším to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vysuším ho"
     }
    ]
@@ -2079,19 +2079,19 @@
    "text": "Dostaneš fyzicky zničující úkol. Co tě žene kupředu?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Čistý adrenalin"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasný smysl práce"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Schopnost snést bolest"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Slíbený výsledek"
     }
    ]
@@ -2101,19 +2101,19 @@
    "text": "Co by měl říct tvůj odznak?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jsem silný"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jsem rozhodný"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Jsem odolný"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Jsem zodpovědný"
     }
    ]
@@ -2123,19 +2123,19 @@
    "text": "Na treku vám začne docházet voda. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zrychlím tempo"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Změním cíl cesty"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím tu žízeň"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Rozdělím poslední zásoby"
     }
    ]
@@ -2145,19 +2145,19 @@
    "text": "Pes ti uteče s buřtem od ohně. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zkusím ho doběhnout"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vymyslím náhradu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Opeču si nový"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pohlídám zbytek jídla"
     }
    ]
@@ -2167,19 +2167,19 @@
    "text": "Když si máš vybrat svůj chlapský styl, co sedí nejvíc?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tahoun"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozumný lídr"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Držák"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Férový parťák"
     }
    ]
@@ -2189,19 +2189,19 @@
    "text": "V hospodě někdo shodí tác s pivem. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu uklidit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vyřeším to v klidu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Neřeším drama"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zeptám se, jestli jsou všichni v pořádku"
     }
    ]
@@ -2211,19 +2211,19 @@
    "text": "Kámoš přijde s plánem, který smrdí průšvihem. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zastavím ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozmluvím mu to"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nenechám se přemluvit"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nezúčastním se plánu"
     }
    ]
@@ -2233,19 +2233,19 @@
    "text": "U ohně někdo vypráví stejnou historku potřetí. Co ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přihodím poleno"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Změním téma"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Neztrapním ho"
     }
    ]
@@ -2255,19 +2255,19 @@
    "text": "Když slyšíš „pravý chlap“, co si představíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Svalnaté tělo"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Chladnou hlavu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ledový klid"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pevné slovo"
     }
    ]
@@ -2277,19 +2277,19 @@
    "text": "V hospodě do tebe někdo agresivně strčí, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vyřeším to s ním venku"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Uklidním situaci"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nenechám se vyprovokovat"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zabráním zbytečné rvačce"
     }
    ]
@@ -2299,19 +2299,19 @@
    "text": "Koza ti na farmě sežere mapu trasy. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pokračuji bezhlavě dál"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Určím směr zpaměti"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepanikařím"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zeptám se kolemjdoucích"
     }
    ]
@@ -2321,19 +2321,19 @@
    "text": "Když máš popsat svůj charakter jedním slovem, jakým?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pevný"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozvážný"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nezlomný"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Spolehlivý"
     }
    ]
@@ -2343,19 +2343,19 @@
    "text": "Nejde ti otevřít zavařovačka. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Rozbiju ji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zkusím fígl"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nevzdám to"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poprosím někoho jiného o pomoc"
     }
    ]
@@ -2365,19 +2365,19 @@
    "text": "Chlap se podle tebe pozná podle toho, že…",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zabere, když je třeba"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Ví, kdy mluvit"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydrží bez stížností"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Splní, co slíbil"
     }
    ]
@@ -2387,19 +2387,19 @@
    "text": "U stolu dojde na těžké rozhodnutí. Co je tvoje role?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Prosadím svůj názor"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozseknu debatu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím napětí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Jsem mediátor debaty"
     }
    ]
@@ -2409,19 +2409,19 @@
    "text": "V lese potkáš zraněné zvíře. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odtáhnu ho do bezpečí"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu pomoc"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pomohu i přes nebezpečí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zavolám záchrannou stanici"
     }
    ]
@@ -2431,19 +2431,19 @@
    "text": "Když se řekne „držák“, co to pro tebe znamená?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Unese víc než ostatní"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Ví, kdy zabrat"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydrží všechno"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nenechá tě v úzkých"
     }
    ]
@@ -2453,19 +2453,19 @@
    "text": "Po třetím kopci někdo prohlásí, že už nemůže. Co ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu mu věci"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Dám pauzu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Povzbudím ho"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dohlédnu, zda je v pořádku"
     }
    ]
@@ -2475,19 +2475,19 @@
    "text": "Večer u ohně začne pršet. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přenesu věci"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Najdu přístřešek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Snažím se udržet oheň"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Schovám suché oblečení"
     }
    ]
@@ -2497,19 +2497,19 @@
    "text": "Kdyby tvoje nálada byla zvíře, co by byla?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zuřivý medvěd"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Starý vlk"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tažný kůň"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pastevecký pes"
     }
    ]
@@ -2519,19 +2519,19 @@
    "text": "Ve hře jsou čtyři úkoly. Který bereš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ten nejtěžší"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Ten nejdůležitější"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ten nejsložitější"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ten, který zvládnu nejlépe"
     }
    ]
@@ -2541,19 +2541,19 @@
    "text": "Když přijde skutečný problém, co je ti nejbližší?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Čin"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozvaha"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Odpovědnost"
     }
    ]
@@ -2563,19 +2563,19 @@
    "text": "Kámoš chce soutěžit, kdo déle vydrží v zimě. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přijmu výzvu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Nastavím hranici"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím déle"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Neženu to přes zdraví"
     }
    ]
@@ -2585,19 +2585,19 @@
    "text": "V hospodě se řeší, kdo je „největší chlap“. Co řekneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ten, kdo zabere"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Ten, kdo má rozum"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ten, kdo vydrží"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ten, kdo nezklame"
     }
    ]
@@ -2607,19 +2607,19 @@
    "text": "V zimě ráno zjistíš, že sousedovi zamrzl zámek u auta. Jak pomůžeš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu mu auto odtlačit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Seženu rozmrazovač a vyřeším to"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Přečkám s ním i když nemám jak pomoci"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Radejí ho odvezu svým autem"
     }
    ]
@@ -2629,19 +2629,19 @@
    "text": "Když se den táhne jak pondělí bez kávy, co pomůže?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zabrat"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Srovnat plán"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržet"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Dotáhnout věci"
     }
    ]
@@ -2651,19 +2651,19 @@
    "text": "Která věta ti sedí nejvíc?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Prorazím každou zeď"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Znám svou cestu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nic mě nezlomí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Držím dané slovo"
     }
    ]
@@ -2673,19 +2673,19 @@
    "text": "Sklízíte seno a blíží se večerní bouřka. Jak postupuješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zrychlím tempo práce."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodím úkoly"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Máknu i v dešti"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zakryji zbylé seno."
     }
    ]
@@ -2695,19 +2695,19 @@
    "text": "Na zahradě zakládáte nový kompost z větví a trávy. Co je tvůj přístup?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Drtím silnější větve"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Určuji místo pro kompost"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nebráním se přebírání odpadu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Skládám správně vrstvy odpadu"
     }
    ]
@@ -2717,19 +2717,19 @@
    "text": "Vyhrál jsi v soutěži sud piva. Jak naložíš s výhrou?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odnesu ho sám."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě svolám partu."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vypiju ho postupně."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Schovám ho na oslavu"
     }
    ]
@@ -2739,19 +2739,19 @@
    "text": "Narazil jsi na skvělého mladého kluka, který se chce učit řemeslo. Co teď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu ho do party."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Ocením jeho nadšení."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Přetrpím jeho první chyby."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Předám mu své zkušenosti."
     }
    ]
@@ -2761,19 +2761,19 @@
    "text": "V partě je nový člověk a moc nezapadá. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pomůžu mu se zapojit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zjistím jeho situaci"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Dám mu čas"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nenechám ho stranou"
     }
    ]
@@ -2783,19 +2783,19 @@
    "text": "Tvůj oblíbený sportovní klub postoupil do finále. Jak ho podpoříš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Hlasitě fandím z plných plic"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hned kupuji lístky."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Fandím do poslední minuty"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Povedu fanoušky k fair-play."
     }
    ]
@@ -2805,19 +2805,19 @@
    "text": "Dostal jsi v práci nečekaný finanční bonus za skvělý výsledek. Co s ním?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Investuji je do sebe."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zaplatím rodinnou dovolenou"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nerozházím ho za hlouposti."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Uložím ho na horší časy."
     }
    ]
@@ -2827,19 +2827,19 @@
    "text": "Na zemi leží odpadky po cizí partě, která odchází. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Donutím je, aby to uklidlii"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Řeknu to správci"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Posbírám je za ně"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vysvětlím následky znečištění"
     }
    ]
@@ -2849,19 +2849,19 @@
    "text": "Když tě někdo zkouší vyprovokovat, co ukážeš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Pevný postoj"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Nadhled"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Sebekontrolu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Férovost"
     }
    ]
@@ -2871,19 +2871,19 @@
    "text": "Když máš být pro partu legenda, čím?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tím, co unesu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Tím, co rozhodnu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tím, co vydržím"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Tím, že nezklamu"
     }
    ]
@@ -2893,19 +2893,19 @@
    "text": "Dokončil jsi stavbu pergoly a zbyl ti kvalitní materiál. Jak s ním naložíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Postavím další kus nábytku."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hned vymyslím další projekt."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nabídnu ho sousedovi."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Bezpečně ho uskladním v kůlně."
     }
    ]
@@ -2915,19 +2915,19 @@
    "text": "Auto ti vypoví službu uprostřed hlubokých lesů bez signálu. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odtlačím ho na kraj."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jdu pěšky pro pomoc."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Přenocuji v autě v klidu."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Otevřu kapotu a opravuji."
     }
    ]
@@ -2937,19 +2937,19 @@
    "text": "V zimě ti zamrzlo vodovodní potrubí. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Rozmrazím ho jakýmkoliv způsobem"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě uzavřu hlavní uzávěr."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zatopím a počkám"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zaizoluji trubky před mrazem."
     }
    ]
@@ -2959,19 +2959,19 @@
    "text": "Během tůry se k vám přidá zatoulaný pes. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zajistím mu bezpečí"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zjistím, kam patří"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zachovám klid"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Seženu mu potravu"
     }
    ]
@@ -2981,19 +2981,19 @@
    "text": "Potřebuješ narychlo porazit a zpracovat vzrostlý strom. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sám odnosím těžké kmeny."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě startuji pilu a kácím."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Budu řezat až do noci."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zajistím bezpečný směr pádu."
     }
    ]
@@ -3003,19 +3003,19 @@
    "text": "Vidíš, jak na ulici skupina lidí slovně napadá slabšího. Jak zareaguješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Fyzicky se mezi ně postavím."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě rázně zasáhnu."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vztáhnu pozornost na sebe."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zavolám někoho na pomoc."
     }
    ]
@@ -3025,19 +3025,19 @@
    "text": "Když se ti nechce, ale slíbil jsi to, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zaberu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zorganizuju se"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Překousnu lenost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Splním slib"
     }
    ]
@@ -3047,19 +3047,19 @@
    "text": "Udělal jsi v práci nebo v životě chybu, která stála peníze. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přijmu plnou váhu následků."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě se k chybě přiznám."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nesložím se z finanční ztráty."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Škodu ze svého zaplatím."
     }
    ]
@@ -3069,19 +3069,19 @@
    "text": "Když se ozve „kdo jde první?“, co ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jdu bez váhání"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnu pořadí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Schytám první náraz"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Prošlápnu bezpečnou cestu"
     }
    ]
@@ -3091,19 +3091,19 @@
    "text": "Kdyby měl Radegast rozdat role v družině, čím bys byl?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Motor party"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Taktik výpravy"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nezlomný držák"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Strážce pravidel"
     }
    ]
@@ -3113,19 +3113,19 @@
    "text": "Co má podle tebe mít poctivé pivo?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Výrazný říz"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vyváženou chuť"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Hořký dozvuk"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poctivý základ"
     }
    ]
@@ -3135,19 +3135,19 @@
    "text": "Při vaření na plynovém vařiči vyšlehnou plameny mimo. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přikryji oheň těžkou dekou."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě zavírám ventil plynu."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepropadnu panice, jednám rozvážně."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Použiji připravený hasicí přístroj."
     }
    ]
@@ -3157,19 +3157,19 @@
    "text": "Kdyby sis měl vybrat talisman, co bereš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vlčí tesák"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Starý kompas"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Kus skály"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Starý železný klíč"
     }
    ]
@@ -3179,19 +3179,19 @@
    "text": "V kvízu neznáš odpověď. Jak tipuješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odvážně"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Logicky"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Bez stresu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vylučovací metodou"
     }
    ]
@@ -3201,19 +3201,19 @@
    "text": "Ztratí se tvůj milovaný pes. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Utíkám ho bezmyšlenkovitě hledat"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě tisknu letáky."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nepřestanu hledat ani v noci."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nahlásím ztrátu útulkům."
     }
    ]
@@ -3223,19 +3223,19 @@
    "text": "Co je větší frajeřina než velké řeči?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odrazit se ode dna"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správné rozhodnutí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nevzdat se"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Přiznat chybu"
     }
    ]
@@ -3245,19 +3245,19 @@
    "text": "Kdyby měl tvůj charakter zvuk, jaký by byl?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Úder kladiva"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hvizd větru"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Praskání ohně"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Šum lesa"
     }
    ]
@@ -3267,19 +3267,19 @@
    "text": "U stolu se hraje hospodský kvíz. Jaká je tvoje role?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Mám poslední slovo"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Píšu odpovědi"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Povzbuzuji tým"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Kontroluji odpovědi i body"
     }
    ]
@@ -3289,19 +3289,19 @@
    "text": "Vidíš na silnici před sebou čerstvou dopravní nehodu. Jak zareaguješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vytáhnu lidi z auta."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě zastavím a pomáhám."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zachovám chladnou hlavu."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Označím místo nehody trojúhelníkem."
     }
    ]
@@ -3311,19 +3311,19 @@
    "text": "Co je podle tebe nejhorší chlapská póza?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Slabost"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Namyšlenost"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Sebelítost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nezodpovědnost"
     }
    ]
@@ -3333,19 +3333,19 @@
    "text": "Jaký Radegast tě nejvíce charakterizuje?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Radegast 12"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Radegast Ratar"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Radegast Rezist"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Radegast 10"
     }
    ]
@@ -3355,19 +3355,19 @@
    "text": "Radegast ti nabídne jednu schopnost. Kterou bereš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu skály"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Moudrost hor"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Kůži z ocele"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pevný charakter"
     }
    ]
@@ -3377,19 +3377,19 @@
    "text": "Co tě nejvíc uklidní v chaosu?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jiná aktivita"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasný plán"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vnitřní klid"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Bezpečí"
     }
    ]
@@ -3399,19 +3399,19 @@
    "text": "Tvůj blízký kamarád prochází těžkou životní krizí. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Podržím ho psychicky i fyzicky."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Okamžitě za ním jedu."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Budu mu dlouhodobou oporou."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nabídnu mu odbornou pomoc."
     }
    ]
@@ -3421,19 +3421,19 @@
    "text": "Kdyby byla tvoje povaha nástroj, co je to?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sekera"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Kompas"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Štít"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Lano"
     }
    ]
@@ -3443,19 +3443,19 @@
    "text": "Co je horší než prohrát?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ani to nezkusit"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Udělat hloupou volbu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vzdát to brzo"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Podvádět"
     }
    ]
@@ -3465,19 +3465,19 @@
    "text": "Co má podle tebe chlap umět říct?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Kdykoliv ti pomůžu."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mýlil jsem se."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "To zvládnu."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Beru to na sebe."
     }
    ]
@@ -3487,19 +3487,19 @@
    "text": "Vyhodili tě z práce. Jak tuto složitost vyřešíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Začnu hned podnikat."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zvažuju alternativní zdroj příjmu."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím se svými zásobami."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Rozešlu mnoho životopisů."
     }
    ]
@@ -3509,19 +3509,19 @@
    "text": "Jaký test by nejlépe prověřil tvé kvality?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zvednout břemeno"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vyřešit rébus"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržet nepohodu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Postarat se o druhého"
     }
    ]
@@ -3531,19 +3531,19 @@
    "text": "U piva padne otázka na čest. Co je tvoje odpověď?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Stát pevně"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mluvit jasně"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustát tlak"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Jednat férově"
     }
    ]
@@ -3553,19 +3553,19 @@
    "text": "Který typ vítězství má pro tebe největší cenu?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vydřené"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Chytré"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ubojované"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Férové"
     }
    ]
@@ -3575,19 +3575,19 @@
    "text": "Co je pravý opak chlapa?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Slabý tah"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Horká hlava"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Měkká vůle"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Prázdné sliby"
     }
    ]
@@ -3597,19 +3597,19 @@
    "text": "Co by sis nenechal vzít?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu zabrat"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vlastní úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Tvrdou vůli"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Důvěru ostatních"
     }
    ]
@@ -3619,19 +3619,19 @@
    "text": "Kdyby byl Radegast životní rozhodčí, co by u tebe ocenil?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tah na bránu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správný úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž bez fňukání"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Čestné jednání"
     }
    ]
@@ -3641,19 +3641,19 @@
    "text": "Jak bys strávil volný víkend?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sportovní aktivity"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Posezení s přáteli"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Turistika"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Úklid domácnosti"
     }
    ]
@@ -3663,19 +3663,19 @@
    "text": "Který přírodní živel ti sedí?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Oheň"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Vzduch"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Země"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Voda"
     }
    ]
@@ -3685,19 +3685,19 @@
    "text": "Co je lepší než být nejhlasitější u stolu?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Být užitečný"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mít pravdu ve správný čas"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vědět, kdy mlčet"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Být férový"
     }
    ]
@@ -3707,19 +3707,19 @@
    "text": "Koupil sis sousední zanedbaný pozemek za skvělou cenu. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vyčistím pozemek"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zavolám řemeslníky"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pustím se do stavby vlasními silami"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Připravím plán na stavbu."
     }
    ]
@@ -3729,19 +3729,19 @@
    "text": "Když se někdo neumí omluvit, co ti na tom vadí nejvíc?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Slabost postoje"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Nedostatek rozumu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Křehké ego"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nečestnost"
     }
    ]
@@ -3751,19 +3751,19 @@
    "text": "Dostal jsi nabídku vést náročný projekt, který nikdo jiný nechce. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Vezmu to na sebe."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Příjmám ýzvu bez váhání."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím veškerý tlak okolí."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Sestavím nejdříve krizový plán."
     }
    ]
@@ -3773,19 +3773,19 @@
    "text": "Co má mít správná parta?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tahouna"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Hlavu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Držáka"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ochránce"
     }
    ]
@@ -3795,19 +3795,19 @@
    "text": "Když vidíš blízkého člověka, který si nevěří, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Povzbudím ho"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Pomůžu najít řešení"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Podělím se o vlastní neúspěchy"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nabídnu pomocnou ruku"
     }
    ]
@@ -3817,19 +3817,19 @@
    "text": "V noci tě vzbudí podivný praskavý zvuk ze zahrady nebo dvora. Jak zareaguješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jdu to osobně zkontrolovat."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Beru baterku a vyrážím."
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Strach mě vůbec neochromí."
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nejprve zajistím bezpečí rodiny."
     }
    ]
@@ -3839,19 +3839,19 @@
    "text": "Jaká je tvá slabá stránka?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jsem vznětlivý"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přehnaně analyzuji"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Jsem neempatický"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Vše musí být po mém"
     }
    ]
@@ -3861,19 +3861,19 @@
    "text": "Když se řekne „hořkost“, co v tom slyšíš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu chuti"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rovnováhu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zkoušku výdrže"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poctivost"
     }
    ]
@@ -3883,19 +3883,19 @@
    "text": "Jaká je tvá role v týmu?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odtahám to nejtěžší"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jsem leader skupiny"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Uklidňuji tým"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Jsem dotahovač"
     }
    ]
@@ -3905,19 +3905,19 @@
    "text": "Co pro tebe symbolizuje vlk?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sílu smečky"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Instinkt"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Výdrž v divočině"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Ochranu území"
     }
    ]
@@ -3927,19 +3927,19 @@
    "text": "Když se učíš něco nového a nejde ti to, co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zatnu se a nepřestanu."
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Změním postup"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržím i přes neúspěch"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Udělám realistický plán"
     }
    ]
@@ -3949,19 +3949,19 @@
    "text": "Jak by sis označil svůj půllitr?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Blesk"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Šipka"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Skála"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Mapa"
     }
    ]
@@ -3971,19 +3971,19 @@
    "text": "Vyhraješ maličkost, kterou chce i kamarád. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Nechám si ji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Dohodnu se s ním"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Odměním ho jinak"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Přenechám mu ji"
     }
    ]
@@ -3993,19 +3993,19 @@
    "text": "Když se ocitneš v novém kolektivu, jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Jsem přímý"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přirozeně konverzuji"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nejdřív pozoruji"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Přizpůsobím se"
     }
    ]
@@ -4015,19 +4015,19 @@
    "text": "Když ti někdo svěří svůj problém, co mu dáš jako první?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přijetí"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Jasnou radu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Klidnou přítomnost"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Budu naslouchat"
     }
    ]
@@ -4037,19 +4037,19 @@
    "text": "Pravda někdy bolí, ale může i pomoci. Co je pro její vyřčení klíčové?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odvaha ji říct"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správná forma"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustát reakci"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zbytečně neublížit"
     }
    ]
@@ -4059,19 +4059,19 @@
    "text": "Když uděláš chybu, co je pro tebe nejtěžší?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ústát stud"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přiznat si ji"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zkusit to znovu"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Zklámání ostatních"
     }
    ]
@@ -4081,19 +4081,19 @@
    "text": "Máš možnost pomoct, ale nikdo tě o to nepožádal. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přiložím ruku i tak"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zeptám se, co je třeba"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Počkám, zda budu potřeba"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Nabídnu pomoc"
     }
    ]
@@ -4103,19 +4103,19 @@
    "text": "Někdo ti řekne nepříjemnou pravdu. Co s tím?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Přijmu ji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přemýšlím o ní"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím ji"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Poděkuju za upřímnost"
     }
    ]
@@ -4125,19 +4125,19 @@
    "text": "Zjistíš, že ti banka omylem poslala na účet peníze navíc. Jak zareaguješ?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Využiji peníze co nejrychleji"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Zainvestuji je"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Odolám pokušení je utratit"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Peníze hned pošlu zpět"
     }
    ]
@@ -4147,19 +4147,19 @@
    "text": "Tvůj plán nevyšel. Jak se zachová chlap?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zkusí to znovu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Přehodnotí to"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nezlomí se"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Přizná chybu"
     }
    ]
@@ -4169,19 +4169,19 @@
    "text": "Když někdo vyhraje nad tebou, jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Chci odvetu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Uznám kvalitu soupeře"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Ustojím porážku se ctí"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pogratuluji"
     }
    ]
@@ -4191,19 +4191,19 @@
    "text": "Když vidiš, že někdo jiný dělá práci neefektivně. Co uděláš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Ukážu mu jak na to"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Navrhnu efektní postup"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nechám ho dokončit po svém"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Pomůžu k dokončení úkolu"
     }
    ]
@@ -4213,19 +4213,19 @@
    "text": "Když máš poslední možnost něco změnit, co zabere?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Síla činu"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Správná volba"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Pevné nervy"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Čistý úmysl"
     }
    ]
@@ -4235,19 +4235,19 @@
    "text": "Když vidíš, že práce není ještě hotová, ale už jsi unavený. Jak se zachováš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Dotlačím to do konce"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Upravím plán"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Dám si oddych"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Požádám o pomoc"
     }
    ]
@@ -4257,19 +4257,19 @@
    "text": "Na konci náročného treku narazíte na průzračný horský potok. Co podnikneš?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Odhážu z koryta balvany"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Dám si odpočinek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Skočím do ledové vody"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Doplním zásoby pitné vody"
     }
    ]
@@ -4279,19 +4279,19 @@
    "text": "Když máš jít příkladem, co musí být vidět?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Že makám"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Že přemýšlím"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Že vydržím"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Že držím slovo"
     }
    ]
@@ -4301,19 +4301,19 @@
    "text": "Co je u správného chlapa nejméně nahraditelné?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tah"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Úsudek"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vůle"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Charakter"
     }
    ]
@@ -4323,19 +4323,19 @@
    "text": "Dostaneš do ruky sekeru, mapu, plášť a lékárničku. Co bereš první?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Sekeru"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mapu"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Plášť"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Lékárničku"
     }
    ]
@@ -4345,19 +4345,19 @@
    "text": "V týmu chybí jeden typ chlapa. Kým budeš ty?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Tahounem"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Mozkem akce"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Držákem"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Garantem dobrého výsledku"
     }
    ]
@@ -4367,19 +4367,19 @@
    "text": "Pravý RealMan podle tebe nikdy…",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Necouvá před prací"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Nerozhoduje z ega"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Nefňuká při tlaku"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Neutíká od následků"
     }
    ]
@@ -4389,19 +4389,19 @@
    "text": "Co by o tobě mělo platit i v den, kdy se nedaří?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Stejně makám dál"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Udelám si čas na rozhodnutí"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Zítra bude líp"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Je na mě spoleh"
     }
    ]
@@ -4411,19 +4411,19 @@
    "text": "Co je nejtěžší forma chlapské disciplíny?",
    "options": [
     {
-     "trait": "sila",
+     "trait": "strength",
      "text": "Zvednout se a makat"
     },
     {
-     "trait": "rozhodnost",
+     "trait": "decisiveness",
      "text": "Rozhodnout bez ega"
     },
     {
-     "trait": "odolnost",
+     "trait": "resilience",
      "text": "Vydržet bez stížností"
     },
     {
-     "trait": "zodpovednost",
+     "trait": "responsibility",
      "text": "Udělat, co je správné"
     }
    ]

@@ -241,7 +241,7 @@
 
   /* ---------- Dev shortcut: ?result=<handle> jumps straight to a
      screen (skips ID entry) so it's quick to edit/preview:
-       ?result=sila | rozhodnost | odolnost | zodpovednost -> that result
+       ?result=strength | decisiveness | resilience | responsibility -> that result
        ?result=prijato -> "ID already used" (denied) screen
        ?result=quiz -> starts a real quiz run (timer, options, etc.)
        ?result=quiz-paused -> same, but the countdown never starts -

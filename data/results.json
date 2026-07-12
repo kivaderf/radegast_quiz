@@ -1,24 +1,24 @@
 {
-  "sila": {
-    "trait": "sila",
+  "strength": {
+    "trait": "strength",
     "name": "Síla",
     "title": "Jsi Silný"
   },
 
-  "rozhodnost": {
-    "trait": "rozhodnost",
+  "decisiveness": {
+    "trait": "decisiveness",
     "name": "Rozhodnost",
     "title": "Jsi Rozhodný"
   },
 
-  "odolnost": {
-    "trait": "odolnost",
+  "resilience": {
+    "trait": "resilience",
     "name": "Odolnost",
     "title": "Jsi odhodlaný"
   },
 
-  "zodpovednost": {
-    "trait": "zodpovednost",
+  "responsibility": {
+    "trait": "responsibility",
     "name": "Zodpovědnost",
     "title": "Jsi Spolehlivý"
   }

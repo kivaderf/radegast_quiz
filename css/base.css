@@ -32,10 +32,10 @@
   --danger: #d24b32;
 
   /* --- Colors for the four traits (result + roulette) --- */
-  --t-sila: #E22A00;
-  --t-rozhodnost: #F7B705;
-  --t-odolnost: #199A6D;
-  --t-zodpovednost: #247DD1;
+  --t-strength: #E22A00;
+  --t-decisiveness: #F7B705;
+  --t-resilience: #199A6D;
+  --t-responsibility: #247DD1;
 
   /* --- Background image (swap the files in /assets) ---
      Default matches the ID screen, which is active on first load;
