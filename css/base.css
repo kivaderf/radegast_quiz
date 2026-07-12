@@ -46,7 +46,7 @@
   --font-display: "Fishmonger CB", "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
   --font-body: "Fishmonger CB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  --radius: 14px;
+  --radius: 0;
   --header-h: 220px;
 }
 
