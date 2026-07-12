@@ -81,10 +81,21 @@
     setTimeout(advance, 550);
   }
 
-  // Time expired -> roulette picks for the user
+  // Time expired -> accept an already-chosen answer, otherwise roulette picks for the user
   function onExpire() {
     if (state.answered) return;
     state.answered = true;
+
+    var selected = state.current.getSelected();
+    if (selected) {
+      console.log("[Kvíz] Čas vypršel, ale odpověď byla vybraná - přijímám ji:", selected.opt);
+      UI.timer.stop();
+      state.current.lock(selected.el);
+      record(selected.opt);
+      setTimeout(advance, 550);
+      return;
+    }
+
     state.current.showAutoNote();
     UI.roulette(state.current.optionEls).then(function (idx) {
       var opt = state.current.options[idx];

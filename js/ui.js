@@ -115,6 +115,10 @@
       return {
         optionEls: optionEls,
         options: question.options,
+        getSelected: function () {
+          if (selectedIdx === -1) return null;
+          return { opt: question.options[selectedIdx], el: optionEls[selectedIdx] };
+        },
         lock: function (pickedEl) {
           wrap.classList.add("locked");
           submitBtn.disabled = true;
