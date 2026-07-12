@@ -3,6 +3,14 @@
    Change colors and fonts here. Screen layout lives in screens.css.
    ============================================================ */
 
+@font-face {
+  font-family: "Fishmonger CB";
+  src: url("../assets/fonts/Fishmonger CB Plain.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* --- Colors (adjust to match the brand) --- */
   --ink: #14110d;
@@ -26,9 +34,9 @@
      #app.bg-start / #app.bg-rest below override it per screen. */
   --bg-image: url("../assets/background_start.jpg");
 
-  /* --- Fonts (to use your own, add @font-face and change here) --- */
-  --font-display: "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* --- Fonts (@font-face above loads the custom one from /assets/fonts) --- */
+  --font-display: "Fishmonger CB", "Arial Black", "Helvetica Neue", Impact, system-ui, sans-serif;
+  --font-body: "Fishmonger CB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --radius: 14px;
   --header-h: clamp(64px, 12vh, 120px);
