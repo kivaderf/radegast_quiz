@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(10px, 2.2vh, 20px);
+  margin-bottom: 80px;
 }
 #screen-id .prompt {
   font-size: 60px;
@@ -24,7 +24,6 @@
   font-size: 24px;
   color: var(--bone);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   margin: 0;
 }
 .id-display {
@@ -42,6 +41,7 @@
   min-width: 0;
   outline: none;
   caret-color: var(--ink);
+  margin-bottom: 30px;
 }
 .id-display::placeholder {
   color: rgba(20, 17, 13, 0.4);

@@ -39,7 +39,7 @@
   --font-body: "Fishmonger CB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --radius: 14px;
-  --header-h: clamp(64px, 12vh, 120px);
+  --header-h: 220px;
 }
 
 * {
@@ -67,8 +67,6 @@ body {
 #app {
   position: fixed;
   inset: 0;
-  display: flex;
-  flex-direction: column;
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
@@ -81,21 +79,27 @@ body {
   --bg-image: url("../assets/background_rest.jpg");
 }
 
-/* Logo at the top, centered – on all screens */
+/* Logo overlay, positioned independently of .app-main so resizing it
+   never shifts where screen content gets vertically centered. */
 .app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--header-h);
-  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: env(safe-area-inset-top, 0);
+  z-index: 2;
 }
 
-/* Area below the header where each screen is rendered */
+/* Full-height area where each screen is rendered, independent of the header */
 .app-main {
-  flex: 1 1 auto;
-  position: relative;
+  position: absolute;
+  inset: 0;
   min-height: 0;
+  z-index: 1;
 }
 
 /* Each screen covers the whole area; toggled via .is-active */
