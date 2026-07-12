@@ -89,28 +89,26 @@
   gap: clamp(6px, 1.4vh, 12px);
 }
 .q-counter {
+  font-family: "Fishmonger MR", var(--font-body);
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 11px;
-  color: var(--amber);
+  font-size: 16px;
+  color: var(--bone);
 }
 .progress-dots {
+  width: 200px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 .progress-dots span {
   position: relative;
   overflow: hidden;
   flex: 1 1 0;
   max-width: clamp(60px, 11vw, 120px);
-  height: clamp(30px, 6vh, 52px);
-  border: 3px solid var(--bone);
+  height: 15px;
+  border: 2px solid var(--bone);
   background: transparent;
-  margin-left: -3px;
-}
-.progress-dots span:first-child {
-  margin-left: 0;
+  margin-left: -2px;
 }
 .progress-dots span.done {
   background: var(--amber);
