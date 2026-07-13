@@ -143,12 +143,12 @@
 }
 .option {
   position: relative;
-  text-align: left;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  background-color: #004736;
   border: 1px solid var(--line);
-  background: var(--panel);
   color: var(--bone);
-  border-radius: var(--radius);
-  padding: clamp(14px, 2.6vh, 22px) clamp(16px, 2.4vw, 26px);
+  padding: 0 24px 0 20px;
   font-size: 21px;
   line-height: 1.2;
   cursor: pointer;
@@ -164,13 +164,13 @@
   flex: 0 0 auto;
   width: clamp(30px, 5vh, 42px);
   height: clamp(30px, 5vh, 42px);
-  border-radius: 0;
   display: grid;
-  place-items: center;
+  place-items: start;
   font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--ink);
-  background: var(--amber);
+  font-size: 45px;
+}
+.option .label {
+  padding-top: 10px;
 }
 .option:active {
   transform: scale(0.985);
