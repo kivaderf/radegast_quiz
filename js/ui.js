@@ -72,7 +72,20 @@
         dots.appendChild(s);
       }
 
-      $("#qText").textContent = question.text;
+      var qText = $("#qText");
+      qText.style.fontSize = "";
+      qText.textContent = question.text;
+      // Shrink the font until the full question fits within the height cap
+      // instead of truncating it (CSS alone can't measure text to fit it).
+      var maxHeight = 195;
+      var minFontSize = 24;
+      var fontSize = parseFloat(getComputedStyle(qText).fontSize);
+      while (qText.scrollHeight > maxHeight && fontSize > minFontSize) {
+        fontSize -= 2;
+        qText.style.fontSize = fontSize + "px";
+      }
+      console.log("[Kvíz] Velikost textu otázky:", fontSize + "px", "(výška " + qText.scrollHeight + "px)");
+
       $("#autoNote").className = "auto-note";
       $("#autoNote").textContent = "";
 
