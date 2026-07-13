@@ -91,11 +91,11 @@
 .q-counter {
   font-family: "Fishmonger MR", var(--font-body);
   text-align: center;
-  font-size: 16px;
+  font-size: 13px;
   color: var(--bone);
 }
 .progress-dots {
-  width: 200px;
+  width: 185px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -105,7 +105,7 @@
   overflow: hidden;
   flex: 1 1 0;
   max-width: clamp(60px, 11vw, 120px);
-  height: 15px;
+  height: 13px;
   border: 2px solid var(--bone);
   background: transparent;
   margin-left: -2px;
@@ -127,7 +127,7 @@
 
 .q-text {
   width: 100%;
-  max-width: 1000px;
+  max-width: 700px;
   text-align: center;
   font-size: 54px;
   font-weight: normal;
@@ -136,7 +136,7 @@
 
 .options {
   width: 100%;
-  max-width: 1000px;
+  max-width: 700px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(10px, 2vh, 18px);
@@ -202,7 +202,7 @@
 }
 
 .q-submit {
-  margin-top: clamp(6px, 1.4vh, 12px);
+  margin-top: 40px;
 }
 
 /* small label shown for the automatic pick after time runs out */
@@ -234,7 +234,7 @@
 #screen-denied,
 #screen-question {
   justify-content: flex-start;
-  padding-top: 190px;
+  padding-top: 155px;
 }
 .result-wrap {
   text-align: center;
