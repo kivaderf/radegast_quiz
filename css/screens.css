@@ -136,7 +136,7 @@
 
 .options {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(10px, 2vh, 18px);
@@ -155,13 +155,14 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  min-height: clamp(64px, 12vh, 104px);
+  min-height: 70px;
   transition: transform 0.08s ease, border-color 0.12s ease,
     background 0.12s ease;
   backdrop-filter: blur(2px);
 }
 .option .tag {
   flex: 0 0 auto;
+  margin-top: -3px;
   width: clamp(30px, 5vh, 42px);
   height: clamp(30px, 5vh, 42px);
   display: grid;
@@ -170,14 +171,15 @@
   font-size: 45px;
 }
 .option .label {
-  padding-top: 10px;
+  padding-top: 7px;
+  margin: 0 auto;
 }
 .option:active {
   transform: scale(0.985);
 }
 .option.is-selected {
   border-color: var(--amber);
-  background: rgba(227, 166, 60, 0.2);
+  background: rgba(227, 166, 60, 0.4);
 }
 .option.is-flash {
   border-color: var(--bone);
