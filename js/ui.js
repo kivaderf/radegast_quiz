@@ -8,6 +8,15 @@
   var Cfg = window.Config;
   var LETTERS = ["A", "B", "C", "D"];
 
+  // Trait key -> audio file in assets/audio/ (filenames are Czech, trait keys are English)
+  var TRAIT_AUDIO = {
+    strength: "silny",
+    decisiveness: "rozhodny",
+    resilience: "odolny",
+    responsibility: "zodpovedny"
+  };
+  var resultAudio = null;
+
   function $(sel) {
     return document.querySelector(sel);
   }
@@ -31,6 +40,9 @@
       Object.keys(screens).forEach(function (k) {
         screens[k].classList.toggle("is-active", k === name);
       });
+      if (name !== "result" && resultAudio) {
+        resultAudio.pause();
+      }
       var app = $("#app");
       app.classList.toggle("bg-start", name === "id");
       app.classList.toggle("bg-rest", name !== "id");
@@ -226,6 +238,15 @@
       $("#resultBadge").src = "assets/trait_" + evalObj.trait + ".png";
       $("#resultBadge").alt = r.title || r.name || "";
       $("#resultType").textContent = r.title || r.name || "";
+
+      if (resultAudio) resultAudio.pause();
+      var audioFile = TRAIT_AUDIO[evalObj.trait];
+      if (audioFile) {
+        resultAudio = new Audio("assets/audio/" + audioFile + ".mp3");
+        resultAudio.play().catch(function (err) {
+          console.log("[Kvíz] Přehrání zvuku výsledku selhalo:", err);
+        });
+      }
     },
 
     /* ---------- Denied start -------------------------------- */
