@@ -89,11 +89,15 @@
       qText.textContent = question.text;
       // Shrink the font until the full question fits within the height cap
       // instead of truncating it (CSS alone can't measure text to fit it).
-      var maxHeight = 195;
-      var minFontSize = 24;
+      // Scaled off the current root font-size (1rem) so this stays
+      // proportional on any iPad size, same as the rem-based CSS.
+      var rootPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      var maxHeight = rootPx * (195 / 16);
+      var minFontSize = rootPx * (24 / 16);
+      var step = rootPx * (2 / 16);
       var fontSize = parseFloat(getComputedStyle(qText).fontSize);
       while (qText.scrollHeight > maxHeight && fontSize > minFontSize) {
-        fontSize -= 2;
+        fontSize -= step;
         qText.style.fontSize = fontSize + "px";
       }
       console.log("[Kvíz] Velikost textu otázky:", fontSize + "px", "(výška " + qText.scrollHeight + "px)");

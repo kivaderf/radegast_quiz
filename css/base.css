@@ -47,11 +47,21 @@
   --font-body: "Fishmonger CB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --radius: 0;
-  --header-h: 170px;
+  --header-h: 10.625rem;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Responsive scale: every size in these stylesheets is in rem so the whole
+   layout scales together as one unit. 1rem = 16px on an 11" iPad
+   (820px-tall viewport in landscape) and grows proportionally on bigger
+   iPads (e.g. ~20px on a 13" iPad's 1024px-tall viewport) - so the exact
+   layout/proportions we tuned stay the same on any iPad size.
+   clamp() keeps it sane outside that range instead of scaling forever. */
+html {
+  font-size: clamp(14px, 1.9512vh, 20px);
 }
 
 html,
@@ -102,10 +112,10 @@ body {
   z-index: 2;
 }
 #app.bg-start .app-header img {
-  width: 362px;
+  width: 22.625rem;
 }
 #app.bg-rest .app-header img {
-  width: 340px;
+  width: 21.25rem;
 }
 
 /* Full-height area where each screen is rendered, independent of the header */
@@ -134,7 +144,7 @@ body {
 @keyframes screen-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(0.5rem);
   }
   to {
     opacity: 1;
@@ -145,7 +155,7 @@ body {
 /* Shared elements ------------------------------------------------ */
 .eyebrow {
   font-family: "Fishmonger MR", var(--font-body);
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--amber);
 }
 .display {
@@ -164,21 +174,21 @@ body {
   color: var(--bone);
   background: var(--amber);
   border-radius: var(--radius);
-  padding: 15px 21px 9px 21px;
-  font-size: 24px;
+  padding: 0.9375rem 1.3125rem 0.5625rem 1.3125rem;
+  font-size: 1.5rem;
   transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
 }
 .btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 var(--amber-deep), 0 6px 14px rgba(0, 0, 0, 0.4);
+  transform: translateY(0.25rem);
+  box-shadow: 0 0.125rem 0 var(--amber-deep), 0 0.375rem 0.875rem rgba(0, 0, 0, 0.4);
 }
 .btn:disabled {
   opacity: 0.4;
   filter: grayscale(0.4);
 }
 .btn:focus-visible {
-  outline: 3px solid var(--bone);
-  outline-offset: 3px;
+  outline: 0.1875rem solid var(--bone);
+  outline-offset: 0.1875rem;
 }
 
 /* Prompt to rotate to landscape (in case the PWA didn't lock orientation) */
@@ -190,14 +200,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 1rem;
   background: var(--ink);
   color: var(--bone);
   text-align: center;
-  padding: 32px;
+  padding: 2rem;
 }
 .rotate-hint .glyph {
-  font-size: 54px;
+  font-size: 3.375rem;
   animation: rotate-nudge 1.8s ease-in-out infinite;
 }
 @keyframes rotate-nudge {
