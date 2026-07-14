@@ -47,40 +47,49 @@ Na obrazovce se pořadí odpovědí **náhodně zamíchá**, aby daný typ nebyl
 na stejné pozici. Klíče `strength/decisiveness/resilience/responsibility` neměň —
 jsou navázané na vyhodnocení a na texty ve `results.json`.
 
-## Napojení na API (až bude hotové)
+## Napojení na API
 
-Verze 1 běží **bez serveru**: kontrola ID projde a výsledky se ukládají do
-fronty v prohlížeči. Až budeš mít backend, v `js/config.js` nastav:
+Backend je nastavený v `js/config.js`:
 
 ```js
-API_BASE: "https://tvoje-api.cz",
-API_HEADERS: { }, // volitelně např. Authorization
+API_BASE: "https://fwtd.site/api",
+API_HEADERS: { }, // zatím žádné auth není potřeba
 ```
 
-Aplikace pak volá dva endpointy:
+Pokud `API_BASE` necháš `null`, aplikace běží bez serveru: kontrola ID
+projde (fail-open) a výsledky se jen hromadí ve frontě v prohlížeči.
 
-**1) Kontrola ID — `POST {API_BASE}/participants/check`**
+Aplikace volá dva endpointy — oba jsou **GET s parametry v URL**, ne
+POST/JSON:
+
+**1) Kontrola ID — `GET {API_BASE}/check_user.php?hash=<id>`**
 ```json
-// požadavek
-{ "id": "427" }
-// odpověď
-{ "exists": true }   // true = tohle ID už test absolvovalo → zobrazí se zákaz
+{ "exists": true }   // true = tohle ID (hash) už test absolvovalo → zobrazí se zákaz
 ```
 
-**2) Uložení výsledku — `POST {API_BASE}/participants/result`**
+**2) Uložení výsledku — `GET {API_BASE}/set_kviz.php?hash=<id>&kviz=<TYP>`**
+
+`kviz` je vítězný typ jako velkými písmeny bez diakritiky (viz mapování
+v `js/api.js`, `KVIZ_PARAM`):
+
+| Náš typ (interně) | Hodnota `kviz` |
+| --- | --- |
+| `strength` | `SILNY` |
+| `decisiveness` | `ROZHODNY` |
+| `resilience` | `ODHODLANY` |
+| `responsibility` | `SPOLEHLIVY` |
+
+Odpověď:
 ```json
-{
-  "id": "427",
-  "type": "strength",
-  "traits": { "strength": 3, "decisiveness": 1, "resilience": 1, "responsibility": 0 },
-  "tie": false,
-  "answers": [ { "questionId": 12, "trait": "strength" }, "..." ],
-  "finishedAt": "2026-07-08T12:00:00.000Z"
-}
+{ "success": true, "value": "ODHODLANÝ" }
 ```
-Vrať `200`/`201` při uložení. **Server musí být idempotentní podle `id`** —
-pokud záznam existuje, vrať `409` (klient to bere jako „uloženo" a přestane
-posílat). Tím je zaručeno, že pro jedno ID nevznikne duplicita.
+`success: true` znamená uloženo → záznam se smaže z lokální fronty.
+`success: false` (nebo chyba sítě) → zůstává ve frontě a zkusí se znovu
+příště (při startu, po dokončení dalšího testu, při obnovení sítě).
+
+Podrobnosti o dalších polích záznamu (`traits`, `answers`, `tie`,
+`finishedAt`) — ty se aktuálně ukládají jen lokálně (`Store.getQueue()`
+v konzoli), server dostává jen `hash` + vítězný `kviz`.
 
 ### Chování offline (podle zadání)
 - **Kontrola ID** při nedostupném API **propustí** uživatele (fail-open).

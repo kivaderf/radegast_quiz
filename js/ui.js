@@ -17,6 +17,22 @@
   };
   var resultAudio = null;
 
+  // Denied-screen copy per reason (see Api.checkId in api.js for what sets each reason).
+  var DENIED_TEXTS = {
+    "not-found": {
+      headline1: "Chyba!",
+      headline2: "ID NEEXISTUJE",
+      body: "Toto ID jsme nenašli. Zkontroluj si prosím zadané číslo, nebo se zeptej hostesky."
+    },
+    already: {
+      headline1: "Pozor!",
+      headline2: "VÝZVA UŽ BYLA PŘIJATA",
+      body:
+        "Ahoj, podle našich záznamů jsi už dnešní Radegastův kvíz absolvoval.<br><br>" +
+        "Tvůj charakter je již zapsán. Běž ukázat svou sílu na Buchar nebo prověř postřeh na Vlkovi a sbírej další body do celonárodního žebříčku."
+    }
+  };
+
   function $(sel) {
     return document.querySelector(sel);
   }
@@ -254,9 +270,11 @@
     },
 
     /* ---------- Denied start -------------------------------- */
-    renderDenied: function () {
-      $("#deniedText").innerHTML =
-        "Ahoj (Petr), podle našich záznamů jsi už dnešní Radegastův kvíz absolvoval.<br><br>Tvůj charakter je již zapsán. Běž ukázat svou sílu na Buchar nebo prověř postřeh na Vlkovi a sbírej další body do celonárodního žebříčku.";
+    renderDenied: function (reason) {
+      var t = DENIED_TEXTS[reason] || DENIED_TEXTS.already;
+      $("#deniedHeadline1").textContent = t.headline1;
+      $("#deniedHeadline2").textContent = t.headline2;
+      $("#deniedText").innerHTML = t.body;
     },
 
     /* ---------- Shared: result + denied auto-return countdown -- */

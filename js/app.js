@@ -11,7 +11,7 @@
   var Quiz = window.Quiz;
   var Store = window.Store;
 
-  var MAX_ID_LEN = 12; // IDs vary in length – cap to avoid breaking the UI
+  var ID_LEN = 6; // ID is always exactly 6 digits
 
   var state = {
     idValue: "",
@@ -29,7 +29,7 @@
   /* ---------- ID screen ---------------------------------- */
   function onIdChange(digits) {
     state.idValue = digits;
-    document.getElementById("startBtn").disabled = !digits;
+    document.getElementById("startBtn").disabled = digits.length !== ID_LEN;
   }
 
   function onStart() {
@@ -42,7 +42,7 @@
       if (res.allowed) {
         beginTest();
       } else {
-        showDenied();
+        showDenied(res.reason);
       }
     });
   }
@@ -170,9 +170,9 @@
   }
 
   /* ---------- Denied start -------------------------------- */
-  function showDenied() {
-    console.log("[Kvíz] Start zamítnut pro ID:", state.idValue);
-    UI.renderDenied();
+  function showDenied(reason) {
+    console.log("[Kvíz] Start zamítnut pro ID:", state.idValue, "- důvod:", reason);
+    UI.renderDenied(reason);
     UI.showScreen("denied");
     var secs = Math.round(Cfg.DENIED_RESET_MS / 1000);
     UI.setCountdownText(secs);
@@ -255,6 +255,7 @@
      screen (skips ID entry) so it's quick to edit/preview:
        ?result=strength | decisiveness | resilience | responsibility -> that result
        ?result=prijato -> "ID already used" (denied) screen
+       ?result=chyba -> "ID not found" (denied) screen
        ?result=quiz -> starts a real quiz run (timer, options, etc.)
        ?result=quiz-paused -> same, but the countdown never starts -
          only the submit button advances questions
@@ -265,9 +266,10 @@
     var handle = new URLSearchParams(location.search).get("result");
     if (!handle) return false;
 
-    if (handle === "prijato") {
-      console.log("[Kvíz] Náhled obrazovky 'ID už bylo použito' přes URL (?result=prijato)");
-      UI.renderDenied();
+    if (handle === "prijato" || handle === "chyba") {
+      var reason = handle === "chyba" ? "not-found" : "already";
+      console.log("[Kvíz] Náhled obrazovky zamítnutí přes URL (?result=" + handle + "), důvod:", reason);
+      UI.renderDenied(reason);
       UI.setCountdownText(Math.round(Cfg.DENIED_RESET_MS / 1000));
       UI.showScreen("denied");
       return true;
@@ -306,7 +308,7 @@
   /* ---------- Start ----------------------------------------- */
   function init() {
     UI.init();
-    UI.initIdInput(MAX_ID_LEN, onIdChange);
+    UI.initIdInput(ID_LEN, onIdChange);
     UI.setIdDisplay("");
     document.getElementById("startBtn").addEventListener("click", onStart);
     hardenKiosk();

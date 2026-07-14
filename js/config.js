@@ -6,20 +6,20 @@
   "use strict";
 
   window.Config = {
-    /* ---- API (v1: no API) --------------------------------
-       Once you have a backend, set API_BASE to its address, e.g.:
-         API_BASE: "https://api.yourdomain.com"
-       While it's null, the app runs locally: the ID check passes
-       (fail-open) and results are queued in the browser.
+    /* ---- API ------------------------------------------------------
+       Both endpoints are GET requests with query params (see api.js
+       for exactly how they're called and how the response is read).
+       While API_BASE is null, the app runs locally: the ID check
+       passes (fail-open) and results are queued in the browser.
     */
-    API_BASE: null,
+    API_BASE: "https://fwtd.site/api",
     ENDPOINTS: {
-      // POST {API_BASE}{check}  body: { id }         -> { exists: boolean }
-      check: "/participants/check",
-      // POST {API_BASE}{result} body: see api.js      -> 200/201 = saved
-      result: "/participants/result"
+      // GET {API_BASE}{check}?hash=<id>            -> { exists: boolean }
+      check: "/check_user.php",
+      // GET {API_BASE}{result}?hash=<id>&kviz=<X>  -> { success: boolean, value: string }
+      result: "/set_kviz.php"
     },
-    // Optional auth header (left empty for v1).
+    // Optional auth header (none needed yet).
     // Example: { "Authorization": "Bearer XXX" }
     API_HEADERS: {},
     API_TIMEOUT_MS: 6000, // after this we treat the API as unavailable -> fail-open

@@ -1,14 +1,22 @@
 /* ============================================================
    api.js — server communication + offline queue
-   V1: API_BASE is null, so nothing is sent. Results accumulate
-   locally and are sent automatically once you set the API and
-   it becomes available. One ID = one record (no duplicates).
+   Both endpoints are GET with query params, not POST/JSON. Results
+   accumulate locally and are sent automatically once the API is
+   reachable. One ID (hash) = one record (no duplicates).
    ============================================================ */
 (function () {
   "use strict";
 
   var Cfg = window.Config;
   var Store = window.Store;
+
+  // Our trait key -> the API's "kviz" value (its title word, upper-case, no diacritics).
+  var KVIZ_PARAM = {
+    strength: "SILNY",
+    decisiveness: "ROZHODNY",
+    resilience: "ODHODLANY",
+    responsibility: "SPOLEHLIVY"
+  };
 
   // fetch with a timeout – give up after API_TIMEOUT_MS
   function fetchWithTimeout(url, opts) {
@@ -33,20 +41,23 @@
     });
   }
 
+  // Both endpoints are plain GET with no body, so this only matters
+  // once an auth header gets added to Cfg.API_HEADERS.
   function headers() {
-    var h = { "Content-Type": "application/json" };
-    var extra = Cfg.API_HEADERS || {};
-    for (var k in extra) if (extra.hasOwnProperty(k)) h[k] = extra[k];
-    return h;
+    return Cfg.API_HEADERS || {};
   }
 
   var Api = {
     /* Checks the ID before the test.
        Returns { allowed: bool, reason: string }
+         - reason "not-found": the hash doesn't exist at all -> denied
          - reason "already": the ID already completed the test -> denied
        Rules:
          1) If the ID is locally marked as completed -> deny (even offline).
-         2) If the API is configured, ask the server (exists=true -> deny).
+         2) If the API is configured, ask the server:
+              { exists: false }                -> not-found, deny
+              { exists: true, kviz: null }      -> ok, allow
+              { exists: true, kviz: "<TRAIT>" } -> already, deny
          3) If the API is missing or unavailable -> ALLOW (fail-open). */
     checkId: function (id) {
       if (Store.isCompleted(id)) {
@@ -57,11 +68,8 @@
         console.log("[Kvíz:API] Žádné API nastavené, propouštím (fail-open).");
         return Promise.resolve({ allowed: true, reason: "no-api" });
       }
-      return fetchWithTimeout(Cfg.API_BASE + Cfg.ENDPOINTS.check, {
-        method: "POST",
-        headers: headers(),
-        body: JSON.stringify({ id: id })
-      })
+      var url = Cfg.API_BASE + Cfg.ENDPOINTS.check + "?hash=" + encodeURIComponent(id);
+      return fetchWithTimeout(url, { method: "GET", headers: headers() })
         .then(function (res) {
           if (!res.ok) {
             console.log("[Kvíz:API] Chyba API při kontrole ID, propouštím:", res.status);
@@ -69,9 +77,13 @@
           }
           return res.json().then(function (data) {
             console.log("[Kvíz:API] Odpověď serveru na kontrolu ID:", data);
-            return data && data.exists
-              ? { allowed: false, reason: "already" }
-              : { allowed: true, reason: "ok" };
+            if (!data || !data.exists) {
+              return { allowed: false, reason: "not-found" };
+            }
+            if (data.kviz) {
+              return { allowed: false, reason: "already" };
+            }
+            return { allowed: true, reason: "ok" };
           });
         })
         .catch(function (err) {
@@ -110,20 +122,30 @@
       return queue
         .reduce(function (chain, rec) {
           return chain.then(function () {
-            return fetchWithTimeout(Cfg.API_BASE + Cfg.ENDPOINTS.result, {
-              method: "POST",
-              headers: headers(),
-              body: JSON.stringify(rec)
-            })
+            var kviz = KVIZ_PARAM[rec.type];
+            if (!kviz) {
+              console.log("[Kvíz:API] Neznámý typ výsledku, přeskočeno:", rec.id, rec.type);
+              return;
+            }
+            var url =
+              Cfg.API_BASE + Cfg.ENDPOINTS.result +
+              "?hash=" + encodeURIComponent(rec.id) +
+              "&kviz=" + encodeURIComponent(kviz);
+            return fetchWithTimeout(url, { method: "GET", headers: headers() })
               .then(function (res) {
-                // 200/201 = saved; 409 = server already has the record -> also OK
-                if (res.ok || res.status === 409) {
-                  Store.removeFromQueue(rec.id);
-                  sent++;
-                  console.log("[Kvíz:API] Odesláno:", rec.id, res.status);
-                } else {
+                if (!res.ok) {
                   console.log("[Kvíz:API] Odeslání selhalo, necháno ve frontě:", rec.id, res.status);
+                  return;
                 }
+                return res.json().then(function (data) {
+                  if (data && data.success) {
+                    Store.removeFromQueue(rec.id);
+                    sent++;
+                    console.log("[Kvíz:API] Odesláno:", rec.id, data);
+                  } else {
+                    console.log("[Kvíz:API] Odeslání selhalo (success:false), necháno ve frontě:", rec.id, data);
+                  }
+                });
               })
               .catch(function (err) {
                 /* leave it queued for next time */
