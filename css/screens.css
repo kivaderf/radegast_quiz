@@ -123,10 +123,6 @@
   background: linear-gradient(90deg, var(--amber), var(--amber-deep));
   transform-origin: left center;
 }
-.progress-dots.low span.current > i {
-  background: linear-gradient(90deg, var(--danger), #a3341f);
-}
-
 .q-text {
   width: 100%;
   max-width: 43.75rem;

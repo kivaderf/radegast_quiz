@@ -88,7 +88,6 @@
       $("#qCounter").textContent = "Otázka " + (index + 1) + "/" + total;
       var dots = $("#dots");
       dots.innerHTML = "";
-      dots.classList.remove("low");
       for (var i = 0; i < total; i++) {
         var s = document.createElement("span");
         if (i < index) {
@@ -177,14 +176,11 @@
         start: function (duration, onExpire) {
           dots = $("#dots");
           fillI = dots.querySelector(".current > i");
-          dots.classList.remove("low");
           var t0 = performance.now();
           function frame(now) {
             var remain = Math.max(0, duration - (now - t0));
             var elapsedFrac = 1 - remain / duration;
             if (fillI) fillI.style.transform = "scaleX(" + elapsedFrac + ")";
-            var secs = Math.ceil(remain / 1000);
-            if (secs <= 10) dots.classList.add("low");
             if (remain <= 0) {
               raf = null;
               onExpire();
