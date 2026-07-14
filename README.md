@@ -115,5 +115,6 @@ v konzoli), server dostává jen `hash` + vítězný `kviz`.
 ID → (případně obrazovka „už použito") → 5 otázek po 30 s → výsledek →
 po 30 s (nebo tlačítkem **Nový test**) zpět na zadání ID.
 
-Když uživatel do 30 s neodpoví, „ruletka" za něj během 1,5 s náhodně vybere
-jednu ze čtyř možností a test pokračuje.
+Když uživatel do 30 s neodpoví, nic se nestane — otázka zůstane zobrazená
+a čeká na ruční potvrzení tlačítkem, dokud uživatel odpověď nevybere a
+nepotvrdí.

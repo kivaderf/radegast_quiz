@@ -183,11 +183,6 @@
   border-color: var(--amber);
   background: rgba(227, 166, 60, 0.4);
 }
-.option.is-flash {
-  border-color: var(--bone);
-  background: rgba(227, 166, 60, 0.28);
-  transform: scale(1.015);
-}
 .option.is-picked {
   border-color: var(--amber);
   background: rgba(227, 166, 60, 0.4);
@@ -201,26 +196,12 @@
 .options.locked .option {
   cursor: default;
 }
-.options.locked .option:not(.is-picked):not(.is-flash) {
+.options.locked .option:not(.is-picked) {
   opacity: 0.4;
 }
 
 .q-submit {
   margin-top: 2.5rem;
-}
-
-/* small label shown for the automatic pick after time runs out */
-.auto-note {
-  margin-top: clamp(8px, 1.8vh, 16px);
-  font-size: 1rem;
-  color: var(--amber);
-  letter-spacing: 0.04em;
-  height: 1.4em;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.auto-note.show {
-  opacity: 1;
 }
 
 /* ---------- Screen: denied start ----------------------- */

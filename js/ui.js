@@ -118,9 +118,6 @@
       }
       console.log("[Kvíz] Velikost textu otázky:", fontSize + "px", "(výška " + qText.scrollHeight + "px)");
 
-      $("#autoNote").className = "auto-note";
-      $("#autoNote").textContent = "";
-
       var wrap = $("#options");
       wrap.className = "options";
       wrap.innerHTML = "";
@@ -160,10 +157,6 @@
       return {
         optionEls: optionEls,
         options: question.options,
-        getSelected: function () {
-          if (selectedIdx === -1) return null;
-          return { opt: question.options[selectedIdx], el: optionEls[selectedIdx] };
-        },
         lock: function (pickedEl) {
           wrap.classList.add("locked");
           submitBtn.disabled = true;
@@ -171,13 +164,6 @@
             o.classList.remove("is-selected");
           });
           if (pickedEl) pickedEl.classList.add("is-picked");
-        },
-        showAutoNote: function () {
-          var note = $("#autoNote");
-          note.textContent = "Čas vypršel – vybíráme za tebe…";
-          note.className = "auto-note show";
-          wrap.classList.add("locked");
-          submitBtn.disabled = true;
         }
       };
     },
@@ -214,41 +200,6 @@
         }
       };
     })(),
-
-    /* ---------- Roulette after time expires ---------------------- */
-    // Flashes through the options and decelerates to a stop on a random one. Returns the index.
-    roulette: function (optionEls) {
-      var ms = Cfg.ROULETTE_MS;
-      return new Promise(function (resolve) {
-        var n = optionEls.length;
-        var target = Math.floor(Math.random() * n);
-        var i = Math.floor(Math.random() * n);
-        var start = performance.now();
-        function clearAll() {
-          optionEls.forEach(function (o) {
-            o.classList.remove("is-flash");
-          });
-        }
-        function step() {
-          clearAll();
-          optionEls[i].classList.add("is-flash");
-          var progress = (performance.now() - start) / ms;
-          if (progress >= 1) {
-            clearAll();
-            resolve(target);
-            return;
-          }
-          if (progress > 0.82) {
-            i = target; // settle on the target option near the end
-          } else {
-            i = (i + 1) % n;
-          }
-          var delay = 60 + progress * progress * 220; // slow down
-          setTimeout(step, delay);
-        }
-        step();
-      });
-    },
 
     /* ---------- Result -------------------------------------- */
     renderResult: function (evalObj) {

@@ -27,7 +27,6 @@
     /* ---- Test flow -------------------------------------------- */
     QUESTION_COUNT: 5, // how many questions per test
     TIME_PER_QUESTION_MS: 30000, // 30 s per question
-    ROULETTE_MS: 1500, // duration of the "roulette" when time expires
 
     /* ---- Anti-repeat between tests ---------------------------------
        A question reappears only after this many other questions have

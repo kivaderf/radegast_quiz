@@ -81,28 +81,9 @@
     setTimeout(advance, 550);
   }
 
-  // Time expired -> accept an already-chosen answer, otherwise roulette picks for the user
+  // Time expired -> do nothing; the question stays open until submitted manually.
   function onExpire() {
-    if (state.answered) return;
-    state.answered = true;
-
-    var selected = state.current.getSelected();
-    if (selected) {
-      console.log("[Kvíz] Čas vypršel, ale odpověď byla vybraná - přijímám ji:", selected.opt);
-      UI.timer.stop();
-      state.current.lock(selected.el);
-      record(selected.opt);
-      setTimeout(advance, 550);
-      return;
-    }
-
-    state.current.showAutoNote();
-    UI.roulette(state.current.optionEls).then(function (idx) {
-      var opt = state.current.options[idx];
-      state.current.lock(state.current.optionEls[idx]);
-      record(opt);
-      setTimeout(advance, 650);
-    });
+    console.log("[Kvíz] Čas na otázku vypršel, žádná akce.");
   }
 
   function record(opt) {
