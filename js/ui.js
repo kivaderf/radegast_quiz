@@ -62,7 +62,7 @@
       var app = $("#app");
       app.classList.toggle("bg-start", name === "id");
       app.classList.toggle("bg-rest", name !== "id");
-      console.log("[Kvíz] Pozadí přepnuto na:", name === "id" ? "start" : "rest");
+      klog("[Kvíz] Pozadí přepnuto na:", name === "id" ? "start" : "rest");
     },
 
     /* ---------- ID (custom on-screen numpad, no device keyboard) --
@@ -156,7 +156,7 @@
         fontSize -= step;
         qText.style.fontSize = fontSize + "px";
       }
-      console.log("[Kvíz] Velikost textu otázky:", fontSize + "px", "(výška " + qText.scrollHeight + "px)");
+      klog("[Kvíz] Velikost textu otázky:", fontSize + "px", "(výška " + qText.scrollHeight + "px)");
 
       var wrap = $("#options");
       wrap.className = "options";
@@ -233,7 +233,7 @@
       if (audioFile) {
         resultAudio = new Audio("assets/audio/" + audioFile + ".mp3");
         resultAudio.play().catch(function (err) {
-          console.log("[Kvíz] Přehrání zvuku výsledku selhalo:", err);
+          klog("[Kvíz] Přehrání zvuku výsledku selhalo:", err);
         });
       }
     },

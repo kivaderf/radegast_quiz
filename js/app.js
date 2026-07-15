@@ -30,7 +30,7 @@
   var idleTimer = null;
 
   function showScreenSaver() {
-    console.log("[Kvíz] Zobrazuji screensaver.");
+    klog("[Kvíz] Zobrazuji screensaver.");
     state.onScreenSaver = true;
     clearTimeout(idleTimer); // no idle countdown while already on the saver
     var saver = document.getElementById("screenSaver");
@@ -54,7 +54,7 @@
     clearTimeout(idleTimer);
     if (state.onScreenSaver) return;
     idleTimer = setTimeout(function () {
-      console.log("[Kvíz] Nečinnost " + IDLE_MS / 1000 + "s - návrat na screensaver.");
+      klog("[Kvíz] Nečinnost " + IDLE_MS / 1000 + "s - návrat na screensaver.");
       resetToScreenSaver();
     }, IDLE_MS);
   }
@@ -79,9 +79,9 @@
     var id = state.idValue;
     if (!id) return;
     document.getElementById("startBtn").disabled = true;
-    console.log("[Kvíz] Kontroluji ID:", id);
+    klog("[Kvíz] Kontroluji ID:", id);
     Api.checkId(id).then(function (res) {
-      console.log("[Kvíz] Výsledek kontroly ID:", res);
+      klog("[Kvíz] Výsledek kontroly ID:", res);
       if (res.allowed) {
         beginTest();
       } else {
@@ -95,7 +95,7 @@
     state.questions = Quiz.pickQuestions();
     state.qIndex = 0;
     state.answers = [];
-    console.log("[Kvíz] Start testu, ID:", state.idValue);
+    klog("[Kvíz] Start testu, ID:", state.idValue);
     UI.showScreen("question");
     renderCurrent();
   }
@@ -124,16 +124,16 @@
 
   // Time expired -> do nothing; the question stays open until submitted manually.
   function onExpire() {
-    console.log("[Kvíz] Čas na otázku vypršel, žádná akce.");
+    klog("[Kvíz] Čas na otázku vypršel, žádná akce.");
   }
 
   function record(opt) {
     var q = state.questions[state.qIndex];
-    console.log(
+    klog(
       "[Kvíz] Otázka " + (state.qIndex + 1) + "/" + Cfg.QUESTION_COUNT + ":",
       q
     );
-    console.log("[Kvíz] Vybraná odpověď:", opt);
+    klog("[Kvíz] Vybraná odpověď:", opt);
     state.answers.push({ questionId: q.id, trait: opt.trait });
   }
 
@@ -163,15 +163,15 @@
       finishedAt: new Date().toISOString()
     };
 
-    console.log("[Kvíz] Vyhodnocení:", evalObj);
-    console.log("[Kvíz] Uložený záznam:", record);
+    klog("[Kvíz] Vyhodnocení:", evalObj);
+    klog("[Kvíz] Uložený záznam:", record);
 
     UI.renderResult(evalObj);
     UI.showScreen("result");
 
     // Save (locally right away, to the server once it's available)
     Api.saveResult(record).then(function (status) {
-      console.log("[Kvíz] Stav odeslání:", status);
+      klog("[Kvíz] Stav odeslání:", status);
     });
 
     var secs = Math.round(Cfg.RESULT_RESET_MS / 1000);
@@ -189,7 +189,7 @@
 
   /* ---------- Denied start -------------------------------- */
   function showDenied(reason) {
-    console.log("[Kvíz] Start zamítnut pro ID:", state.idValue, "- důvod:", reason);
+    klog("[Kvíz] Start zamítnut pro ID:", state.idValue, "- důvod:", reason);
     UI.renderDenied(reason);
     UI.showScreen("denied");
     var secs = Math.round(Cfg.DENIED_RESET_MS / 1000);
@@ -207,7 +207,7 @@
 
   /* ---------- Return to the screen saver ---------------------- */
   function resetToScreenSaver() {
-    console.log("[Kvíz] Reset na screensaver.");
+    klog("[Kvíz] Reset na screensaver.");
     clearInterval(state.resultTimer);
     clearInterval(state.deniedTimer);
     UI.timer.stop();
@@ -270,7 +270,7 @@
 
     Quiz.load()
       .then(function () {
-        console.log(
+        klog(
           "[Kvíz] Data načtena:",
           Quiz.questions.length + " otázek",
           Quiz.results
@@ -279,7 +279,7 @@
         Api.flushQueue(); // send any leftovers from before
       })
       .catch(function (err) {
-        console.log("[Kvíz] Načtení dat selhalo:", err);
+        klog("[Kvíz] Načtení dat selhalo:", err);
         document.getElementById("qText") &&
           (document.getElementById("startBtn").disabled = true);
         alert("Nepodařilo se načíst data kvízu (data/questions.json).");

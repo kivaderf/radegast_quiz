@@ -5,6 +5,22 @@
 (function () {
   "use strict";
 
+  // Shared logger: prefixes every console message with a local date+time
+  // stamp, e.g. "[2026-07-15 14:23:01.123]". Used instead of console.log
+  // everywhere so the log timeline is readable when reviewing a device
+  // after the fact (Safari's own console timestamps aren't always visible).
+  window.klog = function () {
+    var d = new Date();
+    var pad = function (n, len) {
+      return String(n).padStart(len || 2, "0");
+    };
+    var ts =
+      d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) +
+      " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) +
+      "." + pad(d.getMilliseconds(), 3);
+    console.log.apply(console, ["[" + ts + "]"].concat(Array.prototype.slice.call(arguments)));
+  };
+
   window.Config = {
     /* ---- API ------------------------------------------------------
        Both endpoints are GET requests with query params (see api.js

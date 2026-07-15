@@ -69,7 +69,7 @@
       }
 
       var chosen = pool.slice(0, count);
-      console.log(
+      klog(
         "[Kvíz:Quiz] Výběr otázek – fresh: " + fresh.length +
           ", celkem v poolu: " + Quiz.questions.length +
           ", vybráno ID:",
