@@ -23,8 +23,6 @@
     current: null,
     resultTimer: null,
     deniedTimer: null,
-    isPreview: false, // true when started via ?result=quiz(-paused) - skips saving
-    timerDisabled: false, // true when started via ?result=quiz-paused
     onScreenSaver: false
   };
 
@@ -111,9 +109,7 @@
       q,
       onSubmit
     );
-    if (!state.timerDisabled) {
-      UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
-    }
+    UI.timer.start(Cfg.TIME_PER_QUESTION_MS, onExpire);
   }
 
   // Manual pick, confirmed via the submit button
@@ -173,14 +169,10 @@
     UI.renderResult(evalObj);
     UI.showScreen("result");
 
-    if (state.isPreview) {
-      console.log("[Kvíz] Náhled (?result=quiz) - výsledek se neukládá.");
-    } else {
-      // Save (locally right away, to the server once it's available)
-      Api.saveResult(record).then(function (status) {
-        console.log("[Kvíz] Stav odeslání:", status);
-      });
-    }
+    // Save (locally right away, to the server once it's available)
+    Api.saveResult(record).then(function (status) {
+      console.log("[Kvíz] Stav odeslání:", status);
+    });
 
     var secs = Math.round(Cfg.RESULT_RESET_MS / 1000);
     UI.setCountdownText(secs);
@@ -224,8 +216,6 @@
     state.answers = [];
     state.qIndex = 0;
     state.answered = false;
-    state.isPreview = false;
-    state.timerDisabled = false;
     showScreenSaver();
     // try sending queued results while things are idle
     Api.flushQueue();
@@ -264,60 +254,6 @@
       .catch(function () {});
   }
 
-  /* ---------- Dev shortcut: ?result=<handle> jumps straight to a
-     screen (skips ID entry) so it's quick to edit/preview:
-       ?result=strength | decisiveness | resilience | responsibility -> that result
-       ?result=prijato -> "ID already used" (denied) screen
-       ?result=chyba -> "ID not found" (denied) screen
-       ?result=quiz -> starts a real quiz run (timer, options, etc.)
-       ?result=quiz-paused -> same, but the countdown never starts -
-         only the submit button advances questions
-     No auto-reset timers are armed for the static previews, so those
-     screens stay put while you edit. Query param only, no URL routing -
-     works on any static host with no server config. ------------- */
-  function previewFromUrl() {
-    var handle = new URLSearchParams(location.search).get("result");
-    if (!handle) return false;
-
-    if (handle === "prijato" || handle === "chyba") {
-      var reason = handle === "chyba" ? "not-found" : "already";
-      console.log("[Kvíz] Náhled obrazovky zamítnutí přes URL (?result=" + handle + "), důvod:", reason);
-      UI.renderDenied(reason);
-      UI.setCountdownText(Math.round(Cfg.DENIED_RESET_MS / 1000));
-      UI.showScreen("denied");
-      return true;
-    }
-
-    if (handle === "quiz" || handle === "quiz-paused") {
-      console.log("[Kvíz] Náhled obrazovky otázek přes URL (?result=" + handle + ")");
-      state.idValue = "preview";
-      state.isPreview = true;
-      state.timerDisabled = handle === "quiz-paused";
-      beginTest();
-      return true;
-    }
-
-    if (Cfg.TRAITS.indexOf(handle) === -1) return false;
-
-    var evalObj = {
-      trait: handle,
-      counts: Cfg.TRAITS.reduce(function (acc, t) {
-        acc[t] = t === handle ? Cfg.QUESTION_COUNT : 0;
-        return acc;
-      }, {}),
-      tie: false,
-      result: Quiz.results[handle] || {
-        trait: handle,
-        name: handle,
-        title: handle
-      }
-    };
-    console.log("[Kvíz] Náhled výsledku přes URL (?result=" + handle + "):", evalObj);
-    UI.renderResult(evalObj);
-    UI.showScreen("result");
-    return true;
-  }
-
   /* ---------- Start ----------------------------------------- */
   function init() {
     UI.init();
@@ -339,9 +275,7 @@
           Quiz.questions.length + " otázek",
           Quiz.results
         );
-        if (!previewFromUrl()) {
-          showScreenSaver();
-        }
+        showScreenSaver();
         Api.flushQueue(); // send any leftovers from before
       })
       .catch(function (err) {
