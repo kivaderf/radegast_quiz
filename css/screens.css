@@ -226,10 +226,6 @@
 .option:active {
   transform: scale(0.985);
 }
-.option.is-selected {
-  border-color: var(--amber);
-  background: rgba(227, 166, 60, 0.4);
-}
 .option.is-picked {
   border-color: var(--amber);
   background: rgba(227, 166, 60, 0.4);
@@ -245,10 +241,6 @@
 }
 .options.locked .option:not(.is-picked) {
   opacity: 0.4;
-}
-
-.q-submit {
-  margin-top: 2.5rem;
 }
 
 /* ---------- Screen: denied start ----------------------- */
