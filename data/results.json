@@ -14,12 +14,12 @@
   "resilience": {
     "trait": "resilience",
     "name": "Odolnost",
-    "title": "Jsi odhodlaný"
+    "title": "Jsi Odhodlaný"
   },
 
   "responsibility": {
     "trait": "responsibility",
     "name": "Zodpovědnost",
-    "title": "Jsi Spolehlivý"
+    "title": "Jsi Zodpovědný"
   }
 }
