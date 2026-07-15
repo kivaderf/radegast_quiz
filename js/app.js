@@ -326,6 +326,7 @@
     document.getElementById("idDisplay").addEventListener("click", UI.revealKeypad);
     document.getElementById("startBtn").addEventListener("click", onStart);
     document.getElementById("screenSaver").addEventListener("click", hideScreenSaver);
+    document.getElementById("deniedBadge").addEventListener("click", resetToScreenSaver);
     // Any tap anywhere resets the idle clock; taps on the saver itself
     // additionally dismiss it (handled by the listener just above).
     document.addEventListener("pointerdown", resetIdleTimer, { passive: true });

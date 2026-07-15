@@ -285,6 +285,7 @@
 }
 #screen-denied .result-badge {
   width: 14.375rem;
+  cursor: pointer;
 }
 @keyframes badge-in {
   from {
