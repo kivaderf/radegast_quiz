@@ -14,7 +14,7 @@
   var KVIZ_PARAM = {
     strength: "SILNY",
     decisiveness: "ROZHODNY",
-    resilience: "ODHODLANY",
+    resilience: "ODOLNY",
     responsibility: "ZODPOVEDNY"
   };
 

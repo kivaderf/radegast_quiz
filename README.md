@@ -81,12 +81,12 @@ v `js/api.js`, `KVIZ_PARAM`):
 | --- | --- |
 | `strength` | `SILNY` |
 | `decisiveness` | `ROZHODNY` |
-| `resilience` | `ODHODLANY` |
+| `resilience` | `ODOLNY` |
 | `responsibility` | `ZODPOVEDNY` |
 
 Odpověď:
 ```json
-{ "success": true, "value": "ODHODLANÝ" }
+{ "success": true, "value": "ODOLNÝ" }
 ```
 `success: true` znamená uloženo → záznam se smaže z lokální fronty.
 `success: false` (nebo chyba sítě) → zůstává ve frontě a zkusí se znovu
