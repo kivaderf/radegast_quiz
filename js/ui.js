@@ -65,20 +65,61 @@
       console.log("[Kvíz] Pozadí přepnuto na:", name === "id" ? "start" : "rest");
     },
 
-    /* ---------- ID (text field with the device's numeric keyboard) */
+    /* ---------- ID (custom on-screen numpad, no device keyboard) --
+       iPadOS ignores type="tel"/inputmode="numeric" and always shows
+       its full keyboard with a numbers+symbols page instead of a
+       digits-only pad, so a native input can't guarantee a clean
+       numpad on iPad. A custom keypad sidesteps the OS keyboard
+       entirely and behaves identically on every device. */
     setIdDisplay: function (value) {
-      var input = $("#idInput");
-      input.value = value || "";
-      $("#startBtn").disabled = !value;
+      var box = $("#idDisplay");
+      box.textContent = value;
     },
 
-    initIdInput: function (maxLen, onChange) {
-      var input = $("#idInput");
-      input.maxLength = maxLen;
-      input.addEventListener("input", function () {
-        var digits = input.value.replace(/\D/g, "").slice(0, maxLen);
-        if (digits !== input.value) input.value = digits;
-        onChange(digits);
+    // Keypad stays hidden until the display box is tapped (revealKeypad),
+    // so the ID screen starts clean instead of showing the full pad upfront.
+    // #screen-id.keypad-open drives the whole transition in CSS: it fades/
+    // collapses .id-wrap and the eyebrow while the keypad expands in.
+    revealKeypad: function () {
+      $("#keypad").classList.add("is-visible");
+      $("#screen-id").classList.add("keypad-open");
+    },
+    hideKeypad: function () {
+      $("#keypad").classList.remove("is-visible");
+      $("#screen-id").classList.remove("keypad-open");
+    },
+
+    buildKeypad: function (onDigit, onBackspace, onClear) {
+      var pad = $("#keypad");
+      pad.classList.remove("is-visible");
+      $("#screen-id").classList.remove("keypad-open");
+      pad.innerHTML = "";
+      var layout = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "clear", "0", "back"];
+      layout.forEach(function (key) {
+        var b = document.createElement("button");
+        b.type = "button";
+        if (key === "back") {
+          b.className = "key key--action";
+          b.textContent = "⌫";
+          b.setAttribute("aria-label", "Smazat číslici");
+          b.addEventListener("click", function () {
+            onBackspace();
+          });
+        } else if (key === "clear") {
+          b.className = "key key--action";
+          b.textContent = "C";
+          b.setAttribute("aria-label", "Smazat vše");
+          b.addEventListener("click", function () {
+            onClear();
+          });
+        } else {
+          b.className = "key";
+          b.textContent = key;
+          b.addEventListener("click", function () {
+            onDigit(key);
+          });
+        }
+        pad.appendChild(b);
       });
     },
 

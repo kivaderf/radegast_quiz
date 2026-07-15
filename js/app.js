@@ -26,10 +26,20 @@
     timerDisabled: false // true when started via ?result=quiz-paused
   };
 
-  /* ---------- ID screen ---------------------------------- */
-  function onIdChange(digits) {
+  /* ---------- ID screen (custom keypad, no device keyboard) ------ */
+  function setIdValue(digits) {
     state.idValue = digits;
+    UI.setIdDisplay(digits);
     document.getElementById("startBtn").disabled = digits.length !== ID_LEN;
+  }
+  function onIdDigit(d) {
+    if (state.idValue.length < ID_LEN) setIdValue(state.idValue + d);
+  }
+  function onIdBackspace() {
+    setIdValue(state.idValue.slice(0, -1));
+  }
+  function onIdClear() {
+    setIdValue("");
   }
 
   function onStart() {
@@ -174,13 +184,13 @@
     clearInterval(state.resultTimer);
     clearInterval(state.deniedTimer);
     UI.timer.stop();
-    state.idValue = "";
+    setIdValue("");
+    UI.hideKeypad();
     state.answers = [];
     state.qIndex = 0;
     state.answered = false;
     state.isPreview = false;
     state.timerDisabled = false;
-    UI.setIdDisplay("");
     UI.showScreen("id");
     // try sending queued results while things are idle
     Api.flushQueue();
@@ -197,23 +207,10 @@
     document.addEventListener("dragstart", function (e) {
       e.preventDefault();
     });
-    // prevent double-tap zoom (only when tapping the *same* element twice
-    // fast - otherwise quick taps on different buttons/options would have
-    // their second click silently swallowed)
-    var lastTouchTime = 0;
-    var lastTouchTarget = null;
-    document.addEventListener(
-      "touchend",
-      function (e) {
-        var now = Date.now();
-        if (now - lastTouchTime <= 350 && e.target === lastTouchTarget) {
-          e.preventDefault();
-        }
-        lastTouchTime = now;
-        lastTouchTarget = e.target;
-      },
-      { passive: false }
-    );
+    // Double-tap-to-zoom is already disabled by `touch-action: manipulation`
+    // in base.css (no JS workaround needed - a manual one here previously
+    // caused fast repeated taps on the same button, e.g. mashing backspace,
+    // to have every other tap silently swallowed).
     // keep the screen awake (best-effort)
     requestWakeLock();
     document.addEventListener("visibilitychange", function () {
@@ -289,8 +286,9 @@
   /* ---------- Start ----------------------------------------- */
   function init() {
     UI.init();
-    UI.initIdInput(ID_LEN, onIdChange);
-    UI.setIdDisplay("");
+    UI.buildKeypad(onIdDigit, onIdBackspace, onIdClear);
+    setIdValue("");
+    document.getElementById("idDisplay").addEventListener("click", UI.revealKeypad);
     document.getElementById("startBtn").addEventListener("click", onStart);
     hardenKiosk();
 
