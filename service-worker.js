@@ -1,67 +1,37 @@
 /* ============================================================
    service-worker.js — offline operation (PWA)
+   Every image is precached up front, the first time the app runs
+   (install event) — not lazily on first use. HTML/CSS/JS/JSON always
+   go straight to the network, so their changes show up on a normal
+   reload without bumping a version or clearing anything by hand.
 
-   CACHING TEMPORARILY DISABLED FOR TESTING. Every request now goes
-   straight to the network and no assets are cached, so file changes
-   show up on a normal reload — no manual cache clearing or bumping
-   CACHE_VERSION needed. This version also wipes out any cache left
-   over from before, automatically, the first time it activates.
-
-   To re-enable offline support later: delete the disabled block
-   below and uncomment/restore the cache-first block beneath it.
+   Added a new image? Add its path to IMAGES below and bump
+   IMAGE_CACHE so devices pick up the new precache list.
    ============================================================ */
+var IMAGE_CACHE = "ra-kviz-images-v1";
 
-self.addEventListener("install", function (e) {
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", function (e) {
-  e.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(
-        keys.map(function (k) {
-          return caches.delete(k);
-        })
-      );
-    })
-  );
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", function () {
-  // No e.respondWith() call -> browser handles the request normally,
-  // straight to the network, nothing cached.
-});
-
-/* ---------- Original cache-first implementation (disabled) --------------
-
-var CACHE_VERSION = "ra-kviz-v1";
-
-var ASSETS = [
-  ".",
-  "index.html",
-  "manifest.webmanifest",
-  "css/base.css",
-  "css/screens.css",
-  "js/config.js",
-  "js/storage.js",
-  "js/api.js",
-  "js/quiz.js",
-  "js/ui.js",
-  "js/app.js",
-  "data/questions.json",
-  "data/results.json",
-  "assets/logo.svg",
-  "assets/background.svg",
-  "assets/icon-192.png",
-  "assets/icon-512.png",
-  "assets/icon-maskable-512.png"
+var IMAGES = [
+  "assets/background_start.jpg",
+  "assets/background_rest.jpg",
+  "assets/screen_saver.jpg",
+  "assets/Radegast_logo.png",
+  "assets/colours2026_logo_datum.png",
+  "assets/prijato.png",
+  "assets/R_logo_192.png",
+  "assets/R_logo_512.png",
+  "assets/trait_strength.png",
+  "assets/trait_decisiveness.png",
+  "assets/trait_resilience.png",
+  "assets/trait_responsibility.png",
+  "assets/favicon_io/favicon.ico",
+  "assets/favicon_io/favicon-16x16.png",
+  "assets/favicon_io/favicon-32x32.png"
 ];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(
-    caches.open(CACHE_VERSION).then(function (cache) {
-      return cache.addAll(ASSETS);
+    caches.open(IMAGE_CACHE).then(function (cache) {
+      return cache.addAll(IMAGES);
     })
   );
   self.skipWaiting();
@@ -73,7 +43,7 @@ self.addEventListener("activate", function (e) {
       return Promise.all(
         keys
           .filter(function (k) {
-            return k !== CACHE_VERSION;
+            return k !== IMAGE_CACHE;
           })
           .map(function (k) {
             return caches.delete(k);
@@ -89,26 +59,23 @@ self.addEventListener("fetch", function (e) {
   if (req.method !== "GET") return; // never cache POSTs to the API
 
   var url = new URL(req.url);
-  // Requests to a different origin (e.g. the API) are left alone – straight to the network.
+  // Requests to a different origin (e.g. the API) are left alone.
   if (url.origin !== self.location.origin) return;
+  // Only images are cached - everything else always hits the network.
+  if (!/\.(png|jpe?g|svg|webp|gif|ico)$/i.test(url.pathname)) return;
 
-  // App shell + data: cache-first, silently falling back to cache on failure.
   e.respondWith(
     caches.match(req).then(function (cached) {
       if (cached) return cached;
-      return fetch(req)
-        .then(function (res) {
-          var copy = res.clone();
-          caches.open(CACHE_VERSION).then(function (cache) {
-            cache.put(req, copy);
-          });
-          return res;
-        })
-        .catch(function () {
-          return caches.match("index.html");
+      // Not in the precache (e.g. added after install) - fetch once and
+      // cache it so it's available offline from then on.
+      return fetch(req).then(function (res) {
+        var copy = res.clone();
+        caches.open(IMAGE_CACHE).then(function (cache) {
+          cache.put(req, copy);
         });
+        return res;
+      });
     })
   );
 });
-
----------------------------------------------------------------------- */

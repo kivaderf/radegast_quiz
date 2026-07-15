@@ -31,8 +31,13 @@ GitHub Pages, vlastní web) — je to jen statické soubory.
 | Barvy a fonty | proměnné na začátku `css/base.css` |
 | Barvy 4 typů | proměnné `--t-*` v `css/base.css` |
 
-**Po jakékoli změně souborů zvyš `CACHE_VERSION` v `service-worker.js`**,
-jinak si zařízení může držet starou verzi z cache.
+Service worker cachuje jen **obrázky**, a to hned při prvním spuštění appky
+(seznam `IMAGES` v `service-worker.js`) — ne až při prvním použití. HTML/CSS/
+JS/data se vždy stahují znovu, takže jejich úpravy se projeví hned po
+refresh, bez mazání cache. **Když přidáš nový obrázek, přidej jeho cestu i
+do `IMAGES`** — jinak se přednačte až při prvním zobrazení, ne dopředu.
+Když nahradíš obrázek pod stejným názvem souboru, zvyš `IMAGE_CACHE`
+v `service-worker.js`, ať si zařízení nedrží starou verzi.
 
 ### Otázky (`data/questions.json`)
 
