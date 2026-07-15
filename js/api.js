@@ -76,7 +76,7 @@
             return { allowed: true, reason: "api-error" };
           }
           return res.json().then(function (data) {
-            klog("[Kvíz:API] Odpověď serveru na kontrolu ID:", data);
+            klog("[Kvíz:API] Odpověď serveru na kontrolu ID:", id, data);
             if (!data || !data.exists) {
               return { allowed: false, reason: "not-found" };
             }
