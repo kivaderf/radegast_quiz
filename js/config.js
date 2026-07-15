@@ -27,6 +27,9 @@
        for exactly how they're called and how the response is read).
        While API_BASE is null, the app runs locally: the ID check
        passes (fail-open) and results are queued in the browser.
+
+       ❗❗❗ BEFORE PUBLISHING: confirm API_BASE below is the PRODUCTION
+       URL, not a test/staging one. ❗❗❗
     */
     API_BASE: "https://fwtd.site/api",
     ENDPOINTS: {
