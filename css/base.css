@@ -191,6 +191,42 @@ body {
   outline-offset: 0.1875rem;
 }
 
+/* Screen saver: fullscreen idle/attract overlay. Sits above the normal
+   screens and the header (but below the orientation prompt), shown at
+   boot and again after 1 min of inactivity or when a result/denied
+   countdown finishes - see app.js. Uses animation (not transition) so
+   the fade plays correctly even from display:none. */
+.screen-saver {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: none;
+}
+.screen-saver.is-active {
+  display: flex;
+  animation: saver-fade-in 0.5s ease both;
+}
+.screen-saver.is-hiding {
+  display: flex;
+  animation: saver-fade-out 0.5s ease both;
+}
+@keyframes saver-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes saver-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+.screen-saver img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Prompt to rotate to landscape (in case the PWA didn't lock orientation) */
 .rotate-hint {
   position: fixed;

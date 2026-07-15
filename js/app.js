@@ -12,6 +12,7 @@
   var Store = window.Store;
 
   var ID_LEN = 6; // ID is always exactly 6 digits
+  var IDLE_MS = 60000; // 1 min with no taps anywhere -> back to the screen saver
 
   var state = {
     idValue: "",
@@ -23,8 +24,42 @@
     resultTimer: null,
     deniedTimer: null,
     isPreview: false, // true when started via ?result=quiz(-paused) - skips saving
-    timerDisabled: false // true when started via ?result=quiz-paused
+    timerDisabled: false, // true when started via ?result=quiz-paused
+    onScreenSaver: false
   };
+
+  /* ---------- Screen saver (idle/attract overlay) ------------ */
+  var idleTimer = null;
+
+  function showScreenSaver() {
+    console.log("[Kvíz] Zobrazuji screensaver.");
+    state.onScreenSaver = true;
+    clearTimeout(idleTimer); // no idle countdown while already on the saver
+    var saver = document.getElementById("screenSaver");
+    saver.classList.remove("is-hiding");
+    saver.classList.add("is-active");
+  }
+
+  function hideScreenSaver() {
+    state.onScreenSaver = false;
+    var saver = document.getElementById("screenSaver");
+    saver.classList.remove("is-active");
+    saver.classList.add("is-hiding");
+    setTimeout(function () {
+      saver.classList.remove("is-hiding");
+    }, 500);
+    UI.showScreen("id");
+    resetIdleTimer();
+  }
+
+  function resetIdleTimer() {
+    clearTimeout(idleTimer);
+    if (state.onScreenSaver) return;
+    idleTimer = setTimeout(function () {
+      console.log("[Kvíz] Nečinnost " + IDLE_MS / 1000 + "s - návrat na screensaver.");
+      resetToScreenSaver();
+    }, IDLE_MS);
+  }
 
   /* ---------- ID screen (custom keypad, no device keyboard) ------ */
   function setIdValue(digits) {
@@ -155,7 +190,7 @@
       UI.setCountdownText(Math.max(0, secs));
       if (secs <= 0) {
         clearInterval(state.resultTimer);
-        resetToId();
+        resetToScreenSaver();
       }
     }, 1000);
   }
@@ -173,14 +208,14 @@
       UI.setCountdownText(Math.max(0, secs));
       if (secs <= 0) {
         clearInterval(state.deniedTimer);
-        resetToId();
+        resetToScreenSaver();
       }
     }, 1000);
   }
 
-  /* ---------- Return to start -------------------------------- */
-  function resetToId() {
-    console.log("[Kvíz] Reset na úvodní obrazovku.");
+  /* ---------- Return to the screen saver ---------------------- */
+  function resetToScreenSaver() {
+    console.log("[Kvíz] Reset na screensaver.");
     clearInterval(state.resultTimer);
     clearInterval(state.deniedTimer);
     UI.timer.stop();
@@ -191,7 +226,7 @@
     state.answered = false;
     state.isPreview = false;
     state.timerDisabled = false;
-    UI.showScreen("id");
+    showScreenSaver();
     // try sending queued results while things are idle
     Api.flushQueue();
   }
@@ -290,6 +325,10 @@
     setIdValue("");
     document.getElementById("idDisplay").addEventListener("click", UI.revealKeypad);
     document.getElementById("startBtn").addEventListener("click", onStart);
+    document.getElementById("screenSaver").addEventListener("click", hideScreenSaver);
+    // Any tap anywhere resets the idle clock; taps on the saver itself
+    // additionally dismiss it (handled by the listener just above).
+    document.addEventListener("pointerdown", resetIdleTimer, { passive: true });
     hardenKiosk();
 
     Quiz.load()
@@ -300,7 +339,7 @@
           Quiz.results
         );
         if (!previewFromUrl()) {
-          UI.showScreen("id");
+          showScreenSaver();
         }
         Api.flushQueue(); // send any leftovers from before
       })
