@@ -15,7 +15,7 @@
     strength: "SILNY",
     decisiveness: "ROZHODNY",
     resilience: "ODHODLANY",
-    responsibility: "SPOLEHLIVY"
+    responsibility: "ZODPOVEDNY"
   };
 
   // fetch with a timeout – give up after API_TIMEOUT_MS

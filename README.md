@@ -82,7 +82,7 @@ v `js/api.js`, `KVIZ_PARAM`):
 | `strength` | `SILNY` |
 | `decisiveness` | `ROZHODNY` |
 | `resilience` | `ODHODLANY` |
-| `responsibility` | `SPOLEHLIVY` |
+| `responsibility` | `ZODPOVEDNY` |
 
 Odpověď:
 ```json
